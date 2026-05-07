@@ -1,6 +1,6 @@
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import {FiBarChart2, FiActivity, FiCheckSquare, FiArrowRight} from 'react-icons/fi';
+import {FiBarChart2, FiActivity, FiCheckSquare, FiArrowRight, FiGrid} from 'react-icons/fi';
 
 import styles from './styles.module.css';
 
@@ -22,6 +22,12 @@ const tools = [
     title: 'Z-Testi (Tek Örneklem)',
     desc: 'Örneklem ortalamasını bilinen bir popülasyon ortalamasıyla karşılaştırın; z istatistiği, p-değeri ve karar.',
     Icon: FiCheckSquare,
+  },
+  {
+    to: '/araclar/qr-code-generator',
+    title: 'Logolu QR Kod Oluşturucu',
+    desc: 'Özel renk ve logolu QR kodlar oluşturun. PNG veya SVG formatında indirin, panodan kopyalayın.',
+    Icon: FiGrid,
   },
 ];
 

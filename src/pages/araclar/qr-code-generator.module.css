@@ -1,0 +1,205 @@
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  user-select: none;
+}
+
+.radioLabel input[type='radio'] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.radioLabel span {
+  font-size: 0.95rem;
+  color: var(--brand-ink);
+}
+
+.uploadArea {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.fileInput {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--brand-surface);
+  border: 1px dashed var(--brand-border);
+  border-radius: var(--radius-md);
+  color: var(--brand-ink);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.fileInput:hover {
+  border-color: var(--brand-ink);
+}
+
+.fileInput input {
+  display: none;
+}
+
+.logoPreview {
+  width: 100%;
+  height: 160px;
+  margin-top: var(--space-4);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--radius-md);
+  background-color: var(--brand-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logoPreview img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.error {
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--radius-sm);
+  color: #dc2626;
+  font-size: 0.8125rem;
+}
+
+.info {
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: var(--radius-sm);
+  color: #2563eb;
+  font-size: 0.8125rem;
+}
+
+.colorInputWrapper {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.colorInput {
+  width: 48px;
+  height: 44px;
+  padding: 4px;
+  border: 1px solid var(--brand-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  background: var(--brand-surface-raised);
+}
+
+.colorText {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--brand-border);
+  margin: var(--space-6) 0;
+}
+
+.resetButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--brand-surface-raised);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--radius-md);
+  color: var(--brand-ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.resetButton:hover {
+  border-color: var(--brand-ink);
+}
+
+.qrPreview {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 340px;
+  padding: var(--space-6);
+  background-color: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+}
+
+.qrPreview canvas,
+.qrPreview svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.exportButtonsGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.exportButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--brand-yellow);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--brand-ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.exportButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 23, 41, 0.12);
+}
+
+.status {
+  text-align: center;
+  padding: var(--space-3) var(--space-4);
+  background-color: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: var(--radius-md);
+  color: #15803d;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .qrPreview {
+    min-height: 280px;
+  }
+}
