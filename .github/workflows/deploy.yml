@@ -26,8 +26,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -35,6 +33,15 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Cache Docusaurus build
+        uses: actions/cache@v4
+        with:
+          path: .docusaurus
+          key: ${{ runner.os }}-docusaurus-${{ hashFiles('**/package-lock.json', '**/docusaurus.config.js') }}
+          restore-keys: |
+            ${{ runner.os }}-docusaurus-
+
       - name: Build website
         run: npm run build
         env:
