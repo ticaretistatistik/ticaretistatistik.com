@@ -579,6 +579,52 @@
   letter-spacing: 0.01em;
 }
 
+.neonCountdown {
+  display: inline-block;
+  font-family: var(--ifm-font-family-monospace);
+  font-weight: 800;
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+  padding: 0 4px; /* Text clipping fix */
+  
+  /* Elektrik akımı (renk geçişi) */
+  background: linear-gradient(
+    90deg, 
+    var(--brand-ink) 0%, 
+    var(--brand-ink) 35%, 
+    var(--brand-yellow) 50%, 
+    var(--brand-ink) 65%, 
+    var(--brand-ink) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  animation: electric-slide 2s linear infinite;
+  filter: drop-shadow(0 0 3px rgba(245, 207, 6, 0.3));
+}
+
+[data-theme="dark"] .neonCountdown {
+  background: linear-gradient(
+    90deg, 
+    #fff 0%, 
+    #fff 35%, 
+    var(--brand-yellow) 50%, 
+    #fff 65%, 
+    #fff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes electric-slide {
+  to {
+    background-position: -200% center;
+  }
+}
+
 
 /* --- Pagination ----------------------------------------------------------- */
 

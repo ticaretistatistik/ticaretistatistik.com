@@ -40,9 +40,10 @@ function useNextBuildCountdown() {
   const [timeLeft, setTimeLeft] = useState('');
 
   useEffect(() => {
+    let triggeredConfettiForCycle = false;
+    
     const calculateTimeLeft = () => {
       const now = new Date();
-      // Her saat başı için bir sonraki dilimi bul
       const nextBuildHour = now.getUTCHours() + 1;
       const nextBuild = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), nextBuildHour, 0, 0));
       const diff = nextBuild - now;
@@ -50,12 +51,30 @@ function useNextBuildCountdown() {
       const h = Math.floor(diff / (1000 * 60 * 60));
       const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      // Sayaç sıfırlandığında (saat başında) konfeti patlat
+      if (h === 0 && m === 0 && s <= 5) {
+        if (!triggeredConfettiForCycle) {
+          import('canvas-confetti').then((module) => {
+            const confetti = module.default;
+            confetti({
+              particleCount: 200,
+              spread: 100,
+              origin: { y: 0.75 }, // Butonun / sayacın oralar
+              colors: ['#f5cf06', '#ecc221', '#0f1729', '#ffffff'],
+              zIndex: 9999
+            });
+          }).catch(err => console.error("Confetti load error:", err));
+          triggeredConfettiForCycle = true;
+        }
+      } else if (s > 5) {
+        // Döngü tamamlandıktan sonra diğer saat başına hazırla
+        triggeredConfettiForCycle = false;
+      }
       
       return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
     };
 
-    // İlk hesaplamayı beklemeden yap, hydration uyumsuzluğu (SSR) 
-    // olmaması için useEffect içinde set etmek daha güvenli.
     setTimeLeft(calculateTimeLeft());
     const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
     return () => clearInterval(timer);
@@ -461,15 +480,16 @@ export default function SozlukPage() {
             Sen de bir terim öner
             <span className={styles.ctaArrow} aria-hidden="true">→</span>
           </Link>
-          <p className={styles.ctaHint}>
+          <div className={styles.ctaHint}>
             5 dakika sürer · Adın katkıcılar arasında anılır
             <br />
             {timeLeft && (
-              <span>
-                Sonraki yayınlanma döngüsüne: <strong>{timeLeft}</strong>
-              </span>
+              <div style={{ marginTop: '16px' }}>
+                <span style={{ marginRight: '10px' }}>Sonraki yayınlanma döngüsüne:</span>
+                <span className={styles.neonCountdown}>{timeLeft}</span>
+              </div>
             )}
-          </p>
+          </div>
         </div>
       </div>
     </Layout>
