@@ -28,6 +28,14 @@
       "definition": "Standart sapmanın karesidir.",
       "example": "Standart sapma 5 ise varyans 25'tir.",
       "related": ["Standart sapma"]
+    },
+    {
+      "term": "Veri",
+      "en": "Data",
+      "definition": "Araştırma veya gözlem sonucunda elde edilen bilgilere Veri denir.",
+      "example": "Bir iş yerinde mağaza müdürü çalışanların bir günde yaptığı satış miktarlarını kaydeder.\nAyşe 25 satış\nAli 30 satış\nHale 42 satış\n25, 30, 42 veri örneğidir.",
+      "related": ["Nicel veri", "Nitel veri"],
+      "contributor": "Ezgi Hale Öztürk"
     }
   ]
 }
