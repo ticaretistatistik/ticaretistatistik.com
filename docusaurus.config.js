@@ -192,6 +192,10 @@ const config = {
                 label: 'Sözlük',
               },
               {
+                to: '/kavram-haritasi',
+                label: 'Kavram Haritası',
+              },
+              {
                 to: '/araclar',
                 label: 'Araçlar',
               },
