@@ -5,22 +5,21 @@
       "en": "Mean",
       "definition": "Tüm değerlerin toplamının gözlem sayısına bölünmesi. Merkezî eğilimin en bilinen ölçüsü; ancak aykırı değerlere duyarlıdır.",
       "example": "{4, 6, 8, 10, 12} setinin ortalaması (4+6+8+10+12)/5 = 8'dir.",
-      "contributor": "Yiğit Efe Avcı",
-      "related": ["Standart sapma", "Regresyon"]
+      "contributor": "Yiğit Efe Avcı"
     },
     {
       "term": "Regresyon",
       "en": "Regression",
       "definition": "Bir bağımlı değişkenin bir veya daha fazla bağımsız değişkenle ilişkisini modelleyen istatistiksel yöntem. Doğrusal regresyon en basit biçimidir.",
       "example": "Ev fiyatının metrekareye göre modellenmesi: Fiyat = β₀ + β₁ × Metrekare + ε.",
-      "related": ["Ortalama"]
+      "contributor": "Yiğit Efe Avcı"
     },
     {
       "term": "Standart sapma",
       "en": "Standard deviation",
       "definition": "Verinin ortalama etrafında ne kadar yayıldığını gösteren ölçü. Varyansın kareköküdür, orijinal veriyle aynı birimdedir.",
       "example": "İki sınıfın ortalama puanı 70 olsun. Birincide standart sapma 5, ikincide 15 ise birinci sınıftaki puanlar ortalamaya çok daha yakındır.",
-      "related": ["Ortalama", "Varyans"]
+      "contributor": "Yiğit Efe Avcı"
     },
     {
       "term": "Veri",

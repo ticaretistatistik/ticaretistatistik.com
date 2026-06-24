@@ -27,11 +27,21 @@ import {fileURLToPath} from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_FILE = join(__dirname, '..', 'src', 'data', 'glossary.json');
 
-const SHEET_URL = process.env.GLOSSARY_SHEET_CSV_URL;
+let SHEET_URL = process.env.GLOSSARY_SHEET_CSV_URL;
 
 if (!SHEET_URL) {
   console.log('[glossary] GLOSSARY_SHEET_CSV_URL not set; keeping existing JSON.');
   process.exit(0);
+}
+
+// Otomatik olarak "Sözlük" sekmesini çekecek şekilde URL'yi dönüştür
+const sheetIdMatch = SHEET_URL.match(/\/d\/([a-zA-Z0-9-_]+)/);
+if (sheetIdMatch) {
+  // Kullanıcı normal paylaşım linki (/edit) veya eksik export linki verdiyse
+  // garantili bir şekilde Sözlük (S%C3%B6zl%C3%BCk) sekmesinin CSV'sine yönlendir.
+  if (!SHEET_URL.includes('gviz') && (!SHEET_URL.includes('format=csv') || !SHEET_URL.includes('gid='))) {
+    SHEET_URL = `https://docs.google.com/spreadsheets/d/${sheetIdMatch[1]}/gviz/tq?tqx=out:csv&sheet=S%C3%B6zl%C3%BCk`;
+  }
 }
 
 // Header aliases — accept Turkish or English column names, case-insensitive.
