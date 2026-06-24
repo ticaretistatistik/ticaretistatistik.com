@@ -23,13 +23,6 @@
       "related": ["Ortalama", "Varyans"]
     },
     {
-      "term": "Varyans",
-      "en": "Variance",
-      "definition": "Standart sapmanın karesidir.",
-      "example": "Standart sapma 5 ise varyans 25'tir.",
-      "related": ["Standart sapma"]
-    },
-    {
       "term": "Veri",
       "en": "Data",
       "definition": "Araştırma veya gözlem sonucunda elde edilen bilgilere Veri denir.",
