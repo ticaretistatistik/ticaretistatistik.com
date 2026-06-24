@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import {FiSearch, FiX} from 'react-icons/fi';
+import {FiSearch, FiX, FiStar} from 'react-icons/fi';
 
 import glossaryData from '@site/src/data/glossary.json';
 import authorsData from '@site/src/data/authors.json';
@@ -185,6 +185,39 @@ function ContributorsMarquee({contributors}) {
         </div>
       )}
     </section>
+  );
+}
+
+function TermOfTheDay({terms}) {
+  const [term, setTerm] = useState(null);
+
+  useEffect(() => {
+    if (!terms || terms.length === 0) return;
+    const today = new Date();
+    // Deterministic seed based on year, month, date
+    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+    const index = (seed * 13) % terms.length;
+    setTerm(terms[index]);
+  }, [terms]);
+
+  if (!term) return null;
+
+  return (
+    <div className={styles.todCard}>
+      <div className={styles.todHeader}>
+        <span className={styles.todBadge}>
+          <FiStar style={{marginRight: '6px', fill: 'currentColor'}} size={14} />
+          Günün Terimi
+        </span>
+      </div>
+      <h3 className={styles.todTitle}>
+        {term.term} {term.en && <span className={styles.todEn}>({term.en})</span>}
+      </h3>
+      <p className={styles.todDefinition}>{term.definition}</p>
+      <Link to={`#${slugify(term.term)}`} className={styles.todLink}>
+        Detaylara Git →
+      </Link>
+    </div>
   );
 }
 
@@ -375,6 +408,8 @@ export default function SozlukPage() {
         </header>
 
         <main className={styles.main}>
+          {!query && <TermOfTheDay terms={sorted} />}
+          
           {grouped.length === 0 ? (
             <p className={styles.empty}>
               “{query}” için eşleşen terim bulunamadı. Başka bir kelime dener misin?

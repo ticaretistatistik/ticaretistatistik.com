@@ -693,3 +693,98 @@
   background: var(--brand-ink);
   color: var(--brand-surface);
 }
+
+/* --- Term of the Day --- */
+.todCard {
+  background: var(--brand-surface-raised);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-8);
+  margin: var(--space-6) 0 var(--space-10);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+
+.todCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.todCard::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-yellow) 0%, var(--brand-yellow-deep) 100%);
+}
+
+.todHeader {
+  margin-bottom: var(--space-4);
+}
+
+.todBadge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand-yellow-deep);
+  background: var(--brand-yellow-soft);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+[data-theme="dark"] .todBadge {
+  background: rgba(245, 207, 6, 0.15);
+  color: var(--brand-yellow);
+}
+
+.todTitle {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.8rem;
+  color: var(--brand-ink);
+  margin: 0 0 var(--space-2);
+}
+
+.todEn {
+  font-family: var(--ifm-font-family-base);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--brand-ink-subtle);
+  font-style: italic;
+  margin-left: var(--space-2);
+}
+
+.todDefinition {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--brand-ink-muted);
+  margin: 0 0 var(--space-5);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.todLink {
+  display: inline-flex;
+  font-weight: 600;
+  color: var(--brand-ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.todLink:hover {
+  color: var(--brand-yellow-deep);
+  text-decoration: none;
+}
+
+[data-theme="dark"] .todLink:hover {
+  color: var(--brand-yellow);
+}
