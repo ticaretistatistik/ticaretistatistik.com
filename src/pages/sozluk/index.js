@@ -42,8 +42,8 @@ function useNextBuildCountdown() {
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date();
-      // UTC 00, 06, 12, 18 saatleri için bir sonraki dilimi bul
-      const nextBuildHour = Math.floor(now.getUTCHours() / 6) * 6 + 6;
+      // Her saat başı için bir sonraki dilimi bul
+      const nextBuildHour = now.getUTCHours() + 1;
       const nextBuild = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), nextBuildHour, 0, 0));
       const diff = nextBuild - now;
       
