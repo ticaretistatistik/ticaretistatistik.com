@@ -36,6 +36,34 @@ function splitIntoRows(items, rowCount) {
   return rows;
 }
 
+function useNextBuildCountdown() {
+  const [timeLeft, setTimeLeft] = useState('');
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      // UTC 00, 06, 12, 18 saatleri için bir sonraki dilimi bul
+      const nextBuildHour = Math.floor(now.getUTCHours() / 6) * 6 + 6;
+      const nextBuild = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), nextBuildHour, 0, 0));
+      const diff = nextBuild - now;
+      
+      const h = Math.floor(diff / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    };
+
+    // İlk hesaplamayı beklemeden yap, hydration uyumsuzluğu (SSR) 
+    // olmaması için useEffect içinde set etmek daha güvenli.
+    setTimeLeft(calculateTimeLeft());
+    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return timeLeft;
+}
+
 function ContributorCard({contributor}) {
   const initials = contributor.name
     .split(/\s+/)
@@ -144,6 +172,7 @@ function ContributorsMarquee({contributors}) {
 export default function SozlukPage() {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
+  const timeLeft = useNextBuildCountdown();
 
   // Arama her değiştiğinde 1. sayfaya dön — kullanıcı arıyorsa eski
   // sayfa numarası anlamsızlaşır.
@@ -434,6 +463,12 @@ export default function SozlukPage() {
           </Link>
           <p className={styles.ctaHint}>
             5 dakika sürer · Adın katkıcılar arasında anılır
+            <br />
+            {timeLeft && (
+              <span>
+                Sonraki yayınlanma döngüsüne: <strong>{timeLeft}</strong>
+              </span>
+            )}
           </p>
         </div>
       </div>

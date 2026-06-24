@@ -1,20 +1,19 @@
 {
-  "upcoming": [
+  "upcoming": [],
+  "past": [
     {
       "uid": "5c4drd94n2as804d11bhaspoes@google.com",
-      "title": "İstatistik Günü Festivali",
-      "summary": "Sayılar tek başına susar; istatistik onlara ses verir. Her yıl 25 Nisan'da kutlanan Türkiye İstatistik Günü'nü, bu yıl İstanbul Ticaret Üniversitesi İstatistik Topluluğu olarak bir festivalle taçlandırıyoruz. Panel, söyl",
-      "description": "Sayılar tek başına susar; istatistik onlara ses verir. Her yıl 25 Nisan'da kutlanan Türkiye İstatistik Günü'nü, bu yıl İstanbul Ticaret Üniversitesi İstatistik Topluluğu olarak bir festivalle taçlandırıyoruz. Panel, söyleşi, atölye ve sürprizlerle dolu bir gün boyunca; istatistiğin akademiden sahaya, veri biliminden kamu politikalarına uzanan hikâyesini konuşacağız. TÜİK'in kurumsal mirasından modern veri çağına uzanan bu yolculukta öğrenciyi, akademisyeni ve sektörü aynı çatı altında buluşturmayı amaçlıyoruz. Veriyle düşünen, sayılarla üreten ve istatistiği bir yaşam becerisi olarak gören herkesi aramızda görmek isteriz. Detaylı program önümüzdeki haftalarda paylaşılacak — kayıt bilgileri için sosyal medyamızı takipte kalın.",
+      "title": "Veri İstanbul: Yapay Zekâ Destekli Açık Veri Kütüphanesi ve İTOSAM Faaliyetleri",
+      "summary": "stanbul Ticaret Üniversitesi İstatistik Topluluğu olarak düzenlediğimiz “Veri İstanbul: Yapay Zekâ Destekli Açık Veri Kütüphanesi ve İTOSAM Faaliyetleri” programında İTOSAM yetkililerini okulumuzda ağırlamaktan büyük hey",
+      "description": "stanbul Ticaret Üniversitesi İstatistik Topluluğu olarak düzenlediğimiz “Veri İstanbul: Yapay Zekâ Destekli Açık Veri Kütüphanesi ve İTOSAM Faaliyetleri” programında İTOSAM yetkililerini okulumuzda ağırlamaktan büyük heyecan duyuyoruz!İTOSAM müdürlüğü ve değerli birim yöneticilerinin katılımıyla gerçekleşecek etkinliğimizde, aşağıdaki konularda ufuk açıcı sunumlar bizleri bekliyor:• İstatistik alanında kariyer süreçleri• İTO enflasyon çalışmalarının teknik süreci• İTO DERSAADET Kütüphanesi tanıtımı• Veri İstanbul Projesi sunumuVeri dünyasına ilgi duyan, teknik süreçleri uzmanlarından dinlemek ve kariyerine bu alanda yön vermek isteyen herkesi etkinliğimize bekliyoruz!📅 Tarih: 21 Mayıs 2026 - Perşembe 🕒 Saat: 15.00 📍 Konum: İstanbul Ticaret Üniversitesi Sütlüce Kampüsü – Sadabad Toplantı Salonu, Beyoğlu / İstanbul",
       "location": "İstanbul Ticaret Üniversitesi, Örnektepe, İmrahor Cd. No: 88/2, 34445 Beyoğlu/İstanbul, Türkiye",
-      "start": "2026-05-20T09:00:00.000Z",
-      "end": "2026-05-20T12:00:00.000Z",
+      "start": "2026-05-21T12:00:00.000Z",
+      "end": "2026-05-21T15:00:00.000Z",
       "url": null,
       "allDay": false,
-      "slug": "istatistik-gunu-festivali-2026-05-20",
-      "detailPath": "/topluluk/etkinlikler/istatistik-gunu-festivali-2026-05-20"
-    }
-  ],
-  "past": [
+      "slug": "veri-istanbul-yapay-zeka-destekli-acik-veri-kutuphanesi-ve-itosam-faaliyetleri-2026-05-21",
+      "detailPath": "/topluluk/etkinlikler/veri-istanbul-yapay-zeka-destekli-acik-veri-kutuphanesi-ve-itosam-faaliyetleri-2026-05-21"
+    },
     {
       "uid": "03tgk36a62lnd9kln2e2mqda4s@google.com",
       "title": "TCMB Finans Merkezi Teknik Gezisi",
@@ -133,5 +132,5 @@
       "detailPath": "/topluluk/etkinlikler/tanisma-etkinligi-2024-10-14"
     }
   ],
-  "updatedAt": "2026-05-07T12:37:31.348Z"
+  "updatedAt": "2026-06-24T15:35:31.433Z"
 }
