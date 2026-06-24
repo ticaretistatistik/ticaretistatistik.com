@@ -37,10 +37,10 @@ if (!SHEET_URL) {
 // Header aliases — accept Turkish or English column names, case-insensitive.
 const HEADER_MAP = {
   term: ['term', 'terim'],
-  en: ['en', 'english', 'ingilizce', 'i̇ngilizce'],
+  en: ['en', 'english', 'ingilizce', 'i̇ngilizce', 'i̇ngilizce karşılığı', 'ingilizce karşılığı'],
   definition: ['definition', 'tanim', 'tanım'],
   example: ['example', 'ornek', 'örnek'],
-  related: ['related', 'ilgili', 'i̇lgili', 'related terms'],
+  related: ['related', 'ilgili', 'i̇lgili', 'related terms', 'i̇lgili terimler', 'ilgili terimler'],
   contributor: ['contributor', 'katki', 'katkı', 'adin', 'adın'],
 };
 
