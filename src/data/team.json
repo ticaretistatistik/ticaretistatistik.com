@@ -64,16 +64,6 @@
     "image_url": "/img/icon-cropped.png"
   },
   {
-    "key": "ezgihaleozturk",
-    "name": "Ezgi Hale Öztürk",
-    "title": "Veri ve Gelişim Birimi Üyesi",
-    "group": "birim",
-    "unit": "Veri ve Gelişim Birimi",
-    "role_rank": 2,
-    "url": "https://ticaret.edu.tr/istatistik/",
-    "image_url": "/img/icon-cropped.png"
-  },
-  {
     "key": "sosyal_medya_baskan",
     "name": "Ad Soyad",
     "title": "Sosyal Medya ve Tasarım Birimi Başkanı",
@@ -88,7 +78,7 @@
   },
   {
     "key": "akademik_baskan",
-    "name": "Ad Soyad",
+    "name": "Eda Çıkrıkçıoğlu",
     "title": "Akademik Birim Başkanı",
     "group": "birim",
     "unit": "Akademik Birim",
@@ -114,7 +104,7 @@
   },
   {
     "key": "iletisim_baskan",
-    "name": "Ad Soyad",
+    "name": "Secem Bahadır",
     "title": "İletişim Birimi Başkanı",
     "group": "birim",
     "unit": "İletişim Birimi",
