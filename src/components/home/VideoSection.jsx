@@ -1,29 +1,37 @@
 import {useRef, useState} from 'react';
 import ReactPlayer from 'react-player';
 import {FiPlayCircle} from 'react-icons/fi';
+import {FaInstagram} from 'react-icons/fa';
 
+import InstagramEmbed from './InstagramEmbed';
 import styles from './VideoSection.module.css';
 
 const videos = [
   {
+    type: 'youtube',
     title: 'Prof. Dr. Özlem Deniz Başar İstatistik Bölümünü Anlatıyor',
     label: 'Bölüm Tanıtımı',
     url: 'https://www.youtube.com/watch?v=njJBBiyFLxQ',
   },
   {
+    type: 'youtube',
     title: 'İstatistik Bölüm Tanıtım Programı',
     label: 'Tanıtım',
     url: 'https://www.youtube.com/watch?v=zLkbLQyRO_E',
   },
   {
-    title: 'İstatistik Bölümü Neden Tercih Edilmeli?',
-    label: 'Söyleşi',
-    url: 'https://www.youtube.com/watch?v=-FyO2wMOK8s',
+    type: 'youtube',
+    title: 'Öğrenci Gözünden İstatistik Bölümü',
+    label: 'Öğrenci Gözünden',
+    url: 'https://www.youtube.com/watch?v=uoSR9bz2Xz4',
   },
   {
-    title: 'İstatistik Bölümünden Mezun Olunca İş İmkanları Nelerdir?',
-    label: 'Kariyer',
-    url: 'https://www.youtube.com/watch?v=7Kucx4fkwKs',
+    type: 'instagram',
+    title: 'Veri Bilimi İçin 3 Program',
+    label: 'Veri Bilimi',
+    url: 'https://www.instagram.com/reel/DMDPjlStS1h/',
+    // Instagram /media/ endpoint no longer works; host a local cover frame.
+    thumbnail: '/img/videos/reel-DMDPjlStS1h.jpg',
   },
 ];
 
@@ -32,9 +40,15 @@ function youtubeId(url) {
   return m ? m[1] : '';
 }
 
-function thumbFor(url) {
-  const id = youtubeId(url);
+function thumbFor(video) {
+  if (video.thumbnail) return video.thumbnail;
+  if (video.type === 'instagram') return '';
+  const id = youtubeId(video.url);
   return id ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg` : '';
+}
+
+function hideBrokenThumb(e) {
+  e.currentTarget.style.display = 'none';
 }
 
 export default function VideoSection() {
@@ -42,6 +56,7 @@ export default function VideoSection() {
   const [mounted, setMounted] = useState(false);
   const heroRef = useRef(null);
   const current = videos[currentIndex];
+  const isInstagram = current.type === 'instagram';
 
   const handleSelect = (i) => {
     if (i === currentIndex) return;
@@ -62,8 +77,37 @@ export default function VideoSection() {
         </header>
 
         <div ref={heroRef} className={styles.heroCard}>
-          <div className={styles.heroPlayer}>
-            {mounted ? (
+          <div
+            className={`${styles.heroPlayer} ${
+              isInstagram ? styles.heroPlayerInstagram : ''
+            }`}>
+            {isInstagram ? (
+              mounted ? (
+                <InstagramEmbed
+                  key={current.url}
+                  url={current.url}
+                  className={styles.instagramEmbed}
+                />
+              ) : (
+                <button
+                  type="button"
+                  className={styles.igPreview}
+                  onClick={() => setMounted(true)}
+                  aria-label={`${current.title} oynat`}>
+                  {thumbFor(current) && (
+                    <img
+                      src={thumbFor(current)}
+                      alt=""
+                      className={styles.igPreviewImg}
+                      onError={hideBrokenThumb}
+                    />
+                  )}
+                  <span className={styles.playIcon} aria-hidden="true">
+                    <FiPlayCircle size={72} />
+                  </span>
+                </button>
+              )
+            ) : mounted ? (
               <ReactPlayer
                 key={current.url}
                 url={current.url}
@@ -79,7 +123,7 @@ export default function VideoSection() {
               <ReactPlayer
                 key={`light-${current.url}`}
                 url={current.url}
-                light={thumbFor(current.url)}
+                light={thumbFor(current)}
                 width="100%"
                 height="100%"
                 controls
@@ -104,6 +148,7 @@ export default function VideoSection() {
         <ul className={styles.thumbStrip} role="list">
           {videos.map((video, i) => {
             const active = i === currentIndex;
+            const thumbSrc = thumbFor(video);
             return (
               <li key={video.url}>
                 <button
@@ -112,15 +157,23 @@ export default function VideoSection() {
                   onClick={() => handleSelect(i)}
                   aria-pressed={active}>
                   <span className={styles.thumbMedia}>
-                    <img
-                      src={thumbFor(video.url)}
-                      alt={video.title}
-                      className={styles.thumbImg}
-                      loading="lazy"
-                    />
+                    {thumbSrc && (
+                      <img
+                        src={thumbSrc}
+                        alt={video.title}
+                        className={styles.thumbImg}
+                        loading="lazy"
+                        onError={hideBrokenThumb}
+                      />
+                    )}
                     <span className={styles.thumbOverlay} aria-hidden="true">
                       <FiPlayCircle size={28} />
                     </span>
+                    {video.type === 'instagram' && (
+                      <span className={styles.platformBadge} aria-hidden="true">
+                        <FaInstagram size={14} />
+                      </span>
+                    )}
                     {active && <span className={styles.nowBadge}>Şimdi</span>}
                   </span>
                   <span className={styles.thumbBody}>
