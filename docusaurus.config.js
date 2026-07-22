@@ -348,7 +348,7 @@ const config = {
               },
               {
                 label: 'Ders Programları',
-                href: 'https://ticaret.edu.tr/istatistik/ders-programlari/',
+                href: 'https://ticaret.edu.tr/istatistik/lisans-ders-ve-sinav-programi/',
               },
               {
                 label: 'Not Hesaplayıcı',
