@@ -12,7 +12,7 @@ SPSS dokümantasyonu kapsamlı bir revizyon sürecinde. İçerik geçici olarak 
 
 Bu süreçte SPSS kurulumu ve lisans aktivasyonu için **resmi ve güncel kaynak** her zaman İstanbul Ticaret Üniversitesi Bilgi İşlem Daire Başkanlığı'dır:
 
-- **Resmi kurulum sayfası:** [bim.ticaret.edu.tr/spss](https://bim.ticaret.edu.tr/spss/)
+- **Resmi kurulum sayfası:** [bim.ticaret.edu.tr/spss](http://web.archive.org/web/20260517233530/https://bim.ticaret.edu.tr/spss/)
 - **E-posta:** [bim@ticaret.edu.tr](mailto:bim@ticaret.edu.tr)
 - **Telefon:** 444 0 413
 
