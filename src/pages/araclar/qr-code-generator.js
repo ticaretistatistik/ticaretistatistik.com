@@ -181,19 +181,22 @@ export default function QRCodeGeneratorPage() {
   // Download PNG
   const handleDownloadPNG = async () => {
     if (qrInstanceRef.current) {
-      const canvas = await qrInstanceRef.current.getRawData('png');
+      const blob = await qrInstanceRef.current.getRawData('png');
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
-      link.href = canvas;
+      link.href = url;
       link.download = `qr-code-${Date.now()}.png`;
       link.click();
+      URL.revokeObjectURL(url);
     }
   };
 
   // Download SVG
   const handleDownloadSVG = async () => {
     if (qrInstanceRef.current) {
-      const svg = qrInstanceRef.current.getRawData('svg');
-      const blob = new Blob([svg], { type: 'image/svg+xml' });
+      const blob = await qrInstanceRef.current.getRawData('svg');
+      if (!blob) return;
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
@@ -207,8 +210,8 @@ export default function QRCodeGeneratorPage() {
   const handleCopyToClipboard = async () => {
     try {
       if (qrInstanceRef.current) {
-        const canvas = await qrInstanceRef.current.getRawData('png');
-        const blob = await (await fetch(canvas)).blob();
+        const blob = await qrInstanceRef.current.getRawData('png');
+        if (!blob) throw new Error('QR verisi oluşturulamadı');
         await navigator.clipboard.write([
           new ClipboardItem({ 'image/png': blob }),
         ]);
