@@ -1,35 +1,6 @@
 import Link from '@docusaurus/Link';
 import styles from './RecentPosts.module.css';
-
-const posts = [
-  {
-    title: 'Not Hesaplayıcı Yayında',
-    excerpt:
-      'Müfredata göre vize/final ağırlıklarını otomatik yükleyen, tek ders finali ve dönem AGNO hesaplamasını birkaç tıkla yapan yeni aracımız yayında.',
-    date: '24 Nisan 2026',
-    readingTime: '4 dk',
-    to: '/blog/not-hesaplayici',
-    tag: 'Duyuru',
-  },
-  {
-    title: 'Ortalama mı, medyan mı?',
-    excerpt:
-      'Verinin özetlenmesinde merkezi eğilim ölçülerinin hangisini seçmeniz gerektiğini, aykırı değerlerin etkisiyle birlikte inceliyoruz.',
-    date: '23 Eylül 2025',
-    readingTime: '6 dk',
-    to: '/blog/ortalama-vs-medyan',
-    tag: 'Temel İstatistik',
-  },
-  {
-    title: 'NPS — Net Promoter Score',
-    excerpt:
-      'Müşteri sadakatini ölçmek için kullanılan NPS metriğinin hesaplanışı, yorumu ve istatistiksel sınırları.',
-    date: '9 Eylül 2025',
-    readingTime: '5 dk',
-    to: '/blog/net-promosyoncu-skoru-nps',
-    tag: 'Uygulama',
-  },
-];
+import posts from '@site/src/data/latest-posts.json';
 
 export default function RecentPosts() {
   return (
