@@ -50,6 +50,8 @@ mertsismanoglu:
   group: birim
   unit: Veri ve Gelişim Birimi
   role_rank: 1
+  is_board: true
+  bio: Topluluğun veri tabanını ve web sitesini yönetir; topluluk içi veri analizi ve raporlama süreçlerini yürütür.
   url: https://github.com/mertssmnoglu
   image_url: https://github.com/mertssmnoglu.png
 
