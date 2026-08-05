@@ -99,7 +99,7 @@ function Section({title, children}) {
 }
 
 export default function EkibimizPage() {
-  const {board, units, danisman} = useMemo(() => {
+  const {board, danisman} = useMemo(() => {
     const board = team
       .filter((m) => m.group === 'board' || m.is_board === true)
       .sort(sortBoard);
@@ -107,27 +107,7 @@ export default function EkibimizPage() {
       .filter((m) => m.group === 'danisman')
       .sort(sortMembers);
 
-    // Şu an sadece web siteyle ilgilenen birim listeleniyor.
-    // Diğer birimler eklenecekse bu listeyi genişlet veya filtreyi kaldır.
-    const VISIBLE_UNITS = new Set(['Veri ve Gelişim Birimi']);
-    const unitMap = new Map();
-    for (const m of team) {
-      if (m.group !== 'birim') continue;
-      const name = m.unit || 'Diğer';
-      if (!VISIBLE_UNITS.has(name)) continue;
-      if (!unitMap.has(name)) unitMap.set(name, []);
-      unitMap.get(name).push(m);
-    }
-    const units = [...unitMap.entries()]
-      .map(([name, members]) => ({name, members: members.sort(sortMembers)}))
-      .sort((a, b) => {
-        const ra = unitRank(a.name);
-        const rb = unitRank(b.name);
-        if (ra !== rb) return ra - rb;
-        return a.name.localeCompare(b.name, 'tr');
-      });
-
-    return {board, units, danisman};
+    return {board, danisman};
   }, []);
 
   return (
@@ -157,20 +137,7 @@ export default function EkibimizPage() {
           </Section>
         )}
 
-        {units.length > 0 && (
-          <Section title="Birimlerimiz">
-            {units.map((u) => (
-              <div key={u.name} className={styles.unitGroup}>
-                <h3 className={styles.unitTitle}>{u.name}</h3>
-                <ul className={styles.grid}>
-                  {u.members.map((m) => (
-                    <MemberCard key={m.key} m={m} />
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </Section>
-        )}
+
 
         {danisman.length > 0 && (
           <Section title="Akademik Danışmanlar">
@@ -182,7 +149,7 @@ export default function EkibimizPage() {
           </Section>
         )}
 
-        {board.length === 0 && units.length === 0 && danisman.length === 0 && (
+        {board.length === 0 && danisman.length === 0 && (
           <div className={styles.empty}>Henüz üye eklenmemiş.</div>
         )}
       </main>

@@ -39,28 +39,10 @@
     "group": "birim",
     "unit": "Veri ve Gelişim Birimi",
     "role_rank": 1,
+    "is_board": true,
+    "bio": "Topluluğun veri tabanını ve web sitesini yönetir; topluluk içi veri analizi ve raporlama süreçlerini yürütür.",
     "url": "https://github.com/mertssmnoglu",
     "image_url": "https://github.com/mertssmnoglu.png"
-  },
-  {
-    "key": "aslisuveybeoz",
-    "name": "Aslı Süveybe Öz",
-    "title": "Veri ve Gelişim Birimi Üyesi",
-    "group": "birim",
-    "unit": "Veri ve Gelişim Birimi",
-    "role_rank": 2,
-    "url": "https://ticaret.edu.tr/istatistik/",
-    "image_url": "/img/icon-cropped.png"
-  },
-  {
-    "key": "ahmetince",
-    "name": "Ahmet İnce",
-    "title": "Veri ve Gelişim Birimi Üyesi",
-    "group": "birim",
-    "unit": "Veri ve Gelişim Birimi",
-    "role_rank": 2,
-    "url": "https://ticaret.edu.tr/istatistik/",
-    "image_url": "/img/icon-cropped.png"
   },
   {
     "key": "ezgihaleozturk",
@@ -76,46 +58,7 @@
     "image_url": "/img/icon-cropped.png"
   },
   {
-    "key": "akademik_baskan",
-    "name": "Eda Çıkrıkçıoğlu",
-    "title": "Akademik Birim Başkanı",
-    "group": "birim",
-    "unit": "Akademik Birim",
-    "role_rank": 1,
-    "is_board": true,
-    "bio": "Akademik içerik üretimi, eğitim ve seminer çalışmalarını koordine eder.",
-    "email": "istatistiktoplulugu@ticaret.edu.tr",
-    "url": "https://ticaret.edu.tr/istatistik/",
-    "image_url": "/img/icon-cropped.png"
-  },
-  {
-    "key": "etkinlik_baskan",
-    "name": "Ad Soyad",
-    "title": "Etkinlik ve Organizasyon Birimi Başkanı",
-    "group": "birim",
-    "unit": "Etkinlik ve Organizasyon Birimi",
-    "role_rank": 1,
-    "is_board": true,
-    "bio": "Topluluk etkinliklerinin planlanması ve sahada yürütülmesinden sorumludur.",
-    "email": "istatistiktoplulugu@ticaret.edu.tr",
-    "url": "https://ticaret.edu.tr/istatistik/",
-    "image_url": "/img/icon-cropped.png"
-  },
-  {
-    "key": "iletisim_baskan",
-    "name": "Secem Bahadır",
-    "title": "İletişim Birimi Başkanı",
-    "group": "birim",
-    "unit": "İletişim Birimi",
-    "role_rank": 1,
-    "is_board": true,
-    "bio": "Topluluğun iç ve dış iletişim süreçlerini yürütür; paydaşlarla bağı güçlendirir.",
-    "email": "istatistiktoplulugu@ticaret.edu.tr",
-    "url": "https://ticaret.edu.tr/istatistik/",
-    "image_url": "/img/icon-cropped.png"
-  },
-  {
-    "key": "sponsorluk_baskan",
+    "key": "organizasyon_ve_sponsorluk",
     "name": "Ad Soyad",
     "title": "Organizasyon ve Sponsorluk Birimi Başkanı",
     "group": "birim",
