@@ -23,8 +23,8 @@ const channels = [
   },
   {
     label: 'E-posta',
-    handle: 'istatistik@ticaret.edu.tr',
-    href: 'mailto:istatistik@ticaret.edu.tr',
+    handle: 'ticaretstat@gmail.com',
+    href: 'mailto:ticaretstat@gmail.com',
     Icon: FiMail,
   },
 ];
