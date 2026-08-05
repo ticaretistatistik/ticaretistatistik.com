@@ -1,45 +1,44 @@
 [
   {
-    "key": "yonetim_baskan",
-    "name": "Burak Kan",
+    "key": "yigitefeavci",
+    "name": "Yiğit Efe Avcı",
     "title": "Topluluk Başkanı",
     "group": "board",
     "role_rank": 1,
     "bio": "Topluluğun genel koordinasyonundan ve dış ilişkilerden sorumlu.",
-    "email": "istatistiktoplulugu@ticaret.edu.tr",
-    "url": "https://ticaret.edu.tr/istatistik/",
-    "image_url": "/img/icon-cropped.png"
-  },
-  {
-    "key": "yonetim_baskan_yardimcisi",
-    "name": "Emre Agül",
-    "title": "Başkan Yardımcısı",
-    "group": "board",
-    "role_rank": 2,
-    "bio": "Başkana iç işleyiş ve birimler arası koordinasyonda destek olur; etkinlik ve proje takibini yürütür.",
-    "email": "istatistiktoplulugu@ticaret.edu.tr",
-    "url": "https://ticaret.edu.tr/istatistik/",
-    "image_url": "/img/icon-cropped.png"
-  },
-  {
-    "key": "yigitefeavci",
-    "name": "Yiğit Efe Avcı",
-    "title": "Veri ve Gelişim Birimi Başkanı",
-    "group": "birim",
-    "unit": "Veri ve Gelişim Birimi",
-    "role_rank": 1,
-    "is_board": true,
-    "bio": "Birim çalışmalarını koordine eder; teknik altyapı ve veri projelerini yürütür.",
+    "email": "yigitefeavci@outlook.com.tr",
     "url": "https://github.com/yigit433",
     "image_url": "https://github.com/yigit433.png"
   },
   {
+    "key": "ikrademir",
+    "name": "İkra Demir",
+    "title": "Başkan Yardımcısı",
+    "group": "board",
+    "role_rank": 2,
+    "bio": "Başkana iç işleyiş ve birimler arası koordinasyonda destek olur; etkinlik ve proje takibini yürütür.",
+    "email": "ikrademir013@gmail.com",
+    "url": "https://ticaretistatistik.com/",
+    "image_url": "https://github.com/ikrademir.png"
+  },
+  {
+    "key": "melikecumak",
+    "name": "Melike Çumak",
+    "title": "Genel Sekreter",
+    "group": "board",
+    "role_rank": 2,
+    "bio": "Başkana iç işleyiş ve birimler arası koordinasyonda destek olur; etkinlik ve proje takibini yürütür.",
+    "email": "melikecumak@gmail.com",
+    "url": "https://ticaretistatistik.com/",
+    "image_url": "https://github.com/ikrademir.png"
+  },
+  {
     "key": "mertsismanoglu",
     "name": "Mert Şişmanoğlu",
-    "title": "Veri ve Gelişim Birimi Üyesi",
+    "title": "Veri ve Gelişim Birimi Başkanı",
     "group": "birim",
     "unit": "Veri ve Gelişim Birimi",
-    "role_rank": 2,
+    "role_rank": 1,
     "url": "https://github.com/mertssmnoglu",
     "image_url": "https://github.com/mertssmnoglu.png"
   },
@@ -64,15 +63,15 @@
     "image_url": "/img/icon-cropped.png"
   },
   {
-    "key": "sosyal_medya_baskan",
-    "name": "Ad Soyad",
-    "title": "Sosyal Medya ve Tasarım Birimi Başkanı",
+    "key": "ezgihaleozturk",
+    "name": "Ezgi Hale Öztürk",
+    "title": "Tasarım ve Sosyal Medya Birimi Başkanı",
     "group": "birim",
-    "unit": "Sosyal Medya ve Tasarım Birimi",
+    "unit": "Tasarım ve Sosyal Medya Birimi",
     "role_rank": 1,
     "is_board": true,
     "bio": "Topluluğun görsel kimliğini ve sosyal medya iletişimini yönetir.",
-    "email": "istatistiktoplulugu@ticaret.edu.tr",
+    "email": "ezgi.hale07@gmail.com",
     "url": "https://ticaret.edu.tr/istatistik/",
     "image_url": "/img/icon-cropped.png"
   },
@@ -118,9 +117,9 @@
   {
     "key": "sponsorluk_baskan",
     "name": "Ad Soyad",
-    "title": "Sponsorluk Birimi Başkanı",
+    "title": "Organizasyon ve Sponsorluk Birimi Başkanı",
     "group": "birim",
-    "unit": "Sponsorluk Birimi",
+    "unit": "Organizasyon ve Sponsorluk Birimi",
     "role_rank": 1,
     "is_board": true,
     "bio": "Sponsorluk anlaşmaları ve kurumsal iş birliklerinin geliştirilmesinden sorumludur.",
@@ -134,6 +133,7 @@
     "title": "Arş. Gör. Dr.",
     "group": "danisman",
     "role_rank": 1,
+    "email": "kubilayerislik@ticaret.edu.tr",
     "url": "https://github.com/kubilayerislik",
     "image_url": "https://github.com/kubilayerislik.png"
   },
@@ -143,6 +143,7 @@
     "title": "Arş. Gör.",
     "group": "danisman",
     "role_rank": 1,
+    "email": "dgerceker@ticaret.edu.tr",
     "url": "https://ticaret.edu.tr",
     "image_url": "/img/icon-cropped.png"
   }
