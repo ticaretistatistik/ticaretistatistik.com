@@ -121,21 +121,17 @@ export default function EkibimizPage() {
             <span className={styles.titleAccent}>Ekibimiz</span>
           </h1>
           <p className={styles.lead}>
-            Topluluğumuzun yönetim kurulu, birimleri ve akademik danışmanlarıyla
+            Topluluğumuzun yönetim kurulu ve akademik danışmanlarıyla
             tanışın. Bizimle çalışmak veya iletişime geçmek için kartlardaki
             bağlantıları kullanabilirsiniz.
           </p>
         </header>
 
-        {board.length > 0 && (
-          <Section title="Yönetim Kurulu">
-            <ul className={styles.grid}>
-              {board.map((m) => (
-                <MemberCard key={m.key} m={m} />
-              ))}
-            </ul>
-          </Section>
-        )}
+        <Section title="Yönetim Kurulu">
+          <div className={styles.empty}>
+            Yönetim kurulu kadromuz kısa süre içerisinde açıklanacaktır. (Güncelleniyor)
+          </div>
+        </Section>
 
 
 
