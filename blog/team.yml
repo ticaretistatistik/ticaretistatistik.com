@@ -13,118 +13,63 @@
 #     image_url: /img/... veya https://...
 
 # --- Yönetim Kurulu ---
-yonetim_baskan:
-  name: Burak Kan
+yigitefeavci:
+  name: Yiğit Efe Avcı
   title: Topluluk Başkanı
   group: board
   role_rank: 1
   bio: Topluluğun genel koordinasyonundan ve dış ilişkilerden sorumlu.
-  email: istatistiktoplulugu@ticaret.edu.tr
-  url: https://ticaret.edu.tr/istatistik/
-  image_url: /img/icon-cropped.png
+  email: yigitefeavci@outlook.com.tr
+  url: https://github.com/yigit433
+  image_url: https://github.com/yigit433.png
 
-yonetim_baskan_yardimcisi:
-  name: Emre Agül
+ikrademir:
+  name: İkra Demir
   title: Başkan Yardımcısı
   group: board
   role_rank: 2
   bio: Başkana iç işleyiş ve birimler arası koordinasyonda destek olur; etkinlik ve proje takibini yürütür.
-  email: istatistiktoplulugu@ticaret.edu.tr
-  url: https://ticaret.edu.tr/istatistik/
-  image_url: /img/icon-cropped.png
+  email: ikrademir013@gmail.com
+  url: https://ticaretistatistik.com/
+  image_url: https://github.com/ikrademir.png
+
+melikecumak:
+  name: Melike Çumak
+  title: Genel Sekreter
+  group: board
+  role_rank: 2
+  bio: Başkana iç işleyiş ve birimler arası koordinasyonda destek olur; etkinlik ve proje takibini yürütür.
+  email: melikecumak@gmail.com
+  url: https://ticaretistatistik.com/
+  image_url: https://github.com/ikrademir.png
 
 # --- Birimler ---
-yigitefeavci:
-  name: Yiğit Efe Avcı
+mertsismanoglu:
+  name: Mert Şişmanoğlu
   title: Veri ve Gelişim Birimi Başkanı
   group: birim
   unit: Veri ve Gelişim Birimi
   role_rank: 1
-  is_board: true
-  bio: Birim çalışmalarını koordine eder; teknik altyapı ve veri projelerini yürütür.
-  url: https://github.com/yigit433
-  image_url: https://github.com/yigit433.png
-
-mertsismanoglu:
-  name: Mert Şişmanoğlu
-  title: Veri ve Gelişim Birimi Üyesi
-  group: birim
-  unit: Veri ve Gelişim Birimi
-  role_rank: 2
   url: https://github.com/mertssmnoglu
   image_url: https://github.com/mertssmnoglu.png
 
-aslisuveybeoz:
-  name: Aslı Süveybe Öz
-  title: Veri ve Gelişim Birimi Üyesi
+ezgihaleozturk:
+  name: Ezgi Hale Öztürk
+  title: Tasarım ve Sosyal Medya Birimi Başkanı
   group: birim
-  unit: Veri ve Gelişim Birimi
-  role_rank: 2
-  url: https://ticaret.edu.tr/istatistik/
-  image_url: /img/icon-cropped.png
-
-ahmetince:
-  name: Ahmet İnce
-  title: Veri ve Gelişim Birimi Üyesi
-  group: birim
-  unit: Veri ve Gelişim Birimi
-  role_rank: 2
-  url: https://ticaret.edu.tr/istatistik/
-  image_url: /img/icon-cropped.png
-
-sosyal_medya_baskan:
-  name: Ad Soyad
-  title: Sosyal Medya ve Tasarım Birimi Başkanı
-  group: birim
-  unit: Sosyal Medya ve Tasarım Birimi
+  unit: Tasarım ve Sosyal Medya Birimi
   role_rank: 1
   is_board: true
   bio: Topluluğun görsel kimliğini ve sosyal medya iletişimini yönetir.
-  email: istatistiktoplulugu@ticaret.edu.tr
+  email: ezgi.hale07@gmail.com
   url: https://ticaret.edu.tr/istatistik/
   image_url: /img/icon-cropped.png
 
-akademik_baskan:
-  name: Eda Çıkrıkçıoğlu
-  title: Akademik Birim Başkanı
-  group: birim
-  unit: Akademik Birim
-  role_rank: 1
-  is_board: true
-  bio: Akademik içerik üretimi, eğitim ve seminer çalışmalarını koordine eder.
-  email: istatistiktoplulugu@ticaret.edu.tr
-  url: https://ticaret.edu.tr/istatistik/
-  image_url: /img/icon-cropped.png
-
-etkinlik_baskan:
+organizasyon_ve_sponsorluk:
   name: Ad Soyad
-  title: Etkinlik ve Organizasyon Birimi Başkanı
+  title: Organizasyon ve Sponsorluk Birimi Başkanı
   group: birim
-  unit: Etkinlik ve Organizasyon Birimi
-  role_rank: 1
-  is_board: true
-  bio: Topluluk etkinliklerinin planlanması ve sahada yürütülmesinden sorumludur.
-  email: istatistiktoplulugu@ticaret.edu.tr
-  url: https://ticaret.edu.tr/istatistik/
-  image_url: /img/icon-cropped.png
-
-iletisim_baskan:
-  name: Secem Bahadır
-  title: İletişim Birimi Başkanı
-  group: birim
-  unit: İletişim Birimi
-  role_rank: 1
-  is_board: true
-  bio: Topluluğun iç ve dış iletişim süreçlerini yürütür; paydaşlarla bağı güçlendirir.
-  email: istatistiktoplulugu@ticaret.edu.tr
-  url: https://ticaret.edu.tr/istatistik/
-  image_url: /img/icon-cropped.png
-
-sponsorluk_baskan:
-  name: Ad Soyad
-  title: Sponsorluk Birimi Başkanı
-  group: birim
-  unit: Sponsorluk Birimi
+  unit: Organizasyon ve Sponsorluk Birimi
   role_rank: 1
   is_board: true
   bio: Sponsorluk anlaşmaları ve kurumsal iş birliklerinin geliştirilmesinden sorumludur.
@@ -138,6 +83,7 @@ kubilayerislik:
   title: Arş. Gör. Dr.
   group: danisman
   role_rank: 1
+  email: kubilayerislik@ticaret.edu.tr
   url: https://github.com/kubilayerislik
   image_url: https://github.com/kubilayerislik.png
 
@@ -146,5 +92,6 @@ denizgerceker:
   title: Arş. Gör.
   group: danisman
   role_rank: 1
+  email: dgerceker@ticaret.edu.tr
   url: https://ticaret.edu.tr
   image_url: /img/icon-cropped.png
