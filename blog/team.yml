@@ -38,10 +38,10 @@ melikecumak:
   title: Genel Sekreter
   group: board
   role_rank: 2
-  bio: Başkana iç işleyiş ve birimler arası koordinasyonda destek olur; etkinlik ve proje takibini yürütür.
+  bio: Topluluğun resmi yazışmalarını, üye kayıtlarını ve belge yönetimini yürütür; toplantı tutanaklarını tutar.
   email: melikecumak@gmail.com
   url: https://ticaretistatistik.com/
-  image_url: https://github.com/ikrademir.png
+  image_url: /img/icon-cropped.png
 
 # --- Birimler ---
 mertsismanoglu:
