@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "create-post": "node scripts/create-post.mjs",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "generate:og": "node scripts/generate-og-images.mjs",
