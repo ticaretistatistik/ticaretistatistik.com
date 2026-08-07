@@ -243,6 +243,7 @@ const config = {
           },
 
           {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/iletisim', label: 'İletişim', position: 'left'},
 
           {
             href: 'https://hesapla.ticaretistatistik.com/',
