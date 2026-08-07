@@ -47,16 +47,18 @@
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   width: 100%;
+  max-width: 1000px;
 }
 
 .contactInfo {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  width: 100%;
 }
 
 .infoCard {
@@ -184,8 +186,11 @@ html[data-theme='dark'] .formContainer {
 
 @media (max-width: 996px) {
   .container {
+    gap: 3rem;
+  }
+  
+  .contactInfo {
     grid-template-columns: 1fr;
-    gap: 4rem;
   }
   
   .title {
