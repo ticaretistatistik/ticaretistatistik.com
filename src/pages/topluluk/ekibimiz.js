@@ -128,9 +128,11 @@ export default function EkibimizPage() {
         </header>
 
         <Section title="Yönetim Kurulu">
-          <div className={styles.empty}>
-            Yönetim kurulu kadromuz kısa süre içerisinde açıklanacaktır. (Güncelleniyor)
-          </div>
+          <ul className={styles.grid}>
+            {board.map((m) => (
+              <MemberCard key={m.key} m={m} />
+            ))}
+          </ul>
         </Section>
 
 

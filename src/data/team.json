@@ -19,7 +19,7 @@
     "bio": "Başkana iç işleyiş ve birimler arası koordinasyonda destek olur; etkinlik ve proje takibini yürütür.",
     "email": "ikrademir013@gmail.com",
     "url": "https://ticaretistatistik.com/",
-    "image_url": "https://github.com/ikrademir.png"
+    "image_url": "/img/icon-cropped.png"
   },
   {
     "key": "melikecumak",
@@ -33,33 +33,34 @@
     "image_url": "/img/icon-cropped.png"
   },
   {
-    "key": "mertsismanoglu",
-    "name": "Mert Şişmanoğlu",
+    "key": "ezgihaleozturk",
+    "name": "Ezgi Hale Öztürk",
     "title": "Veri ve Gelişim Birimi Başkanı",
     "group": "birim",
     "unit": "Veri ve Gelişim Birimi",
     "role_rank": 1,
     "is_board": true,
     "bio": "Topluluğun veri tabanını ve web sitesini yönetir; topluluk içi veri analizi ve raporlama süreçlerini yürütür.",
-    "url": "https://github.com/mertssmnoglu",
-    "image_url": "https://github.com/mertssmnoglu.png"
+    "email": "ezgi.hale07@gmail.com",
+    "url": "https://github.com/ticaretistatistik",
+    "image_url": "/img/icon-cropped.png"
   },
   {
-    "key": "ezgihaleozturk",
-    "name": "Ezgi Hale Öztürk",
+    "key": "burcuavcu",
+    "name": "Burcu Avcu",
     "title": "Tasarım ve Sosyal Medya Birimi Başkanı",
     "group": "birim",
     "unit": "Tasarım ve Sosyal Medya Birimi",
     "role_rank": 1,
     "is_board": true,
     "bio": "Topluluğun görsel kimliğini ve sosyal medya iletişimini yönetir.",
-    "email": "ezgi.hale07@gmail.com",
-    "url": "https://ticaret.edu.tr/istatistik/",
+    "email": "burcuavcu@gmail.com",
+    "url": "https://github.com/ticaretistatistik",
     "image_url": "/img/icon-cropped.png"
   },
   {
-    "key": "organizasyon_ve_sponsorluk",
-    "name": "Ad Soyad",
+    "key": "elifnuryildirim",
+    "name": "Elif Nur Yıldırım",
     "title": "Organizasyon ve Sponsorluk Birimi Başkanı",
     "group": "birim",
     "unit": "Organizasyon ve Sponsorluk Birimi",
