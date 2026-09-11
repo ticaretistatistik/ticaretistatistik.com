@@ -35,7 +35,7 @@ ikrademir:
 
 melikecumak:
   name: Melike Çumak
-  title: Genel Sekreter
+  title: Başkan Yardımcısı
   group: board
   role_rank: 2
   bio: Topluluğun resmi yazışmalarını, üye kayıtlarını ve belge yönetimini yürütür; toplantı tutanaklarını tutar.
@@ -81,14 +81,6 @@ elifnuryildirim:
   image_url: /img/icon-cropped.png
 
 # --- Akademik Danışmanlar ---
-kubilayerislik:
-  name: Kubilay Erişlik
-  title: Arş. Gör. Dr.
-  group: danisman
-  role_rank: 1
-  email: kubilayerislik@ticaret.edu.tr
-  url: https://github.com/kubilayerislik
-  image_url: https://github.com/kubilayerislik.png
 
 denizgerceker:
   name: Deniz Gerçeker
