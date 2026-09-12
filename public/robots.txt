@@ -1,0 +1,8 @@
+# Ticaret İstatistik
+# https://ticaretistatistik.com
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://ticaretistatistik.com/sitemap.xml
