@@ -42,15 +42,40 @@ export default async function DocPage({ params }: DocPageProps) {
   if (!doc) {
     if (!params.slug || params.slug.length === 0) {
       return (
-        <main className="relative py-12 w-full">
-          <div className="mx-auto w-full min-w-0 max-w-3xl">
-            <h1 className="text-4xl font-serif font-bold tracking-tight text-white mb-4">
-              Dokümantasyon Merkezi
+        <main className="relative py-12 lg:py-20 w-full min-h-[80vh]">
+          {/* Subtle bg glow */}
+          <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-brand-yellow/5 to-transparent pointer-events-none -z-10"></div>
+          
+          <div className="mx-auto w-full min-w-0 max-w-4xl flex flex-col items-center text-center">
+            <div className="inline-flex items-center rounded-full border border-brand-yellow/30 bg-brand-yellow/10 px-3 py-1 text-sm font-medium text-brand-yellow mb-8">
+              Bilgi Bankası
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl font-serif font-black tracking-tight text-foreground mb-6">
+              Dokümantasyon <br/>
+              <span className="text-zinc-400 dark:text-zinc-500 italic font-medium">Merkezi.</span>
             </h1>
-            <p className="text-lg text-zinc-400 mb-8">
-              İstatistik, Python, R ve diğer veri bilimi araçları için hazırladığımız kaynaklara hoş geldiniz. 
-              İncelemek istediğiniz konuyu sol taraftaki menüden seçebilirsiniz.
+            
+            <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-12 max-w-2xl leading-relaxed">
+              İstatistik, Python, R, SPSS ve Tableau için hazırladığımız kapsamlı Türkçe kaynaklara hoş geldiniz. Öğrenmeye başlamak için bir kategori seçin.
             </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              {[
+                { name: "Python ile Veri Bilimi", path: "/docs/python", color: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20" },
+                { name: "R Programlama", path: "/docs/r", color: "bg-brand-yellow/10 text-brand-yellow border-brand-yellow/20" },
+                { name: "SPSS Uygulamaları", path: "/docs/spss", color: "bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20" },
+                { name: "JASP Notları", path: "/docs/jasp", color: "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20" },
+              ].map((item) => (
+                <a key={item.name} href={item.path} className="group relative p-6 rounded-2xl border border-border bg-white/50 dark:bg-white/5 hover:bg-white dark:hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-left overflow-hidden flex items-center justify-between">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 dark:via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-100%] group-hover:translate-x-[100%] duration-1000 z-0"></div>
+                  <h3 className="text-lg font-bold text-foreground z-10">{item.name}</h3>
+                  <div className={`h-10 w-10 rounded-full border flex items-center justify-center transition-colors z-10 ${item.color}`}>
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </main>
       );

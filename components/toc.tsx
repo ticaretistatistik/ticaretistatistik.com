@@ -23,7 +23,7 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
 
   return (
     <div className="space-y-2">
-      <p className="font-medium text-zinc-100">Bu Sayfada</p>
+      <p className="font-bold uppercase tracking-wider text-xs text-foreground mb-4">Bu Sayfada</p>
       <Tree tree={toc} activeItem={activeId} />
     </div>
   );
@@ -79,10 +79,10 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
             <a
               href={item.url}
               className={cn(
-                "inline-block no-underline transition-colors hover:text-zinc-100",
+                "inline-block no-underline transition-colors hover:text-foreground",
                 item.url === `#${activeItem}`
-                  ? "font-medium text-zinc-100"
-                  : "text-zinc-400"
+                  ? "font-medium text-brand-yellow"
+                  : "text-zinc-600 dark:text-zinc-400"
               )}
             >
               {item.title}
