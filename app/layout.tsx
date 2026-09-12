@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { SearchDialog } from "@/components/search-dialog";
@@ -22,8 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" suppressHydrationWarning>
-      <body className={`${inter.variable} ${fraunces.variable} font-sans bg-background selection:bg-brand-yellow selection:text-brand-ink transition-colors duration-300`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <body className={`${inter.variable} ${fraunces.variable} font-sans bg-background text-foreground selection:bg-brand-yellow selection:text-brand-ink transition-colors duration-500 ease-in-out`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main className="min-h-screen pt-16">
             {children}
