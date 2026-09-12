@@ -5,14 +5,18 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --border: 240 5.9% 90%;
+    --foreground: 222 47% 11%;
+    --border: 214 32% 91%;
+    --brand-yellow: 50 96% 49%; /* #f5cf06 */
+    --brand-ink: 222 47% 11%; /* #091E42 */
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
+    --background: 222 47% 11%; /* Koyu lacivert / mürekkep arka plan */
+    --foreground: 210 40% 98%;
+    --border: 217 33% 20%;
+    --brand-yellow: 50 96% 49%;
+    --brand-ink: 222 47% 11%;
   }
 }
 
@@ -23,5 +27,8 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
   }
 }
