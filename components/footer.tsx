@@ -54,7 +54,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:iletisim@ticaretistatistik.com" className="hover:text-brand-yellow transition-colors">iletisim@ticaretistatistik.com</a>
+                <a href="mailto:ticaretstat@gmail.com" className="hover:text-brand-yellow transition-colors">ticaretstat@gmail.com</a>
               </li>
               <li className="mt-4 p-4 border border-border rounded-lg bg-white dark:bg-zinc-900/50">
                 <span className="block text-foreground font-medium mb-1">Aramıza Katıl</span>
