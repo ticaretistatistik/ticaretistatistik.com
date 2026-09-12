@@ -2,7 +2,7 @@
 
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import AutoScroll from "embla-carousel-auto-scroll";
 
 const slides = [
   {
@@ -28,9 +28,9 @@ export function ImageSlider() {
     { 
       loop: true,
       align: "center",
-      skipSnaps: false
+      dragFree: true
     }, 
-    [Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })]
+    [AutoScroll({ playOnInit: true, speed: 1, stopOnInteraction: false })]
   );
 
   return (
