@@ -23,11 +23,8 @@ export default function MarketingPage() {
           
           <h1 className="text-[12vw] leading-[0.85] font-serif font-medium tracking-tighter uppercase mb-6 flex flex-col">
             <span className="text-foreground">İstatistik</span>
-            <span className="text-zinc-400 dark:text-zinc-500 italic flex items-center gap-6">
+            <span className="text-zinc-400 dark:text-zinc-500 italic">
               Topluluğu
-              <span className="hidden md:inline-flex items-center justify-center h-[0.5em] w-[0.5em] rounded-full border border-zinc-300 dark:border-zinc-500/30 bg-black/5 dark:bg-white/5 backdrop-blur-md">
-                <ArrowUpRight className="h-1/2 w-1/2 text-zinc-500 dark:text-zinc-400" />
-              </span>
             </span>
           </h1>
 
