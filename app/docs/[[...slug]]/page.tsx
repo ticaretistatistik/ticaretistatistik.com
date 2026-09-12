@@ -29,15 +29,32 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  return docs.map((doc) => ({
+  const paths = docs.map((doc) => ({
     slug: doc.slug.split("/"),
   }));
+  paths.push({ slug: [] });
+  return paths;
 }
 
 export default async function DocPage({ params }: DocPageProps) {
   const doc = await getDocFromParams({ params });
 
   if (!doc) {
+    if (!params.slug || params.slug.length === 0) {
+      return (
+        <main className="relative py-12 w-full">
+          <div className="mx-auto w-full min-w-0 max-w-3xl">
+            <h1 className="text-4xl font-serif font-bold tracking-tight text-white mb-4">
+              Dokümantasyon Merkezi
+            </h1>
+            <p className="text-lg text-zinc-400 mb-8">
+              İstatistik, Python, R ve diğer veri bilimi araçları için hazırladığımız kaynaklara hoş geldiniz. 
+              İncelemek istediğiniz konuyu sol taraftaki menüden seçebilirsiniz.
+            </p>
+          </div>
+        </main>
+      );
+    }
     notFound();
   }
 
