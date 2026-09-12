@@ -248,14 +248,24 @@
 
 .learnList {
   margin: 0;
-  padding-left: 1.1rem;
+  padding-left: 0;
+  list-style: none;
   font-size: 0.9rem;
   line-height: 1.55;
   color: var(--brand-ink-muted);
 }
 
 .learnList li {
-  margin: 2px 0;
+  margin: 6px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.checkIcon {
+  color: var(--brand-yellow);
+  flex-shrink: 0;
+  margin-top: 3px;
 }
 
 .metaRow {

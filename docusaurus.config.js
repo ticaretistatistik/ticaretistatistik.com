@@ -200,8 +200,8 @@ const config = {
                 label: 'Araçlar',
               },
               {
-                to: '/veri-setleri',
-                label: 'Veri Setleri',
+                to: '/veri-kaynaklari',
+                label: 'Veri Kaynakları',
               },
             ],
           },
