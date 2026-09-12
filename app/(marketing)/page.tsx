@@ -22,9 +22,10 @@ export default function MarketingPage() {
             İstanbul Ticaret Üniversitesi
           </p>
           
-          <h1 className="text-[12vw] leading-[0.85] font-serif font-medium tracking-tighter uppercase mb-6 flex flex-col">
-            <span className="text-foreground relative inline-block w-max">
-              İstatistik
+          <h1 className="text-[9vw] lg:text-[7vw] leading-[0.9] font-serif font-medium tracking-tighter mb-6 flex flex-col uppercase">
+            <span className="text-foreground">Veriden Hikâye</span>
+            <span className="text-zinc-400 dark:text-zinc-500 italic relative inline-block w-max">
+              Çıkarma Disiplini.
               {/* Marker Highlight SVG */}
               <svg className="absolute w-[105%] h-[0.3em] -bottom-[0.05em] -left-[2%] text-brand-yellow z-[-1]" viewBox="0 0 200 20" preserveAspectRatio="none">
                 <path
@@ -36,9 +37,6 @@ export default function MarketingPage() {
                   className="animate-draw"
                 />
               </svg>
-            </span>
-            <span className="text-zinc-400 dark:text-zinc-500 italic">
-              Topluluğu
             </span>
           </h1>
 
