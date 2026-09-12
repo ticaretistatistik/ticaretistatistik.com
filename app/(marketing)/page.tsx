@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ImageSlider } from "@/components/image-slider";
 
 export default function MarketingPage() {
   return (
@@ -48,7 +49,7 @@ export default function MarketingPage() {
       </section>
 
       {/* MARQUEE */}
-      <div className="w-full border-y border-border bg-zinc-50 dark:bg-brand-ink overflow-hidden py-4 flex whitespace-nowrap">
+      <div className="w-full border-y border-border bg-zinc-50 dark:bg-brand-ink overflow-hidden py-4 flex whitespace-nowrap relative z-10">
         <div className="animate-marquee flex gap-8 items-center text-zinc-400 dark:text-zinc-500 font-serif text-2xl uppercase tracking-widest">
           <span>• Veri Bilimi</span>
           <span>• Makine Öğrenmesi</span>
@@ -63,6 +64,9 @@ export default function MarketingPage() {
           <span>• R Programlama</span>
         </div>
       </div>
+
+      {/* IMAGE SLIDER */}
+      <ImageSlider />
 
       {/* EDITORIAL SECTION */}
       <section className="py-32 px-6 md:px-12 w-full max-w-[1600px] mx-auto">
