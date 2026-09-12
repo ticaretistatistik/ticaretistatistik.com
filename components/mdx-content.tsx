@@ -71,13 +71,23 @@ const components = {
       </div>
     </div>
   ),
-  // Docusaurus Custom Components Polyfill
-  DownloadFileFeature: ({ content, file, icon }: any) => (
-    <a href={file?.url} download={file?.name} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/20 rounded-xl hover:bg-brand-yellow/20 transition-colors">
-      <span>{icon === 'windows' ? '🖥️' : '🍎'}</span>
-      <span className="font-bold">{content}</span>
-    </a>
-  ),
+  DownloadFileFeature: ({ content, file, icon }: any) => {
+    const isWin = icon === 'windows';
+    return (
+      <a href={file?.url} download={file?.name} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-4 py-2 bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/20 rounded-xl hover:bg-brand-yellow/20 transition-colors">
+        {isWin ? (
+          <svg viewBox="0 0 448 512" fill="currentColor" className="h-[18px] w-auto">
+            <path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/>
+          </svg>
+        ) : (
+          <svg viewBox="0 0 384 512" fill="currentColor" className="h-[18px] w-auto pb-[2px]">
+            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 24 184.8 8 277.3c-1.9 5.3-21.2 72.7-21.2 143.6 0 77.2 26 142.1 63 189.6 19.3 24.8 41.7 49.3 71.3 49.3 30.6 0 45-19.4 82.5-19.4 37 0 49.9 19.4 83.4 19.4 30.7 0 54.1-26.9 71.3-49.3 29.3-38.3 47.9-92.4 47.9-94.6-.2-.6-40.8-15.4-87.5-15.4zM245.9 105.7c20.4-24.8 34.6-59.5 30.9-94.2-30.8 1.2-66.2 20.5-87.1 45.4-17.7 21.1-34.6 57.3-30.1 90.7 34.4 2.7 66.8-17.1 86.3-41.9z"/>
+          </svg>
+        )}
+        <span className="font-bold">{content}</span>
+      </a>
+    );
+  },
   ReactPlayer: ({ url, height, width }: any) => {
     let embedUrl = url;
     if (url?.includes('youtu.be/')) {
