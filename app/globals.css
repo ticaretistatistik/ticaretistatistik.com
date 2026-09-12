@@ -7,16 +7,16 @@
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
     --border: 214 32% 91%;
-    --brand-yellow: 50 96% 49%; /* #f5cf06 */
-    --brand-ink: 222 47% 11%; /* #091E42 */
+    --brand-yellow: 50 96% 49%;
+    --brand-ink: 222 47% 7%; /* Darkened for a more premium black/navy look */
   }
 
   .dark {
-    --background: 222 47% 11%; /* Koyu lacivert / mürekkep arka plan */
+    --background: 222 47% 7%;
     --foreground: 210 40% 98%;
-    --border: 217 33% 20%;
+    --border: 217 33% 15%; /* Subtler borders */
     --brand-yellow: 50 96% 49%;
-    --brand-ink: 222 47% 11%;
+    --brand-ink: 222 47% 7%;
   }
 }
 
@@ -29,6 +29,17 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-serif tracking-tight;
   }
+}
+
+/* Custom Marquee Animation for Fashion Style */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  min-width: 200%;
 }

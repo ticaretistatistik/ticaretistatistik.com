@@ -1,107 +1,152 @@
 import Link from "next/link";
-import { ArrowRight, Calendar, Users, Mic, BookOpen, ChevronRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function MarketingPage() {
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative px-4 pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden flex flex-col items-center text-center">
-        <div className="absolute inset-0 bg-brand-ink -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/5 via-brand-ink to-brand-ink"></div>
+    <div className="flex flex-col bg-brand-ink text-white overflow-hidden">
+      
+      {/* 
+        HERO SECTION: Fashion/Editorial Style 
+        Massive typography, very minimalist, high contrast.
+      */}
+      <section className="relative min-h-[90vh] flex flex-col justify-center px-6 md:px-12 pt-32 pb-16">
         
-        <div className="inline-flex items-center rounded-full border border-brand-yellow/30 bg-brand-yellow/10 px-3 py-1 text-sm font-medium text-brand-yellow mb-8">
-          <span className="flex h-2 w-2 rounded-full bg-brand-yellow mr-2"></span>
-          Yeni Dönem Kayıtları Başladı!
-        </div>
+        {/* Subtle glowing orb in background for premium feel */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-yellow/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
-        <h1 className="max-w-4xl text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
-          Verinin Gücünü <br className="hidden md:block" />
-          <span className="text-brand-yellow font-serif italic">Birlikte Keşfedelim</span>
-        </h1>
-        
-        <p className="max-w-2xl text-lg md:text-xl text-zinc-300 mb-10 leading-relaxed">
-          İstanbul Ticaret Üniversitesi İstatistik Topluluğu'na hoş geldin! Veri bilimi eğitimleri, 
-          sektör buluşmaları, podcastler ve zengin dokümantasyon arşivimizle seni geleceğe hazırlıyoruz.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <Link href="/topluluk/etkinliklerimiz" className="inline-flex items-center justify-center rounded-md text-brand-ink bg-brand-yellow hover:bg-brand-yellow/90 font-bold px-8 py-3 w-full sm:w-auto transition-colors">
-            Etkinliklere Katıl
-          </Link>
-          <Link href="/docs" className="inline-flex items-center justify-center rounded-md text-white border border-zinc-700 bg-white/5 hover:bg-white/10 font-medium px-8 py-3 w-full sm:w-auto transition-colors">
-            Dokümanları İncele <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </div>
-      </section>
+        <div className="w-full max-w-[1600px] mx-auto flex flex-col items-start z-10">
+          <p className="text-brand-yellow font-medium tracking-[0.2em] text-sm uppercase mb-6 md:mb-10 pl-1 border-l-2 border-brand-yellow">
+            İstanbul Ticaret Üniversitesi
+          </p>
+          
+          <h1 className="text-[12vw] leading-[0.85] font-serif font-medium tracking-tighter uppercase mb-6 flex flex-col">
+            <span className="text-white">İstatistik</span>
+            <span className="text-zinc-500 italic flex items-center gap-6">
+              Topluluğu
+              <span className="hidden md:inline-flex items-center justify-center h-[0.5em] w-[0.5em] rounded-full border border-zinc-500/30 bg-white/5 backdrop-blur-md">
+                <ArrowUpRight className="h-1/2 w-1/2 text-zinc-400" />
+              </span>
+            </span>
+          </h1>
 
-      {/* Stats/Highlight Section */}
-      <section className="border-y border-zinc-800 bg-white/5">
-        <div className="container mx-auto max-w-[1200px] px-4 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-zinc-800/0 md:divide-zinc-800">
-            <div className="flex flex-col items-center">
-              <span className="text-4xl font-serif font-bold text-brand-yellow mb-2">350+</span>
-              <span className="text-sm font-medium text-zinc-400 uppercase tracking-wider">Aktif Üye</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-4xl font-serif font-bold text-brand-yellow mb-2">24</span>
-              <span className="text-sm font-medium text-zinc-400 uppercase tracking-wider">Yıllık Etkinlik</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-4xl font-serif font-bold text-brand-yellow mb-2">50+</span>
-              <span className="text-sm font-medium text-zinc-400 uppercase tracking-wider">Eğitim İçeriği</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-4xl font-serif font-bold text-brand-yellow mb-2">12</span>
-              <span className="text-sm font-medium text-zinc-400 uppercase tracking-wider">Podcast Bölümü</span>
+          <div className="flex flex-col md:flex-row justify-between w-full mt-12 md:mt-24 border-t border-zinc-800 pt-8 gap-8">
+            <p className="max-w-md text-lg text-zinc-400 font-light leading-relaxed">
+              Veri biliminin zarif dünyası. Teorik altyapıyı modern analiz yöntemleriyle buluşturan, 
+              geleceğin veri liderlerini yetiştiren premium ekosistem.
+            </p>
+            
+            <div className="flex gap-4">
+              <Link href="/topluluk/etkinliklerimiz" className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full border border-brand-yellow bg-brand-yellow px-8 font-medium text-brand-ink transition-all hover:bg-transparent hover:text-brand-yellow">
+                <span className="mr-2">Keşfet</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Pillars */}
-      <section className="py-24 px-4 container mx-auto max-w-[1200px]">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-4">Toplulukta Neler Var?</h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto">Teorik bilginin pratikle buluştuğu, sektör profesyonelleriyle öğrencilerin bir araya geldiği dinamik bir ekosistem.</p>
+      {/* 
+        MARQUEE / INFINITE SCROLL TEXT (Fashion staple)
+      */}
+      <div className="w-full border-y border-zinc-800 bg-brand-ink overflow-hidden py-4 flex whitespace-nowrap">
+        <div className="animate-marquee flex gap-8 items-center text-zinc-500 font-serif text-2xl uppercase tracking-widest">
+          <span>• Veri Bilimi</span>
+          <span>• Makine Öğrenmesi</span>
+          <span>• Python</span>
+          <span>• R Programlama</span>
+          <span>• Veri Görselleştirme</span>
+          <span>• SPSS</span>
+          <span>• Tableau</span>
+          <span>• Veri Bilimi</span>
+          <span>• Makine Öğrenmesi</span>
+          <span>• Python</span>
+          <span>• R Programlama</span>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Link href="/docs" className="group p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-800/60 transition-all hover:-translate-y-1">
-            <div className="h-12 w-12 rounded-full bg-brand-yellow/10 text-brand-yellow flex items-center justify-center mb-6">
-              <BookOpen className="h-6 w-6" />
+      {/* 
+        EDITORIAL / CATALOG SECTION 
+        Asymmetrical, large numbers, thin lines.
+      */}
+      <section className="py-32 px-6 md:px-12 w-full max-w-[1600px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
+          
+          <div className="lg:col-span-4 flex flex-col justify-between">
+            <h2 className="text-5xl font-serif leading-tight mb-8">
+              Akademik <br />
+              <span className="text-brand-yellow italic">ve Pratik.</span>
+            </h2>
+            <p className="text-zinc-400 font-light leading-relaxed mb-12">
+              Sadece kod yazmayı değil, verinin arkasındaki hikayeyi okumayı öğreniyoruz. 
+              Topluluğumuz, öğrencileri akademik dünyanın disipliniyle, iş dünyasının dinamizmi arasında bir köprü olarak konumlandırıyor.
+            </p>
+            <div className="hidden lg:block w-full h-[400px] bg-zinc-900 border border-zinc-800 rounded-2xl relative overflow-hidden group">
+               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700"></div>
+               <div className="absolute bottom-6 left-6 z-20">
+                 <p className="text-xs font-bold tracking-widest uppercase text-brand-yellow mb-2">Vizyon</p>
+                 <p className="text-lg font-serif">Veriyi Sanata Dönüştürmek</p>
+               </div>
             </div>
-            <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-brand-yellow transition-colors">Açık Kaynak Dokümanlar</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Python, R, SPSS ve Tableau gibi veri bilimi araçları için öğrencilerimiz tarafından hazırlanan Türkçe notlar.</p>
-            <span className="text-brand-yellow text-sm font-medium flex items-center">İncele <ChevronRight className="ml-1 h-4 w-4" /></span>
-          </Link>
+          </div>
 
-          <Link href="/topluluk/etkinliklerimiz" className="group p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-800/60 transition-all hover:-translate-y-1">
-            <div className="h-12 w-12 rounded-full bg-brand-yellow/10 text-brand-yellow flex items-center justify-center mb-6">
-              <Calendar className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-brand-yellow transition-colors">Etkinlikler & Datathon</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Sektör liderleriyle söyleşiler, veri analizi yarışmaları (Datathon) ve teknik workshop duyuruları.</p>
-            <span className="text-brand-yellow text-sm font-medium flex items-center">Takvimi Gör <ChevronRight className="ml-1 h-4 w-4" /></span>
-          </Link>
+          <div className="lg:col-span-8 flex flex-col gap-8 lg:mt-32">
+            
+            {/* Feature 1 */}
+            <Link href="/docs" className="group flex flex-col md:flex-row items-start md:items-center gap-8 p-8 border border-zinc-800 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors backdrop-blur-sm relative overflow-hidden">
+              <span className="text-7xl font-serif text-zinc-800 group-hover:text-brand-yellow/20 transition-colors absolute -top-4 -right-4 font-bold">01</span>
+              <div className="flex-1 z-10">
+                <p className="text-brand-yellow text-xs tracking-[0.2em] uppercase font-bold mb-3">Açık Kaynak</p>
+                <h3 className="text-3xl font-serif mb-4">Dokümantasyon</h3>
+                <p className="text-zinc-400 font-light max-w-md">Python, R, ve JASP gibi diller/araçlar için öğrenciler tarafından hazırlanan kusursuz, minimalist notlar.</p>
+              </div>
+              <div className="h-16 w-16 rounded-full border border-zinc-700 flex items-center justify-center group-hover:bg-brand-yellow group-hover:text-brand-ink group-hover:border-brand-yellow transition-all z-10 shrink-0">
+                <ArrowUpRight className="h-6 w-6" />
+              </div>
+            </Link>
 
-          <a href="https://open.spotify.com/show/..." target="_blank" rel="noreferrer" className="group p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-800/60 transition-all hover:-translate-y-1">
-            <div className="h-12 w-12 rounded-full bg-brand-yellow/10 text-brand-yellow flex items-center justify-center mb-6">
-              <Mic className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-brand-yellow transition-colors">İstatistiğin Sesi Podcast</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Mezunlarımız ve akademisyenlerimizle veri biliminin geleceği üzerine keyifli sohbetler dinleyin.</p>
-            <span className="text-brand-yellow text-sm font-medium flex items-center">Dinle <ChevronRight className="ml-1 h-4 w-4" /></span>
-          </a>
+            {/* Feature 2 */}
+            <Link href="/topluluk/etkinliklerimiz" className="group flex flex-col md:flex-row items-start md:items-center gap-8 p-8 border border-zinc-800 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors backdrop-blur-sm relative overflow-hidden">
+              <span className="text-7xl font-serif text-zinc-800 group-hover:text-brand-yellow/20 transition-colors absolute -top-4 -right-4 font-bold">02</span>
+              <div className="flex-1 z-10">
+                <p className="text-brand-yellow text-xs tracking-[0.2em] uppercase font-bold mb-3">Datathon & Zirve</p>
+                <h3 className="text-3xl font-serif mb-4">Etkinlikler</h3>
+                <p className="text-zinc-400 font-light max-w-md">Sektör liderleriyle networking, veri yarışmaları ve uygulamalı workshop'lar ile sınırlarını zorla.</p>
+              </div>
+              <div className="h-16 w-16 rounded-full border border-zinc-700 flex items-center justify-center group-hover:bg-brand-yellow group-hover:text-brand-ink group-hover:border-brand-yellow transition-all z-10 shrink-0">
+                <ArrowUpRight className="h-6 w-6" />
+              </div>
+            </Link>
 
-          <Link href="/topluluk/ekibimiz" className="group p-6 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-800/60 transition-all hover:-translate-y-1">
-            <div className="h-12 w-12 rounded-full bg-brand-yellow/10 text-brand-yellow flex items-center justify-center mb-6">
-              <Users className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-brand-yellow transition-colors">Yönetim & Ekip</h3>
-            <p className="text-zinc-400 text-sm leading-relaxed mb-4">Topluluğun arkasındaki enerjik ekiple tanışın. Sen de aramıza katılmak için açık pozisyonları incele.</p>
-            <span className="text-brand-yellow text-sm font-medium flex items-center">Tanışalım <ChevronRight className="ml-1 h-4 w-4" /></span>
-          </Link>
+            {/* Feature 3 */}
+            <a href="https://open.spotify.com" target="_blank" rel="noreferrer" className="group flex flex-col md:flex-row items-start md:items-center gap-8 p-8 border border-zinc-800 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors backdrop-blur-sm relative overflow-hidden">
+              <span className="text-7xl font-serif text-zinc-800 group-hover:text-brand-yellow/20 transition-colors absolute -top-4 -right-4 font-bold">03</span>
+              <div className="flex-1 z-10">
+                <p className="text-brand-yellow text-xs tracking-[0.2em] uppercase font-bold mb-3">Kapsamlı İçerik</p>
+                <h3 className="text-3xl font-serif mb-4">Podcast & Blog</h3>
+                <p className="text-zinc-400 font-light max-w-md">Mezunların deneyimleri, güncel veri bilimi trendleri ve analitik düşünce üzerine derinlemesine sohbetler.</p>
+              </div>
+              <div className="h-16 w-16 rounded-full border border-zinc-700 flex items-center justify-center group-hover:bg-brand-yellow group-hover:text-brand-ink group-hover:border-brand-yellow transition-all z-10 shrink-0">
+                <ArrowUpRight className="h-6 w-6" />
+              </div>
+            </a>
+
+          </div>
         </div>
       </section>
+
+      {/* 
+        BOTTOM CTA - Huge text, very minimal
+      */}
+      <section className="py-32 px-6 border-t border-zinc-800 text-center flex flex-col items-center">
+        <h2 className="text-4xl md:text-6xl font-serif font-light mb-8">
+          Hazırsan <span className="italic text-brand-yellow">Başlayalım.</span>
+        </h2>
+        <Link href="/topluluk/ekibimiz" className="group flex items-center gap-4 text-xl font-medium tracking-wide uppercase border-b border-brand-yellow pb-2 hover:text-brand-yellow transition-colors">
+          Ekiple Tanış <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
+        </Link>
+      </section>
+
     </div>
   );
 }
