@@ -6,3 +6,6 @@ type Collections = typeof config.collections
 
 export type Doc = Collections['docs']['schema']['_output']
 export declare const docs: Doc[]
+
+export type Post = Collections['blog']['schema']['_output']
+export declare const blog: Post[]

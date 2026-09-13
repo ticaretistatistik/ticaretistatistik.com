@@ -10,7 +10,7 @@ export default function TeamPage() {
         <header className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-black/10 dark:border-white/10 pb-12">
           <div className="max-w-2xl">
             <h1 className="text-5xl md:text-7xl font-medium tracking-tighter text-black dark:text-white mb-6">
-              Yönetim Kurulu.
+              Yönetim Kurulu
             </h1>
             <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
               Topluluğumuzun vizyonunu gerçeğe dönüştüren, istatistik ve veri bilimine tutkulu ekibimiz.

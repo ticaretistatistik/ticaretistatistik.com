@@ -3,7 +3,7 @@ import rehypeSlug from "rehype-slug";
 import rehypePrettyCode from "rehype-pretty-code";
 
 export default defineConfig({
-  root: "docs",
+  root: ".",
   output: {
     data: ".velite",
     assets: "public/static",
@@ -14,7 +14,7 @@ export default defineConfig({
   collections: {
     docs: {
       name: "Doc",
-      pattern: "**/*.{md,mdx}",
+      pattern: "docs/**/*.{md,mdx}",
       schema: s.object({
         title: s.string(),
         description: s.string().optional(),
@@ -22,10 +22,35 @@ export default defineConfig({
         sidebar_position: s.number().optional().default(99),
         content: s.mdx(),
         toc: s.toc(),
-      }).transform((data) => ({
-        ...data,
-        permalink: `/docs/${data.slug}`,
-      })),
+      }).transform((data) => {
+        const cleanSlug = data.slug.replace(/^docs\//, '').replace(/^docs$/, 'index');
+        return {
+          ...data,
+          slug: cleanSlug,
+          permalink: cleanSlug === 'index' ? '/docs' : `/docs/${cleanSlug}`,
+        };
+      }),
+    },
+    blog: {
+      name: "Post",
+      pattern: "blog/**/*.{md,mdx}",
+      schema: s.object({
+        title: s.string(),
+        description: s.string().optional(),
+        slug: s.path(),
+        date: s.isodate().optional(),
+        cover: s.image().optional(),
+        authors: s.array(s.string()).optional(),
+        tags: s.array(s.string()).optional(),
+        content: s.mdx(),
+      }).transform((data) => {
+        const cleanSlug = data.slug.replace(/^blog\//, '').replace(/^blog$/, 'index');
+        return {
+          ...data,
+          slug: cleanSlug,
+          permalink: cleanSlug === 'index' ? '/blog' : `/blog/${cleanSlug}`,
+        };
+      }),
     },
   },
   mdx: {

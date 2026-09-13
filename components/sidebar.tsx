@@ -13,6 +13,7 @@ interface TreeNode {
   sidebar_position: number;
   children: TreeNode[];
   isIndex: boolean;
+  permalink: string;
 }
 
 export function Sidebar() {
@@ -20,43 +21,61 @@ export function Sidebar() {
 
   const tree = useMemo(() => {
     const rootNodes: TreeNode[] = [];
-    const map = new Map<string, TreeNode>();
+    const map = new Map<string, TreeNode & { indexTitle?: string }>();
 
     const sortedDocs = [...docs].sort((a, b) => (a.sidebar_position ?? 99) - (b.sidebar_position ?? 99));
 
+    const capitalize = (s: string) => {
+      const upper = ['jasp', 'spss', 'r', 'nps'];
+      if (upper.includes(s.toLowerCase())) return s.toUpperCase();
+      return s.charAt(0).toUpperCase() + s.slice(1);
+    };
+
     sortedDocs.forEach((doc) => {
-      const parts = doc.slug.split('/');
-      if (parts.length === 1) {
-        map.set(doc.slug, {
-          slug: doc.slug,
-          title: doc.title,
-          sidebar_position: doc.sidebar_position ?? 99,
+      if (doc.slug === 'index') {
+        rootNodes.push({
+          slug: 'index',
+          title: 'Ana Sayfa',
+          sidebar_position: 0,
           children: [],
           isIndex: true,
+          permalink: doc.permalink,
         });
-        rootNodes.push(map.get(doc.slug)!);
-      } else {
-        const parentSlug = parts[0];
-        let parent = map.get(parentSlug);
-        
-        if (!parent) {
-          parent = {
-            slug: parentSlug,
-            title: parentSlug.toUpperCase(),
-            sidebar_position: 99,
-            children: [],
-            isIndex: false,
-          };
-          map.set(parentSlug, parent);
-          rootNodes.push(parent);
+        return;
+      }
+
+      const parts = doc.slug.split('/');
+      const parentSlug = parts[0];
+      
+      let parent = map.get(parentSlug);
+      if (!parent) {
+        parent = {
+          slug: parentSlug,
+          title: capitalize(parentSlug),
+          sidebar_position: 99,
+          children: [],
+          isIndex: false,
+          permalink: `/docs/${parentSlug}`,
+        };
+        map.set(parentSlug, parent);
+        rootNodes.push(parent);
+      }
+
+      if (parts.length === 1) {
+        parent.isIndex = true;
+        parent.indexTitle = doc.title;
+        parent.permalink = doc.permalink;
+        if (doc.sidebar_position) {
+          parent.sidebar_position = Math.min(parent.sidebar_position, doc.sidebar_position);
         }
-        
+      } else {
         parent.children.push({
           slug: doc.slug,
           title: doc.title,
           sidebar_position: doc.sidebar_position ?? 99,
           children: [],
           isIndex: false,
+          permalink: doc.permalink,
         });
       }
     });
@@ -76,8 +95,8 @@ export function Sidebar() {
         </h4>
         <div className="flex flex-col gap-1 w-full">
           {tree.map((node) => {
-            const isActiveParent = pathname?.includes(`/docs/${node.slug}`);
-            const isRootActive = pathname === `/docs/${node.slug}`;
+            const isActiveParent = pathname?.includes(node.permalink) && node.permalink !== '/docs';
+            const isRootActive = pathname === node.permalink;
             
             return (
               <div key={node.slug} className="flex flex-col">
@@ -93,7 +112,7 @@ export function Sidebar() {
                     <div className="flex flex-col pl-4 mt-1 gap-1 border-l border-border/50 ml-4 mb-2">
                       {node.isIndex && (
                         <Link 
-                          href={`/docs/${node.slug}`} 
+                          href={node.permalink} 
                           className={cn(
                             "rounded-md px-3 py-1.5 text-sm transition-colors",
                             isRootActive ? "text-brand-yellow font-bold bg-brand-yellow/10" : "text-zinc-600 dark:text-zinc-400 hover:text-foreground hover:bg-zinc-100 dark:hover:bg-white/5"
@@ -103,11 +122,11 @@ export function Sidebar() {
                         </Link>
                       )}
                       {node.children.map((child) => {
-                        const isChildActive = pathname === `/docs/${child.slug}`;
+                        const isChildActive = pathname === child.permalink;
                         return (
                           <Link 
                             key={child.slug} 
-                            href={`/docs/${child.slug}`} 
+                            href={child.permalink} 
                             className={cn(
                               "rounded-md px-3 py-1.5 text-sm transition-colors",
                               isChildActive ? "text-brand-yellow font-bold bg-brand-yellow/10" : "text-zinc-600 dark:text-zinc-400 hover:text-foreground hover:bg-zinc-100 dark:hover:bg-white/5"
@@ -121,7 +140,7 @@ export function Sidebar() {
                   </details>
                 ) : (
                   <Link 
-                    href={`/docs/${node.slug}`} 
+                    href={node.permalink} 
                     className={cn(
                       "flex items-center rounded-lg px-3 py-2 text-sm transition-colors",
                       isRootActive ? "bg-brand-yellow/10 text-brand-yellow font-bold" : "font-bold text-foreground hover:bg-zinc-100 dark:hover:bg-white/5"
