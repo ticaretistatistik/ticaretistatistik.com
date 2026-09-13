@@ -13,6 +13,9 @@ const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 export const metadata: Metadata = {
   title: "Ticaret İstatistik Topluluğu",
   description: "İstanbul Ticaret Üniversitesi İstatistik Bölümü Topluluğu resmi web sitesi ve bilgi kaynağı.",
+  icons: {
+    icon: "/img/favicon.png",
+  },
 };
 
 export default function RootLayout({

@@ -35,6 +35,6 @@ Hayır! İstatistik, matematiksel araçları kullanır ama asıl amacı anlam bu
 
 **Sonuç olarak**, istatistik sadece akademik bir alan değil, aynı zamanda hayatın her anına dokunan güçlü bir araçtır. Bölümümüzde öğrendiğimiz her yöntem, bizi daha sorgulayıcı, daha analitik ve daha donanımlı bireyler yapıyor. İstatistik öğrenmek, dünyayı verilerle okumanın anahtarıdır.
 
-:::info
+<Callout title="BİLGİ">
 Yapay zekânın "öğrenme" dediğimiz süreci, aslında verilerden istatistiksel olarak çıkarım yapmasıdır. Her modelin arkasında bir regresyon, sınıflandırma ya da olasılık dağılımı vardır!
-:::
+</Callout>

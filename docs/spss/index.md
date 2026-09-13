@@ -6,9 +6,9 @@ sidebar_position: 2
 
 # Bakımda
 
-:::warning Bu sayfa şu an güncelleniyor
+<Callout title="Bu sayfa şu an güncelleniyor">
 SPSS dokümantasyonu kapsamlı bir revizyon sürecinde. İçerik geçici olarak kaldırıldı; güncel ve doğrulanmış sürüm hazır olduğunda yeniden yayına alınacak.
-:::
+</Callout>
 
 Bu süreçte SPSS kurulumu ve lisans aktivasyonu için **resmi ve güncel kaynak** her zaman İstanbul Ticaret Üniversitesi Bilgi İşlem Daire Başkanlığı'dır:
 
