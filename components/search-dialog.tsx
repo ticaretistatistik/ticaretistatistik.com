@@ -2,10 +2,49 @@
 
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { Search } from "lucide-react";
+import { Search, FileText, BookOpen } from "lucide-react";
+import MiniSearch from "minisearch";
+import { docs, blog } from "#site/content";
+import { useRouter } from "next/navigation";
+
+// Initialize Minisearch
+const searchIndex = new MiniSearch({
+  fields: ['title', 'description', 'content'], // fields to index
+  storeFields: ['title', 'description', 'permalink', 'type'], // fields to return
+  searchOptions: {
+    prefix: true,
+    fuzzy: 0.2,
+  },
+});
+
+const documents = [
+  ...docs.map((doc) => ({
+    id: doc.slug,
+    title: doc.title,
+    description: doc.description || '',
+    content: doc.content || '',
+    permalink: doc.permalink,
+    type: 'Doc',
+  })),
+  ...blog.map((post) => ({
+    id: post.slug,
+    title: post.title,
+    description: post.description || '',
+    content: post.content || '',
+    permalink: post.permalink,
+    type: 'Blog',
+  })),
+];
+
+// Add documents to index only once
+if (searchIndex.documentCount === 0) {
+  searchIndex.addAll(documents);
+}
 
 export function SearchDialog() {
   const [open, setOpen] = React.useState(false);
+  const [query, setQuery] = React.useState('');
+  const router = useRouter();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -18,20 +57,73 @@ export function SearchDialog() {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
+  const results = React.useMemo(() => {
+    if (query.trim().length > 1) {
+      return searchIndex.search(query);
+    }
+    return [];
+  }, [query]);
+
+  const handleSelect = (permalink: string) => {
+    setOpen(false);
+    router.push(permalink);
+    setTimeout(() => setQuery(''), 200); // clear query after closing animation
+  };
+
   return (
     <DialogPrimitive.Root open={open} onOpenChange={setOpen}>
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-        <DialogPrimitive.Content className="fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-zinc-800 bg-zinc-950 p-0 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg">
-          <div className="flex items-center border-b border-zinc-800 px-3">
-            <Search className="mr-2 h-4 w-4 shrink-0 opacity-50 text-zinc-400" />
+        <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+        <DialogPrimitive.Content className="fixed left-[50%] top-[20%] sm:top-[50%] z-50 grid w-full max-w-2xl translate-x-[-50%] translate-y-[-20%] sm:translate-y-[-50%] gap-0 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-0 shadow-2xl duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-xl overflow-hidden">
+          <div className="flex items-center border-b border-zinc-200 dark:border-zinc-800 px-4">
+            <Search className="mr-3 h-5 w-5 shrink-0 text-zinc-500" />
             <input
-              className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-zinc-500 disabled:cursor-not-allowed disabled:opacity-50 text-zinc-100"
-              placeholder="Dokümanlarda arayın..."
+              className="flex h-14 w-full rounded-md bg-transparent py-3 text-base outline-none placeholder:text-zinc-500 disabled:cursor-not-allowed disabled:opacity-50 text-zinc-900 dark:text-zinc-100"
+              placeholder="Dokümanlarda veya bloglarda arayın..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              autoFocus
             />
           </div>
-          <div className="max-h-[300px] overflow-y-auto p-4 text-sm text-zinc-400 text-center">
-            Arama sonuçları burada listelenecektir. (MiniSearch / Algolia entegrasyonu eklenebilir)
+          <div className="max-h-[350px] overflow-y-auto p-2">
+            {query.trim().length <= 1 ? (
+              <div className="p-8 text-center text-sm text-zinc-500">
+                Aramaya başlamak için bir şeyler yazın.
+              </div>
+            ) : results.length === 0 ? (
+              <div className="p-8 text-center text-sm text-zinc-500">
+                "{query}" için sonuç bulunamadı.
+              </div>
+            ) : (
+              <div className="flex flex-col gap-1">
+                {results.map((result) => (
+                  <button
+                    key={result.id}
+                    onClick={() => handleSelect(result.permalink)}
+                    className="flex flex-col items-start gap-1 p-3 text-left w-full hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-lg transition-colors"
+                  >
+                    <div className="flex items-center gap-2 w-full">
+                      {result.type === 'Blog' ? (
+                        <FileText className="w-4 h-4 text-brand-yellow shrink-0" />
+                      ) : (
+                        <BookOpen className="w-4 h-4 text-blue-500 shrink-0" />
+                      )}
+                      <span className="font-medium text-zinc-900 dark:text-zinc-100 truncate">
+                        {result.title}
+                      </span>
+                      <span className="ml-auto text-[10px] font-semibold tracking-wider uppercase text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 rounded">
+                        {result.type}
+                      </span>
+                    </div>
+                    {result.description && (
+                      <span className="text-sm text-zinc-500 dark:text-zinc-400 line-clamp-1 ml-6">
+                        {result.description}
+                      </span>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>
