@@ -91,143 +91,6 @@
     "permalink": "/docs/jasp/kurulum"
   },
   {
-    "title": "Python nedir?",
-    "description": "Python programlama dili nedir?",
-    "slug": "python",
-    "sidebar_position": 99,
-    "content": "const{Fragment:i,jsx:a,jsxs:n}=arguments[0];function _createMdxContent(e){const l={a:\"a\",p:\"p\",strong:\"strong\",...e.components};return n(i,{children:[a(l.p,{children:\"Python, genel amaçlı, yüksek seviyeli, yorumlanmış ve dinamik bir programlama dilidir. 1991 yılında Guido van Rossum tarafından geliştirilmeye başlanmış ve o zamandan beri dünya çapında yaygın olarak kullanılan popüler bir programlama diline dönüşmüştür. Python’un temel özellikleri şunlardır:\"}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"1. Basit ve Okunabilir Söz Dizimi:\"}),\" Python, geliştiricilerin hızlı bir şekilde kod yazmalarını sağlamak amacıyla, sade ve anlaşılır bir söz dizimi sunar. Bu, kodun kolayca okunabilir ve bakımının yapılabilir olmasına yardımcı olur.\"]}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"2. Çok Amaçlı Kullanım:\"}),\" Python, web geliştirme, veri bilimi, yapay zeka, makine öğrenimi, otomasyon, oyun geliştirme ve daha birçok alanda kullanılabilir. Bu nedenle çok geniş bir kullanım yelpazesine sahiptir.\"]}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"3. Zengin Kütüphane Desteği:\"}),\" Python, birçok yerleşik kütüphane ve modüle sahiptir. NumPy, Pandas, Matplotlib gibi veri bilimi araçları, Django ve Flask gibi web geliştirme çerçeveleri, TensorFlow ve PyTorch gibi yapay zeka kütüphaneleri Python ile kolayca kullanılabilir. Bunlar gibi kütüphanelere \",a(l.a,{href:\"https://pypi.org/\",children:\"pypi.org\"}),\" adresinden erişebilirsiniz.\"]}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"4. Yorumlanmış Dil:\"}),\" Python, yorumlanan bir dil olduğu için kod, derlenmeden doğrudan çalıştırılabilir. Bu, geliştirme sürecini hızlandırır ve hata ayıklama işlemini kolaylaştırır.\"]}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"5. Taşınabilirlik ve Platform Bağımsızlığı:\"}),\" Python, farklı işletim sistemlerinde (Windows, macOS, Linux) çalışabilir. Aynı kod, çoğu zaman farklı platformlarda değişiklik yapmadan çalıştırılabilir.\"]}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"6. Dinamik Tip Sistemi:\"}),\" Python, statik tip denetimi yerine dinamik tip denetimi yapar. Bu, değişkenlerin tiplerinin programın çalışma zamanında belirlendiği anlamına gelir, bu da daha esnek ve hızlı geliştirme imkanı sunar.\"]})]})}return{default:function(i={}){const{wrapper:n}=i.components||{};return n?a(n,{...i,children:a(_createMdxContent,{...i})}):_createMdxContent(i)}};",
-    "toc": [],
-    "permalink": "/docs/python"
-  },
-  {
-    "title": "Python nasıl kurulur?",
-    "slug": "python/kurulum",
-    "sidebar_position": 99,
-    "content": "const{Fragment:e,jsx:n,jsxs:i}=arguments[0];function _createMdxContent(a){const l={a:\"a\",br:\"br\",code:\"code\",figure:\"figure\",h2:\"h2\",h3:\"h3\",img:\"img\",li:\"li\",ol:\"ol\",p:\"p\",pre:\"pre\",span:\"span\",strong:\"strong\",ul:\"ul\",...a.components},{DownloadFileFeature:d,ReactPlayer:r,TabItem:t,Tabs:o}=l;return d||_missingMdxReference(\"DownloadFileFeature\",!0),r||_missingMdxReference(\"ReactPlayer\",!0),t||_missingMdxReference(\"TabItem\",!0),o||_missingMdxReference(\"Tabs\",!0),i(e,{children:[n(l.h2,{id:\"kurulum-aşamaları\",children:\"Kurulum Aşamaları\"}),\"\\n\",i(l.ul,{children:[\"\\n\",n(l.li,{children:\"MiniConda (Python dahil)\"}),\"\\n\",n(l.li,{children:\"Visual Studio Code (VSCode)\"}),\"\\n\"]}),\"\\n\",i(\"div\",{style:{display:\"flex\",gap:\"10px\",marginBottom:\"10px\"},children:[n(d,{content:\"İndir\",file:{name:\"miniconda-vscode-windows.ps1\",url:\"https://gist.githubusercontent.com/yigit433/dad44f953742f4858362696514a8475e/raw/a447edee8596307866d6a43821d97da9fa47c5e4/miniconda-vscode-windows.ps1\"},icon:\"windows\"}),n(d,{content:\"İndir\",file:{name:\"miniconda-vscode-macos.sh\",url:\"https://gist.githubusercontent.com/mertssmnoglu/dbb4546ba9924b142ac42203deb41e06/raw/54c3e7e748bdb636fc5d2047da723f8c3f672fac/miniconda-vscode-macos.sh\"},icon:\"macos\"})]}),\"\\n\",i(o,{children:[i(t,{value:\"windows\",label:\"Windows\",default:!0,children:[i(l.p,{children:[\":::info\\nKurulum dosyasının çalıştırılabilmesi için bilgisayarınız \",n(l.strong,{children:\"Windows 10 ve üzeri olması\"}),\" gerekmektedir.\\n:::\"]}),i(l.ol,{children:[\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[n(l.code,{children:\"miniconda-vscode-windows.ps1\"}),\" kurulum dosyasını indirin.\",n(l.br,{}),\"\\n\",n(l.img,{src:\"/docs/python/windows/miniconda-vscode-windows-download.gif\",alt:\"Windows Script Download\"})]}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[\"Powershell'i \",n(l.strong,{children:\"yönetici\"}),\" olarak çalıştırın ve aşağıdaki komutu girerek komut çalıştırma kısıtlamasını geçici olarak kaldırın:\"]}),\"\\n\"]}),\"\\n\"]}),n(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:n(l.pre,{tabIndex:\"0\",\"data-language\":\"powershell\",\"data-theme\":\"github-dark-dimmed\",children:n(l.code,{\"data-language\":\"powershell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:i(l.span,{\"data-line\":\"\",children:[n(l.span,{style:{color:\"#6CB6FF\"},children:\"Set-ExecutionPolicy\"}),n(l.span,{style:{color:\"#F47067\"},children:\" -\"}),n(l.span,{style:{color:\"#ADBAC7\"},children:\"Scope \"}),n(l.span,{style:{color:\"#F47067\"},children:\"Process\"}),n(l.span,{style:{color:\"#F47067\"},children:\" -\"}),n(l.span,{style:{color:\"#ADBAC7\"},children:\"ExecutionPolicy Bypass\"})]})})})}),n(l.p,{children:n(l.img,{src:\"/docs/python/windows/powershell-permission.gif\",alt:\"Windows Script Download\"})}),i(l.ol,{start:\"3\",children:[\"\\n\",n(l.li,{children:\"Ardından aşağıdaki komutu terminale yapıştırarak kurulum dosyasını çalıştırın:\"}),\"\\n\"]}),n(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:n(l.pre,{tabIndex:\"0\",\"data-language\":\"powershell\",\"data-theme\":\"github-dark-dimmed\",children:n(l.code,{\"data-language\":\"powershell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:i(l.span,{\"data-line\":\"\",children:[n(l.span,{style:{color:\"#ADBAC7\"},children:\"powershell \"}),n(l.span,{style:{color:\"#F47067\"},children:\"-\"}),n(l.span,{style:{color:\"#ADBAC7\"},children:\"ExecutionPolicy Bypass \"}),n(l.span,{style:{color:\"#F47067\"},children:\"-\"}),n(l.span,{style:{color:\"#ADBAC7\"},children:\"File \"}),n(l.span,{style:{color:\"#96D0FF\"},children:'\"C:\\\\Users\\\\User\\\\Desktop\\\\miniconda-vscode-windows.ps1\"'})]})})})}),i(l.ol,{start:\"4\",children:[\"\\n\",i(l.li,{children:[\"Eğer dosyanın farklı bir klasörde olduğunu biliyorsanız, komuttaki \",n(l.code,{children:'\"C:\\\\Users\\\\User\\\\Desktop\\\\...\"'}),\" kısmını o konuma göre düzenleyin.\",n(l.br,{}),\"\\n\",\"Aşağıdaki videoda adımlar detaylı bir şekilde gösterilmiştir:\"]}),\"\\n\"]}),n(r,{playing:!1,controls:!0,height:\"600px\",width:\"100%\",url:\"https://youtu.be/I7HGV6RgVH8\"})]}),n(t,{value:\"macos\",label:\"macOS\",children:i(l.ol,{children:[\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[n(l.code,{children:\"miniconda-vscode-macos.sh\"}),\" kurulum dosyasını indirin.\\n\",n(l.img,{src:\"/docs/python/macos/miniconda-vscode-macos-download.gif\",alt:\"macOS Script Download\"})]}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[\"Bilgisayarınızındaki \",n(l.code,{children:\"Dosyalar\"}),\" uygulamasına girin ve \",n(l.code,{children:\"İndirilenler\"}),\" klasörünü açın.\"]}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[\"Bilgisayarınızdaan Finder'a veya Spotlight'a girin ve \",n(l.code,{children:\"Terminal\"}),\" uygulamasını açın\\n\",n(l.img,{src:\"/docs/python/macos/mac-terminal-finder-spotlight.jpeg\",alt:\"macOS Finder/Spotlight üzerinden Terminal Uygulamasını Açma\"})]}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[\"Terminal uygulaması açıldığında karşınıza aşağıdaki gibi bir ekran çıktığından emin olun.\\n\",n(l.img,{src:\"/docs/python/macos/mac-terminal-interface.jpeg\",alt:\"macOS Terminal Arayüzü\"})]}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",n(l.p,{children:\"Açılan terminal ekranında, konumunuzu değiştirmek için aşağıdaki komutlardan sistem diliniz ile uyuşanı seçin.\"}),\"\\n\",n(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:n(l.pre,{tabIndex:\"0\",\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",children:n(l.code,{\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:i(l.span,{\"data-line\":\"\",children:[n(l.span,{style:{color:\"#6CB6FF\"},children:\"cd\"}),n(l.span,{style:{color:\"#96D0FF\"},children:\" İndirilenler\"})]})})})}),\"\\n\",n(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:n(l.pre,{tabIndex:\"0\",\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",children:n(l.code,{\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:i(l.span,{\"data-line\":\"\",children:[n(l.span,{style:{color:\"#6CB6FF\"},children:\"cd\"}),n(l.span,{style:{color:\"#96D0FF\"},children:\" Downloads\"})]})})})}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",n(l.p,{children:\"İndirilenler klasörüne geçiş yaptıktan sonra aşağıdaki komutu çalıştırın ve komut dosyasının yönlendirmelerini takip edin. (Yönetici şifrenizi girmeniz gerekebilir.)\"}),\"\\n\",n(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:n(l.pre,{tabIndex:\"0\",\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",children:n(l.code,{\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:i(l.span,{\"data-line\":\"\",children:[n(l.span,{style:{color:\"#F69D50\"},children:\"sh\"}),n(l.span,{style:{color:\"#96D0FF\"},children:\" ./miniconda-vscode-macos.sh\"})]})})})}),\"\\n\"]}),\"\\n\"]})})]}),\"\\n\",i(l.p,{children:[\":::note\\nEğer bir hata mesajı görmediyseniz işlemler başarı ile gerçekleşmiş demektir. Kodları çalıştırabileceğiniz ortam hazır, şimdi ise bir editöre ihtiyacınız olacak. Visual Studio Code yapılandırmasına erişmek için \",n(l.a,{href:\"#visual-studio-code\",children:\"tıklayın\"}),\"\\n:::\"]}),\"\\n\",n(l.h3,{id:\"visual-studio-code\",children:\"Visual Studio Code\"}),\"\\n\",i(l.p,{children:[\"Eğer üst kısımda anlatılan işletim sistemine göre kurulum adımlarını takip ettiyseniz ve herhangi bir hata almadıysanız Visual Studio Code kurulumunuz gerçekleşmiş demektir. Python programlama dili ile kodlama yaparken işimize yarayacak olan bir takım eklentileri kurabilmemiz için gereken \",n(l.code,{children:\"Profil\"}),\" dosyasının  editöre uygulanmasını sağlayacağız.\"]}),\"\\n\",n(l.p,{children:\"Aşağıdaki profillinki kopyalayın.\"}),\"\\n\",n(l.pre,{children:n(l.code,{children:\"https://gist.githubusercontent.com/mertssmnoglu/7a82ec0e7a26c88b7adf6116e62ae80b/raw/3bf99820fafa3596ca7eddcdfb5f06f3b6de4e7d/ticaretistatistik.code-profile\\n\"})}),\"\\n\",n(r,{playing:!1,controls:!0,height:\"600px\",width:\"100%\",url:\"https://youtu.be/89USfXbeaX0\"})]})}return{default:function(e={}){const{wrapper:i}=e.components||{};return i?n(i,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
-    "toc": [
-      {
-        "title": "Kurulum Aşamaları",
-        "url": "#kurulum-aşamaları",
-        "items": [
-          {
-            "title": "Visual Studio Code",
-            "url": "#visual-studio-code",
-            "items": []
-          }
-        ]
-      }
-    ],
-    "permalink": "/docs/python/kurulum"
-  },
-  {
-    "title": "Tensorflow nedir?",
-    "slug": "python/tensorflow_nedir",
-    "sidebar_position": 99,
-    "content": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const a={h2:\"h2\",img:\"img\",p:\"p\",...i.components};return r(e,{children:[n(a.p,{children:\"TensorFlow, Google tarafından geliştirilen ve makine öğrenimi ve derin öğrenme modelleri oluşturmak, eğitmek ve dağıtmak için kullanılan bir açık kaynaklı bir kütüphanedir. İlk olarak 2015 yılında duyurulan TensorFlow, geniş bir kullanıcı tabanına sahiptir ve endüstride ve araştırmada yaygın olarak kullanılmaktadır.\"}),\"\\n\",n(a.p,{children:\"TensorFlow'un temelinde, grafik tabanlı hesaplama modeli vardır. Bu, bir makine öğrenimi modelini oluştururken işlemlerin bir grafik olarak ifade edilmesini sağlar. Bu grafikte düğümler, matematiksel işlemleri temsil eder ve kenarlar, veri akışını gösterir. Bu sayede, TensorFlow kullanıcılara büyük ve karmaşık makine öğrenimi modelleri oluşturma, eğitme ve dağıtma imkanı sağlar.\"}),\"\\n\",n(a.p,{children:\"TensorFlow, Python ve C++ dillerinde kullanılabilir ve CPU ve GPU gibi farklı donanımlarda çalışabilir. Ayrıca, TensorFlow Extended (TFX) gibi bileşenleriyle, model eğitiminden dağıtımına kadar makine öğrenimi projelerinin tüm süreçlerini kapsayan kapsamlı bir platform sunar.\"}),\"\\n\",n(a.p,{children:\"TensorFlow, derin öğrenme alanında birçok popüler mimarinin (örneğin, sinir ağları, evrişimli sinir ağları, uzun-kısa süreli bellek ağları, ve daha fazlası) uygulanmasını destekler ve geliştiricilere esneklik ve performans sağlar.\"}),\"\\n\",n(a.h2,{id:\"tensorflow-kütüphanesini-destekleyen-işletim-sistemi-sürümleri\",children:\"Tensorflow kütüphanesini destekleyen işletim sistemi sürümleri\"}),\"\\n\",n(a.p,{children:n(a.img,{src:\"/docs/python/tensorflow_destekleyen_osler.png\",alt:\"TensorflowDestekleyenOsler\"})}),\"\\n\",n(a.h2,{id:\"peki-tensorflow-kütüphanesini-nasıl-kurarım\",children:\"Peki tensorflow kütüphanesini nasıl kurarım?\"}),\"\\n\",r(a.p,{children:['Tensorflow kütüphanesinin kurulumu için gerekli olan komut aşağıdaki görselde iletilmiştir. Eğer deneysel bir sürümünü kurmak istemiyor iseniz \"Current Stable Relase\" yazanın altındaki komutu çalıştırın.\\n',n(a.img,{src:\"/docs/python/tensorflow_kurulum.png\",alt:\"TensorflowKurulum\"})]})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};",
-    "toc": [
-      {
-        "title": "Tensorflow kütüphanesini destekleyen işletim sistemi sürümleri",
-        "url": "#tensorflow-kütüphanesini-destekleyen-işletim-sistemi-sürümleri",
-        "items": []
-      },
-      {
-        "title": "Peki tensorflow kütüphanesini nasıl kurarım?",
-        "url": "#peki-tensorflow-kütüphanesini-nasıl-kurarım",
-        "items": []
-      }
-    ],
-    "permalink": "/docs/python/tensorflow_nedir"
-  },
-  {
-    "title": "Bakımda",
-    "description": "SPSS dokümantasyonu şu an güncellenmektedir.",
-    "slug": "spss",
-    "sidebar_position": 2,
-    "content": "const{Fragment:n,jsx:e,jsxs:a}=arguments[0];function _createMdxContent(r){const i={a:\"a\",h1:\"h1\",li:\"li\",p:\"p\",strong:\"strong\",ul:\"ul\",...r.components};return a(n,{children:[e(i.h1,{id:\"bakımda\",children:\"Bakımda\"}),\"\\n\",e(i.p,{children:\":::warning Bu sayfa şu an güncelleniyor\\nSPSS dokümantasyonu kapsamlı bir revizyon sürecinde. İçerik geçici olarak kaldırıldı; güncel ve doğrulanmış sürüm hazır olduğunda yeniden yayına alınacak.\\n:::\"}),\"\\n\",a(i.p,{children:[\"Bu süreçte SPSS kurulumu ve lisans aktivasyonu için \",e(i.strong,{children:\"resmi ve güncel kaynak\"}),\" her zaman İstanbul Ticaret Üniversitesi Bilgi İşlem Daire Başkanlığı'dır:\"]}),\"\\n\",a(i.ul,{children:[\"\\n\",a(i.li,{children:[e(i.strong,{children:\"Resmi kurulum sayfası:\"}),\" \",e(i.a,{href:\"https://bim.ticaret.edu.tr/spss/\",children:\"bim.ticaret.edu.tr/spss\"})]}),\"\\n\",a(i.li,{children:[e(i.strong,{children:\"E-posta:\"}),\" \",e(i.a,{href:\"mailto:bim@ticaret.edu.tr\",children:\"bim@ticaret.edu.tr\"})]}),\"\\n\",a(i.li,{children:[e(i.strong,{children:\"Telefon:\"}),\" 444 0 413\"]}),\"\\n\"]}),\"\\n\",e(i.p,{children:\"Sayfa yayına alındığında buradaki uyarı kalkacak ve güncel içerik yerini alacak.\"})]})}return{default:function(n={}){const{wrapper:a}=n.components||{};return a?e(a,{...n,children:e(_createMdxContent,{...n})}):_createMdxContent(n)}};",
-    "toc": [
-      {
-        "title": "Bakımda",
-        "url": "#bakımda",
-        "items": []
-      }
-    ],
-    "permalink": "/docs/spss"
-  },
-  {
-    "title": "R nedir?",
-    "description": "R programming language",
-    "slug": "r",
-    "sidebar_position": 99,
-    "content": "const{Fragment:i,jsx:e,jsxs:l}=arguments[0];function _createMdxContent(r){const a={h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",strong:\"strong\",...r.components};return l(i,{children:[e(a.p,{children:\"R programlama dili, özellikle istatistiksel analiz ve veri bilimi alanında yaygın olarak kullanılan açık kaynaklı bir programlama dilidir. 1993 yılında Ross Ihaka ve Robert Gentleman tarafından geliştirilmiştir ve günümüzde akademik dünyada, araştırma enstitülerinde ve ticari işletmelerde popülerdir. İşte R dilinin özellikleri ve neden tercih edildiği hakkında ayrıntılar:\"}),\"\\n\",e(a.h2,{id:\"r-programlama-dilinin-temel-özellikleri\",children:\"R Programlama Dilinin Temel Özellikleri\"}),\"\\n\",l(a.ol,{children:[\"\\n\",l(a.li,{children:[e(a.strong,{children:\"İstatistiksel Hesaplama ve Veri Analizi İçin Tasarlanmıştır:\"}),\" R'ın ana odağı istatistiksel hesaplamalar ve veri analitiğidir. İçerisinde birçok istatistiksel test, analiz ve modelleme fonksiyonu bulunmaktadır. Çok sayıda yerleşik fonksiyon sayesinde, veri analizi süreçleri oldukça verimli bir şekilde gerçekleştirilebilir.\"]}),\"\\n\",l(a.li,{children:[e(a.strong,{children:\"Geniş Paket Desteği:\"}),\" R, kullanıcılar tarafından geliştirilen binlerce ek fonksiyonu ve paketi destekler. Özellikle CRAN (Comprehensive R Archive Network) adlı bir paket depolama ağına sahiptir ve buradan sayısız ek fonksiyon yüklenebilir. İstatistik, veri görselleştirme, makine öğrenimi, zaman serisi analizi gibi çeşitli alanlar için birçok hazır paket bulunmaktadır.\"]}),\"\\n\",l(a.li,{children:[e(a.strong,{children:\"Veri Görselleştirme:\"}),\" R, güçlü veri görselleştirme yetenekleriyle bilinir. R'da ggplot2 gibi popüler kütüphanelerle estetik ve özelleştirilebilir grafikler ve görselleştirmeler oluşturabilirsiniz. Grafikler, büyük veri setlerini anlamlandırmak ve bulguları net bir şekilde sunmak için oldukça güçlüdür.\"]}),\"\\n\",l(a.li,{children:[e(a.strong,{children:\"Açık Kaynak ve Ücretsiz:\"}),\" R, açık kaynaklıdır ve ücretsiz olarak kullanılabilir. Bu, özellikle üniversiteler, araştırmacılar ve kar amacı gütmeyen kuruluşlar için büyük bir avantajdır. Aynı zamanda aktif bir topluluk tarafından sürekli geliştirilmekte ve desteklenmektedir.\"]}),\"\\n\",l(a.li,{children:[e(a.strong,{children:\"Esneklik:\"}),\" R, hem küçük ölçekli veri analizleri hem de büyük veri setleri üzerinde çalışmak için uygundur. Kullanıcılar, çok çeşitli veri yapılarıyla (matrisler, veri çerçeveleri, diziler, listeler) çalışabilirler ve bu da esnek analiz imkânı sunar.\"]}),\"\\n\"]}),\"\\n\",e(a.h2,{id:\"r-neden-kullanılır\",children:\"R Neden Kullanılır?\"}),\"\\n\",l(a.ol,{children:[\"\\n\",l(a.li,{children:[\"\\n\",l(a.p,{children:[e(a.strong,{children:\"İstatistik ve Veri Analitiği:\"}),\" R, özellikle veri bilimciler ve istatistikçiler tarafından tercih edilir. Akademik dünyada, araştırmalarda ve veri analizi projelerinde güçlü istatistiksel yetenekleri nedeniyle yaygın olarak kullanılır. Regresyon, hipotez testleri, varyans analizi gibi birçok istatistiksel teknik için kullanıma hazır fonksiyonlar sunar.\"]}),\"\\n\"]}),\"\\n\",l(a.li,{children:[\"\\n\",l(a.p,{children:[e(a.strong,{children:\"Veri Görselleştirme:\"}),\" R’nin veri görselleştirme araçları, araştırmacılar ve analistler tarafından veri içgörülerini etkili bir şekilde sunmak için sıklıkla tercih edilir. Çubuk grafikler, dağılım grafikleri, ısı haritaları, zaman serileri görselleştirmeleri gibi çok çeşitli grafikler oluşturabilir.\"]}),\"\\n\"]}),\"\\n\",l(a.li,{children:[\"\\n\",l(a.p,{children:[e(a.strong,{children:\"Büyük Veri Analizleri:\"}),\" R, büyük veri setlerini işleyebilir ve veri madenciliği, makine öğrenimi algoritmaları gibi ileri düzey analizleri gerçekleştirebilir. Makine öğrenimi paketleri sayesinde R, günümüzde makine öğrenimi modelleri geliştirme ve test etme için de yaygın olarak kullanılmaktadır.\"]}),\"\\n\"]}),\"\\n\",l(a.li,{children:[\"\\n\",l(a.p,{children:[e(a.strong,{children:\"Geniş Topluluk ve Destek:\"}),\" R, geniş bir kullanıcı topluluğuna sahiptir. Bu da çeşitli problemler için çevrimiçi kaynakların, derslerin ve dokümantasyonların kolayca bulunmasını sağlar. Geliştirici topluluğu sürekli olarak yeni paketler ekler ve mevcut olanları geliştirir.\"]}),\"\\n\"]}),\"\\n\",l(a.li,{children:[\"\\n\",l(a.p,{children:[e(a.strong,{children:\"Makine Öğrenimi ve Yapay Zeka:\"}),\" R'da makine öğrenimi algoritmalarını uygulamak için caret, randomForest gibi popüler paketler mevcuttur. Veri bilimciler, R'ı tahmin modelleri geliştirme, sınıflandırma, kümeleme ve regresyon gibi görevlerde kullanabilirler.\"]}),\"\\n\"]}),\"\\n\"]})]})}return{default:function(i={}){const{wrapper:l}=i.components||{};return l?e(l,{...i,children:e(_createMdxContent,{...i})}):_createMdxContent(i)}};",
-    "toc": [
-      {
-        "title": "R Programlama Dilinin Temel Özellikleri",
-        "url": "#r-programlama-dilinin-temel-özellikleri",
-        "items": []
-      },
-      {
-        "title": "R Neden Kullanılır?",
-        "url": "#r-neden-kullanılır",
-        "items": []
-      }
-    ],
-    "permalink": "/docs/r"
-  },
-  {
-    "title": "Gerekli kurulumlar",
-    "description": "R ile Çalışmak çin Gerekli Kurulumlar",
-    "slug": "r/kurulum",
-    "sidebar_position": 99,
-    "content": "const{Fragment:i,jsx:e,jsxs:n}=arguments[0];function _createMdxContent(a){const l={a:\"a\",code:\"code\",figure:\"figure\",h1:\"h1\",h2:\"h2\",h3:\"h3\",h4:\"h4\",img:\"img\",li:\"li\",p:\"p\",pre:\"pre\",span:\"span\",strong:\"strong\",ul:\"ul\",...a.components};return n(i,{children:[e(l.h1,{id:\"r-ile-çalışabilmek-için-gerekli-kurulumlar\",children:\"R ile Çalışabilmek için Gerekli Kurulumlar\"}),\"\\n\",e(l.p,{children:\"R ile çalışmak için bilgisayarımıza birkaç kurulum yapmamız gerekiyor. R, bir programlama dili ve yazılım ortamıdır. R Studio ise R ile çalışmak için geliştirilmiş bir IDE'dir.\"}),\"\\n\",e(l.p,{children:\"İki yazılım da açık kaynak kodlu ve özgür yazılımlardır. Kullanım ücreti ödemeden, ekstra lisanslama ile uğraşmadan kullanabilirsiniz. Bunun yanında R Studio'nun ücretli versiyonu da bulunmaktadır ancak bu dokümanda ücretsiz olan versiyonu anlatılacaktır.\"}),\"\\n\",e(l.h2,{id:\"r-kurulumu\",children:\"R Kurulumu\"}),\"\\n\",e(l.h3,{id:\"r-i̇ndirme-bağlantısı\",children:\"R İndirme Bağlantısı\"}),\"\\n\",n(l.p,{children:[\"R'ın kurulum dosyasınının dağıtımı birçok farklı ülke tarafından yapılmaktadır. Bu nedenle R'ı indirirken, bulunduğunuz ülkeye en yakın sunucuyu seçmeniz daha hızlı bir indirme işlemi sağlayacaktır. Türkiye için kurulum dosyaları \",e(l.a,{href:\"https://cran.gedik.edu.tr/\",children:\"İstanbul Gedik Üniversitesi\"}),\" ve \",e(l.a,{href:\"https://cran.pau.edu.tr/\",children:\"Denizli Pamukkale Üniversitesi\"}),\" tarafından dağıtılmaktadır.\"]}),\"\\n\",n(l.p,{children:[\"İstanbul'da bulunduğumuz için \",e(l.a,{href:\"https://cran.gedik.edu.tr/\",children:\"İstanbul Gedik Üniversitesi\"}),\" sunucusundan indirme işlemi yapacağız.\"]}),\"\\n\",e(l.h3,{id:\"i̇şletim-sistemi-seçimi\",children:\"İşletim Sistemi Seçimi\"}),\"\\n\",e(l.p,{children:\"İşletim sisteminize uygun olan en son sürüme tıklayın.\"}),\"\\n\",e(l.p,{children:e(l.img,{src:\"/static/kurulum_baglantilari-566b55.png\",alt:\"İşletim Sistemi Seçimi\"})}),\"\\n\",n(l.ul,{children:[\"\\n\",n(l.li,{children:[e(l.strong,{children:\"Windows\"}),\" için \",e(l.code,{children:\"base\"}),\" seçeneğini seçin.\"]}),\"\\n\",n(l.li,{children:[e(l.strong,{children:\"Mac\"}),\" için, eğer M serisi bir işlemciye sahipseniz \",e(l.code,{children:\"arm64\"}),\" seçeneğini seçin. Eğer intel işlemciye sahipseniz\",e(l.code,{children:\"x86_64\"}),\" seçeneğini seçin.\"]}),\"\\n\",n(l.li,{children:[e(l.strong,{children:\"Linux\"}),\" için uygun olan seçeneği seçin.\"]}),\"\\n\"]}),\"\\n\",e(l.h4,{id:\"linux-için-komut-satırı-ile-kurulum\",children:\"Linux için Komut Satırı ile Kurulum\"}),\"\\n\",e(l.p,{children:\"Debian/Ubuntu\"}),\"\\n\",e(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:e(l.pre,{tabIndex:\"0\",\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",children:e(l.code,{\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:n(l.span,{\"data-line\":\"\",children:[e(l.span,{style:{color:\"#F69D50\"},children:\"sudo\"}),e(l.span,{style:{color:\"#96D0FF\"},children:\" apt-get\"}),e(l.span,{style:{color:\"#96D0FF\"},children:\" install\"}),e(l.span,{style:{color:\"#96D0FF\"},children:\" r-base\"}),e(l.span,{style:{color:\"#ADBAC7\"},children:\" \"})]})})})}),\"\\n\",e(l.p,{children:\"Arch Linux\"}),\"\\n\",e(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:e(l.pre,{tabIndex:\"0\",\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",children:e(l.code,{\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:n(l.span,{\"data-line\":\"\",children:[e(l.span,{style:{color:\"#F69D50\"},children:\"sudo\"}),e(l.span,{style:{color:\"#96D0FF\"},children:\" pacman\"}),e(l.span,{style:{color:\"#6CB6FF\"},children:\" -S\"}),e(l.span,{style:{color:\"#96D0FF\"},children:\" r\"})]})})})}),\"\\n\",e(l.p,{children:\"İndirme işlemleriniz bittikten sonra bilgisayarınızda R çalıştırabilir duruma geleceksiniz.\"}),\"\\n\",e(l.h2,{id:\"r-studio-kurulumu\",children:\"R Studio Kurulumu\"}),\"\\n\",e(l.h3,{id:\"r-studio-i̇ndirme-bağlantısı\",children:\"R Studio İndirme Bağlantısı\"}),\"\\n\",n(l.p,{children:[\"R Studio'nun indirme bağlantısına \",e(l.a,{href:\"https://posit.co/download/rstudio-desktop/\",children:\"buradan\"}),\" ulaşabilirsiniz.\"]}),\"\\n\",e(l.h3,{id:\"i̇şletim-sistemi-seçimi-1\",children:\"İşletim Sistemi Seçimi\"}),\"\\n\",e(l.p,{children:\"İşletim sisteminize uygun olan en son sürüme tıklayın.\"}),\"\\n\",e(l.p,{children:e(l.img,{src:\"/static/r_studio-cb39d3.png\",alt:\"İşletim Sistemi Seçimi\"})}),\"\\n\",e(l.p,{children:\"İndirdiğiniz dosyası yükledikten sonra R Studio bilgisayarınıza kurulmuş olacak. Artık R ve R Studio'yu kullanmaya başlayabilirsiniz.\"})]})}return{default:function(i={}){const{wrapper:n}=i.components||{};return n?e(n,{...i,children:e(_createMdxContent,{...i})}):_createMdxContent(i)}};",
-    "toc": [
-      {
-        "title": "R ile Çalışabilmek için Gerekli Kurulumlar",
-        "url": "#r-ile-çalışabilmek-için-gerekli-kurulumlar",
-        "items": [
-          {
-            "title": "R Kurulumu",
-            "url": "#r-kurulumu",
-            "items": [
-              {
-                "title": "R İndirme Bağlantısı",
-                "url": "#r-i̇ndirme-bağlantısı",
-                "items": []
-              },
-              {
-                "title": "İşletim Sistemi Seçimi",
-                "url": "#i̇şletim-sistemi-seçimi",
-                "items": [
-                  {
-                    "title": "Linux için Komut Satırı ile Kurulum",
-                    "url": "#linux-için-komut-satırı-ile-kurulum",
-                    "items": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "R Studio Kurulumu",
-            "url": "#r-studio-kurulumu",
-            "items": [
-              {
-                "title": "R Studio İndirme Bağlantısı",
-                "url": "#r-studio-i̇ndirme-bağlantısı",
-                "items": []
-              },
-              {
-                "title": "İşletim Sistemi Seçimi",
-                "url": "#i̇şletim-sistemi-seçimi-1",
-                "items": []
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "permalink": "/docs/r/kurulum"
-  },
-  {
     "title": "Tableau nedir?",
     "description": "Tableau, etkileşimli veri görselleştirmesi ve iş zekâsı için geliştirilmiş görsel analitik platformu. VizQL motoru üzerinde sürükle-bırak arayüzüyle panolar üretilir.",
     "slug": "tableau",
@@ -370,5 +233,142 @@
       }
     ],
     "permalink": "/docs/tableau/temel_kullanim"
+  },
+  {
+    "title": "Python nedir?",
+    "description": "Python programlama dili nedir?",
+    "slug": "python",
+    "sidebar_position": 99,
+    "content": "const{Fragment:i,jsx:a,jsxs:n}=arguments[0];function _createMdxContent(e){const l={a:\"a\",p:\"p\",strong:\"strong\",...e.components};return n(i,{children:[a(l.p,{children:\"Python, genel amaçlı, yüksek seviyeli, yorumlanmış ve dinamik bir programlama dilidir. 1991 yılında Guido van Rossum tarafından geliştirilmeye başlanmış ve o zamandan beri dünya çapında yaygın olarak kullanılan popüler bir programlama diline dönüşmüştür. Python’un temel özellikleri şunlardır:\"}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"1. Basit ve Okunabilir Söz Dizimi:\"}),\" Python, geliştiricilerin hızlı bir şekilde kod yazmalarını sağlamak amacıyla, sade ve anlaşılır bir söz dizimi sunar. Bu, kodun kolayca okunabilir ve bakımının yapılabilir olmasına yardımcı olur.\"]}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"2. Çok Amaçlı Kullanım:\"}),\" Python, web geliştirme, veri bilimi, yapay zeka, makine öğrenimi, otomasyon, oyun geliştirme ve daha birçok alanda kullanılabilir. Bu nedenle çok geniş bir kullanım yelpazesine sahiptir.\"]}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"3. Zengin Kütüphane Desteği:\"}),\" Python, birçok yerleşik kütüphane ve modüle sahiptir. NumPy, Pandas, Matplotlib gibi veri bilimi araçları, Django ve Flask gibi web geliştirme çerçeveleri, TensorFlow ve PyTorch gibi yapay zeka kütüphaneleri Python ile kolayca kullanılabilir. Bunlar gibi kütüphanelere \",a(l.a,{href:\"https://pypi.org/\",children:\"pypi.org\"}),\" adresinden erişebilirsiniz.\"]}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"4. Yorumlanmış Dil:\"}),\" Python, yorumlanan bir dil olduğu için kod, derlenmeden doğrudan çalıştırılabilir. Bu, geliştirme sürecini hızlandırır ve hata ayıklama işlemini kolaylaştırır.\"]}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"5. Taşınabilirlik ve Platform Bağımsızlığı:\"}),\" Python, farklı işletim sistemlerinde (Windows, macOS, Linux) çalışabilir. Aynı kod, çoğu zaman farklı platformlarda değişiklik yapmadan çalıştırılabilir.\"]}),\"\\n\",n(l.p,{children:[a(l.strong,{children:\"6. Dinamik Tip Sistemi:\"}),\" Python, statik tip denetimi yerine dinamik tip denetimi yapar. Bu, değişkenlerin tiplerinin programın çalışma zamanında belirlendiği anlamına gelir, bu da daha esnek ve hızlı geliştirme imkanı sunar.\"]})]})}return{default:function(i={}){const{wrapper:n}=i.components||{};return n?a(n,{...i,children:a(_createMdxContent,{...i})}):_createMdxContent(i)}};",
+    "toc": [],
+    "permalink": "/docs/python"
+  },
+  {
+    "title": "Python nasıl kurulur?",
+    "slug": "python/kurulum",
+    "sidebar_position": 99,
+    "content": "const{Fragment:e,jsx:n,jsxs:i}=arguments[0];function _createMdxContent(a){const l={a:\"a\",br:\"br\",code:\"code\",figure:\"figure\",h2:\"h2\",h3:\"h3\",img:\"img\",li:\"li\",ol:\"ol\",p:\"p\",pre:\"pre\",span:\"span\",strong:\"strong\",ul:\"ul\",...a.components},{DownloadFileFeature:d,ReactPlayer:r,TabItem:t,Tabs:o}=l;return d||_missingMdxReference(\"DownloadFileFeature\",!0),r||_missingMdxReference(\"ReactPlayer\",!0),t||_missingMdxReference(\"TabItem\",!0),o||_missingMdxReference(\"Tabs\",!0),i(e,{children:[n(l.h2,{id:\"kurulum-aşamaları\",children:\"Kurulum Aşamaları\"}),\"\\n\",i(l.ul,{children:[\"\\n\",n(l.li,{children:\"MiniConda (Python dahil)\"}),\"\\n\",n(l.li,{children:\"Visual Studio Code (VSCode)\"}),\"\\n\"]}),\"\\n\",i(\"div\",{style:{display:\"flex\",gap:\"10px\",marginBottom:\"10px\"},children:[n(d,{content:\"İndir\",file:{name:\"miniconda-vscode-windows.ps1\",url:\"https://gist.githubusercontent.com/yigit433/dad44f953742f4858362696514a8475e/raw/a447edee8596307866d6a43821d97da9fa47c5e4/miniconda-vscode-windows.ps1\"},icon:\"windows\"}),n(d,{content:\"İndir\",file:{name:\"miniconda-vscode-macos.sh\",url:\"https://gist.githubusercontent.com/mertssmnoglu/dbb4546ba9924b142ac42203deb41e06/raw/54c3e7e748bdb636fc5d2047da723f8c3f672fac/miniconda-vscode-macos.sh\"},icon:\"macos\"})]}),\"\\n\",i(o,{children:[i(t,{value:\"windows\",label:\"Windows\",default:!0,children:[i(l.p,{children:[\":::info\\nKurulum dosyasının çalıştırılabilmesi için bilgisayarınız \",n(l.strong,{children:\"Windows 10 ve üzeri olması\"}),\" gerekmektedir.\\n:::\"]}),i(l.ol,{children:[\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[n(l.code,{children:\"miniconda-vscode-windows.ps1\"}),\" kurulum dosyasını indirin.\",n(l.br,{}),\"\\n\",n(l.img,{src:\"/docs/python/windows/miniconda-vscode-windows-download.gif\",alt:\"Windows Script Download\"})]}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[\"Powershell'i \",n(l.strong,{children:\"yönetici\"}),\" olarak çalıştırın ve aşağıdaki komutu girerek komut çalıştırma kısıtlamasını geçici olarak kaldırın:\"]}),\"\\n\"]}),\"\\n\"]}),n(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:n(l.pre,{tabIndex:\"0\",\"data-language\":\"powershell\",\"data-theme\":\"github-dark-dimmed\",children:n(l.code,{\"data-language\":\"powershell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:i(l.span,{\"data-line\":\"\",children:[n(l.span,{style:{color:\"#6CB6FF\"},children:\"Set-ExecutionPolicy\"}),n(l.span,{style:{color:\"#F47067\"},children:\" -\"}),n(l.span,{style:{color:\"#ADBAC7\"},children:\"Scope \"}),n(l.span,{style:{color:\"#F47067\"},children:\"Process\"}),n(l.span,{style:{color:\"#F47067\"},children:\" -\"}),n(l.span,{style:{color:\"#ADBAC7\"},children:\"ExecutionPolicy Bypass\"})]})})})}),n(l.p,{children:n(l.img,{src:\"/docs/python/windows/powershell-permission.gif\",alt:\"Windows Script Download\"})}),i(l.ol,{start:\"3\",children:[\"\\n\",n(l.li,{children:\"Ardından aşağıdaki komutu terminale yapıştırarak kurulum dosyasını çalıştırın:\"}),\"\\n\"]}),n(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:n(l.pre,{tabIndex:\"0\",\"data-language\":\"powershell\",\"data-theme\":\"github-dark-dimmed\",children:n(l.code,{\"data-language\":\"powershell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:i(l.span,{\"data-line\":\"\",children:[n(l.span,{style:{color:\"#ADBAC7\"},children:\"powershell \"}),n(l.span,{style:{color:\"#F47067\"},children:\"-\"}),n(l.span,{style:{color:\"#ADBAC7\"},children:\"ExecutionPolicy Bypass \"}),n(l.span,{style:{color:\"#F47067\"},children:\"-\"}),n(l.span,{style:{color:\"#ADBAC7\"},children:\"File \"}),n(l.span,{style:{color:\"#96D0FF\"},children:'\"C:\\\\Users\\\\User\\\\Desktop\\\\miniconda-vscode-windows.ps1\"'})]})})})}),i(l.ol,{start:\"4\",children:[\"\\n\",i(l.li,{children:[\"Eğer dosyanın farklı bir klasörde olduğunu biliyorsanız, komuttaki \",n(l.code,{children:'\"C:\\\\Users\\\\User\\\\Desktop\\\\...\"'}),\" kısmını o konuma göre düzenleyin.\",n(l.br,{}),\"\\n\",\"Aşağıdaki videoda adımlar detaylı bir şekilde gösterilmiştir:\"]}),\"\\n\"]}),n(r,{playing:!1,controls:!0,height:\"600px\",width:\"100%\",url:\"https://youtu.be/I7HGV6RgVH8\"})]}),n(t,{value:\"macos\",label:\"macOS\",children:i(l.ol,{children:[\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[n(l.code,{children:\"miniconda-vscode-macos.sh\"}),\" kurulum dosyasını indirin.\\n\",n(l.img,{src:\"/docs/python/macos/miniconda-vscode-macos-download.gif\",alt:\"macOS Script Download\"})]}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[\"Bilgisayarınızındaki \",n(l.code,{children:\"Dosyalar\"}),\" uygulamasına girin ve \",n(l.code,{children:\"İndirilenler\"}),\" klasörünü açın.\"]}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[\"Bilgisayarınızdaan Finder'a veya Spotlight'a girin ve \",n(l.code,{children:\"Terminal\"}),\" uygulamasını açın\\n\",n(l.img,{src:\"/docs/python/macos/mac-terminal-finder-spotlight.jpeg\",alt:\"macOS Finder/Spotlight üzerinden Terminal Uygulamasını Açma\"})]}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",i(l.p,{children:[\"Terminal uygulaması açıldığında karşınıza aşağıdaki gibi bir ekran çıktığından emin olun.\\n\",n(l.img,{src:\"/docs/python/macos/mac-terminal-interface.jpeg\",alt:\"macOS Terminal Arayüzü\"})]}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",n(l.p,{children:\"Açılan terminal ekranında, konumunuzu değiştirmek için aşağıdaki komutlardan sistem diliniz ile uyuşanı seçin.\"}),\"\\n\",n(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:n(l.pre,{tabIndex:\"0\",\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",children:n(l.code,{\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:i(l.span,{\"data-line\":\"\",children:[n(l.span,{style:{color:\"#6CB6FF\"},children:\"cd\"}),n(l.span,{style:{color:\"#96D0FF\"},children:\" İndirilenler\"})]})})})}),\"\\n\",n(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:n(l.pre,{tabIndex:\"0\",\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",children:n(l.code,{\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:i(l.span,{\"data-line\":\"\",children:[n(l.span,{style:{color:\"#6CB6FF\"},children:\"cd\"}),n(l.span,{style:{color:\"#96D0FF\"},children:\" Downloads\"})]})})})}),\"\\n\"]}),\"\\n\",i(l.li,{children:[\"\\n\",n(l.p,{children:\"İndirilenler klasörüne geçiş yaptıktan sonra aşağıdaki komutu çalıştırın ve komut dosyasının yönlendirmelerini takip edin. (Yönetici şifrenizi girmeniz gerekebilir.)\"}),\"\\n\",n(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:n(l.pre,{tabIndex:\"0\",\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",children:n(l.code,{\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:i(l.span,{\"data-line\":\"\",children:[n(l.span,{style:{color:\"#F69D50\"},children:\"sh\"}),n(l.span,{style:{color:\"#96D0FF\"},children:\" ./miniconda-vscode-macos.sh\"})]})})})}),\"\\n\"]}),\"\\n\"]})})]}),\"\\n\",i(l.p,{children:[\":::note\\nEğer bir hata mesajı görmediyseniz işlemler başarı ile gerçekleşmiş demektir. Kodları çalıştırabileceğiniz ortam hazır, şimdi ise bir editöre ihtiyacınız olacak. Visual Studio Code yapılandırmasına erişmek için \",n(l.a,{href:\"#visual-studio-code\",children:\"tıklayın\"}),\"\\n:::\"]}),\"\\n\",n(l.h3,{id:\"visual-studio-code\",children:\"Visual Studio Code\"}),\"\\n\",i(l.p,{children:[\"Eğer üst kısımda anlatılan işletim sistemine göre kurulum adımlarını takip ettiyseniz ve herhangi bir hata almadıysanız Visual Studio Code kurulumunuz gerçekleşmiş demektir. Python programlama dili ile kodlama yaparken işimize yarayacak olan bir takım eklentileri kurabilmemiz için gereken \",n(l.code,{children:\"Profil\"}),\" dosyasının  editöre uygulanmasını sağlayacağız.\"]}),\"\\n\",n(l.p,{children:\"Aşağıdaki profillinki kopyalayın.\"}),\"\\n\",n(l.pre,{children:n(l.code,{children:\"https://gist.githubusercontent.com/mertssmnoglu/7a82ec0e7a26c88b7adf6116e62ae80b/raw/3bf99820fafa3596ca7eddcdfb5f06f3b6de4e7d/ticaretistatistik.code-profile\\n\"})}),\"\\n\",n(r,{playing:!1,controls:!0,height:\"600px\",width:\"100%\",url:\"https://youtu.be/89USfXbeaX0\"})]})}return{default:function(e={}){const{wrapper:i}=e.components||{};return i?n(i,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};function _missingMdxReference(e,n){throw new Error(\"Expected \"+(n?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}",
+    "toc": [
+      {
+        "title": "Kurulum Aşamaları",
+        "url": "#kurulum-aşamaları",
+        "items": [
+          {
+            "title": "Visual Studio Code",
+            "url": "#visual-studio-code",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "permalink": "/docs/python/kurulum"
+  },
+  {
+    "title": "Tensorflow nedir?",
+    "slug": "python/tensorflow_nedir",
+    "sidebar_position": 99,
+    "content": "const{Fragment:e,jsx:n,jsxs:r}=arguments[0];function _createMdxContent(i){const a={h2:\"h2\",img:\"img\",p:\"p\",...i.components};return r(e,{children:[n(a.p,{children:\"TensorFlow, Google tarafından geliştirilen ve makine öğrenimi ve derin öğrenme modelleri oluşturmak, eğitmek ve dağıtmak için kullanılan bir açık kaynaklı bir kütüphanedir. İlk olarak 2015 yılında duyurulan TensorFlow, geniş bir kullanıcı tabanına sahiptir ve endüstride ve araştırmada yaygın olarak kullanılmaktadır.\"}),\"\\n\",n(a.p,{children:\"TensorFlow'un temelinde, grafik tabanlı hesaplama modeli vardır. Bu, bir makine öğrenimi modelini oluştururken işlemlerin bir grafik olarak ifade edilmesini sağlar. Bu grafikte düğümler, matematiksel işlemleri temsil eder ve kenarlar, veri akışını gösterir. Bu sayede, TensorFlow kullanıcılara büyük ve karmaşık makine öğrenimi modelleri oluşturma, eğitme ve dağıtma imkanı sağlar.\"}),\"\\n\",n(a.p,{children:\"TensorFlow, Python ve C++ dillerinde kullanılabilir ve CPU ve GPU gibi farklı donanımlarda çalışabilir. Ayrıca, TensorFlow Extended (TFX) gibi bileşenleriyle, model eğitiminden dağıtımına kadar makine öğrenimi projelerinin tüm süreçlerini kapsayan kapsamlı bir platform sunar.\"}),\"\\n\",n(a.p,{children:\"TensorFlow, derin öğrenme alanında birçok popüler mimarinin (örneğin, sinir ağları, evrişimli sinir ağları, uzun-kısa süreli bellek ağları, ve daha fazlası) uygulanmasını destekler ve geliştiricilere esneklik ve performans sağlar.\"}),\"\\n\",n(a.h2,{id:\"tensorflow-kütüphanesini-destekleyen-işletim-sistemi-sürümleri\",children:\"Tensorflow kütüphanesini destekleyen işletim sistemi sürümleri\"}),\"\\n\",n(a.p,{children:n(a.img,{src:\"/docs/python/tensorflow_destekleyen_osler.png\",alt:\"TensorflowDestekleyenOsler\"})}),\"\\n\",n(a.h2,{id:\"peki-tensorflow-kütüphanesini-nasıl-kurarım\",children:\"Peki tensorflow kütüphanesini nasıl kurarım?\"}),\"\\n\",r(a.p,{children:['Tensorflow kütüphanesinin kurulumu için gerekli olan komut aşağıdaki görselde iletilmiştir. Eğer deneysel bir sürümünü kurmak istemiyor iseniz \"Current Stable Relase\" yazanın altındaki komutu çalıştırın.\\n',n(a.img,{src:\"/docs/python/tensorflow_kurulum.png\",alt:\"TensorflowKurulum\"})]})]})}return{default:function(e={}){const{wrapper:r}=e.components||{};return r?n(r,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};",
+    "toc": [
+      {
+        "title": "Tensorflow kütüphanesini destekleyen işletim sistemi sürümleri",
+        "url": "#tensorflow-kütüphanesini-destekleyen-işletim-sistemi-sürümleri",
+        "items": []
+      },
+      {
+        "title": "Peki tensorflow kütüphanesini nasıl kurarım?",
+        "url": "#peki-tensorflow-kütüphanesini-nasıl-kurarım",
+        "items": []
+      }
+    ],
+    "permalink": "/docs/python/tensorflow_nedir"
+  },
+  {
+    "title": "Bakımda",
+    "description": "SPSS dokümantasyonu şu an güncellenmektedir.",
+    "slug": "spss",
+    "sidebar_position": 2,
+    "content": "const{Fragment:n,jsx:e,jsxs:a}=arguments[0];function _createMdxContent(r){const i={a:\"a\",h1:\"h1\",li:\"li\",p:\"p\",strong:\"strong\",ul:\"ul\",...r.components};return a(n,{children:[e(i.h1,{id:\"bakımda\",children:\"Bakımda\"}),\"\\n\",e(i.p,{children:\":::warning Bu sayfa şu an güncelleniyor\\nSPSS dokümantasyonu kapsamlı bir revizyon sürecinde. İçerik geçici olarak kaldırıldı; güncel ve doğrulanmış sürüm hazır olduğunda yeniden yayına alınacak.\\n:::\"}),\"\\n\",a(i.p,{children:[\"Bu süreçte SPSS kurulumu ve lisans aktivasyonu için \",e(i.strong,{children:\"resmi ve güncel kaynak\"}),\" her zaman İstanbul Ticaret Üniversitesi Bilgi İşlem Daire Başkanlığı'dır:\"]}),\"\\n\",a(i.ul,{children:[\"\\n\",a(i.li,{children:[e(i.strong,{children:\"Resmi kurulum sayfası:\"}),\" \",e(i.a,{href:\"https://bim.ticaret.edu.tr/spss/\",children:\"bim.ticaret.edu.tr/spss\"})]}),\"\\n\",a(i.li,{children:[e(i.strong,{children:\"E-posta:\"}),\" \",e(i.a,{href:\"mailto:bim@ticaret.edu.tr\",children:\"bim@ticaret.edu.tr\"})]}),\"\\n\",a(i.li,{children:[e(i.strong,{children:\"Telefon:\"}),\" 444 0 413\"]}),\"\\n\"]}),\"\\n\",e(i.p,{children:\"Sayfa yayına alındığında buradaki uyarı kalkacak ve güncel içerik yerini alacak.\"})]})}return{default:function(n={}){const{wrapper:a}=n.components||{};return a?e(a,{...n,children:e(_createMdxContent,{...n})}):_createMdxContent(n)}};",
+    "toc": [
+      {
+        "title": "Bakımda",
+        "url": "#bakımda",
+        "items": []
+      }
+    ],
+    "permalink": "/docs/spss"
+  },
+  {
+    "title": "R nedir?",
+    "description": "R programming language",
+    "slug": "r",
+    "sidebar_position": 99,
+    "content": "const{Fragment:i,jsx:e,jsxs:l}=arguments[0];function _createMdxContent(r){const a={h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",strong:\"strong\",...r.components};return l(i,{children:[e(a.p,{children:\"R programlama dili, özellikle istatistiksel analiz ve veri bilimi alanında yaygın olarak kullanılan açık kaynaklı bir programlama dilidir. 1993 yılında Ross Ihaka ve Robert Gentleman tarafından geliştirilmiştir ve günümüzde akademik dünyada, araştırma enstitülerinde ve ticari işletmelerde popülerdir. İşte R dilinin özellikleri ve neden tercih edildiği hakkında ayrıntılar:\"}),\"\\n\",e(a.h2,{id:\"r-programlama-dilinin-temel-özellikleri\",children:\"R Programlama Dilinin Temel Özellikleri\"}),\"\\n\",l(a.ol,{children:[\"\\n\",l(a.li,{children:[e(a.strong,{children:\"İstatistiksel Hesaplama ve Veri Analizi İçin Tasarlanmıştır:\"}),\" R'ın ana odağı istatistiksel hesaplamalar ve veri analitiğidir. İçerisinde birçok istatistiksel test, analiz ve modelleme fonksiyonu bulunmaktadır. Çok sayıda yerleşik fonksiyon sayesinde, veri analizi süreçleri oldukça verimli bir şekilde gerçekleştirilebilir.\"]}),\"\\n\",l(a.li,{children:[e(a.strong,{children:\"Geniş Paket Desteği:\"}),\" R, kullanıcılar tarafından geliştirilen binlerce ek fonksiyonu ve paketi destekler. Özellikle CRAN (Comprehensive R Archive Network) adlı bir paket depolama ağına sahiptir ve buradan sayısız ek fonksiyon yüklenebilir. İstatistik, veri görselleştirme, makine öğrenimi, zaman serisi analizi gibi çeşitli alanlar için birçok hazır paket bulunmaktadır.\"]}),\"\\n\",l(a.li,{children:[e(a.strong,{children:\"Veri Görselleştirme:\"}),\" R, güçlü veri görselleştirme yetenekleriyle bilinir. R'da ggplot2 gibi popüler kütüphanelerle estetik ve özelleştirilebilir grafikler ve görselleştirmeler oluşturabilirsiniz. Grafikler, büyük veri setlerini anlamlandırmak ve bulguları net bir şekilde sunmak için oldukça güçlüdür.\"]}),\"\\n\",l(a.li,{children:[e(a.strong,{children:\"Açık Kaynak ve Ücretsiz:\"}),\" R, açık kaynaklıdır ve ücretsiz olarak kullanılabilir. Bu, özellikle üniversiteler, araştırmacılar ve kar amacı gütmeyen kuruluşlar için büyük bir avantajdır. Aynı zamanda aktif bir topluluk tarafından sürekli geliştirilmekte ve desteklenmektedir.\"]}),\"\\n\",l(a.li,{children:[e(a.strong,{children:\"Esneklik:\"}),\" R, hem küçük ölçekli veri analizleri hem de büyük veri setleri üzerinde çalışmak için uygundur. Kullanıcılar, çok çeşitli veri yapılarıyla (matrisler, veri çerçeveleri, diziler, listeler) çalışabilirler ve bu da esnek analiz imkânı sunar.\"]}),\"\\n\"]}),\"\\n\",e(a.h2,{id:\"r-neden-kullanılır\",children:\"R Neden Kullanılır?\"}),\"\\n\",l(a.ol,{children:[\"\\n\",l(a.li,{children:[\"\\n\",l(a.p,{children:[e(a.strong,{children:\"İstatistik ve Veri Analitiği:\"}),\" R, özellikle veri bilimciler ve istatistikçiler tarafından tercih edilir. Akademik dünyada, araştırmalarda ve veri analizi projelerinde güçlü istatistiksel yetenekleri nedeniyle yaygın olarak kullanılır. Regresyon, hipotez testleri, varyans analizi gibi birçok istatistiksel teknik için kullanıma hazır fonksiyonlar sunar.\"]}),\"\\n\"]}),\"\\n\",l(a.li,{children:[\"\\n\",l(a.p,{children:[e(a.strong,{children:\"Veri Görselleştirme:\"}),\" R’nin veri görselleştirme araçları, araştırmacılar ve analistler tarafından veri içgörülerini etkili bir şekilde sunmak için sıklıkla tercih edilir. Çubuk grafikler, dağılım grafikleri, ısı haritaları, zaman serileri görselleştirmeleri gibi çok çeşitli grafikler oluşturabilir.\"]}),\"\\n\"]}),\"\\n\",l(a.li,{children:[\"\\n\",l(a.p,{children:[e(a.strong,{children:\"Büyük Veri Analizleri:\"}),\" R, büyük veri setlerini işleyebilir ve veri madenciliği, makine öğrenimi algoritmaları gibi ileri düzey analizleri gerçekleştirebilir. Makine öğrenimi paketleri sayesinde R, günümüzde makine öğrenimi modelleri geliştirme ve test etme için de yaygın olarak kullanılmaktadır.\"]}),\"\\n\"]}),\"\\n\",l(a.li,{children:[\"\\n\",l(a.p,{children:[e(a.strong,{children:\"Geniş Topluluk ve Destek:\"}),\" R, geniş bir kullanıcı topluluğuna sahiptir. Bu da çeşitli problemler için çevrimiçi kaynakların, derslerin ve dokümantasyonların kolayca bulunmasını sağlar. Geliştirici topluluğu sürekli olarak yeni paketler ekler ve mevcut olanları geliştirir.\"]}),\"\\n\"]}),\"\\n\",l(a.li,{children:[\"\\n\",l(a.p,{children:[e(a.strong,{children:\"Makine Öğrenimi ve Yapay Zeka:\"}),\" R'da makine öğrenimi algoritmalarını uygulamak için caret, randomForest gibi popüler paketler mevcuttur. Veri bilimciler, R'ı tahmin modelleri geliştirme, sınıflandırma, kümeleme ve regresyon gibi görevlerde kullanabilirler.\"]}),\"\\n\"]}),\"\\n\"]})]})}return{default:function(i={}){const{wrapper:l}=i.components||{};return l?e(l,{...i,children:e(_createMdxContent,{...i})}):_createMdxContent(i)}};",
+    "toc": [
+      {
+        "title": "R Programlama Dilinin Temel Özellikleri",
+        "url": "#r-programlama-dilinin-temel-özellikleri",
+        "items": []
+      },
+      {
+        "title": "R Neden Kullanılır?",
+        "url": "#r-neden-kullanılır",
+        "items": []
+      }
+    ],
+    "permalink": "/docs/r"
+  },
+  {
+    "title": "Gerekli kurulumlar",
+    "description": "R ile Çalışmak çin Gerekli Kurulumlar",
+    "slug": "r/kurulum",
+    "sidebar_position": 99,
+    "content": "const{Fragment:i,jsx:e,jsxs:n}=arguments[0];function _createMdxContent(a){const l={a:\"a\",code:\"code\",figure:\"figure\",h1:\"h1\",h2:\"h2\",h3:\"h3\",h4:\"h4\",img:\"img\",li:\"li\",p:\"p\",pre:\"pre\",span:\"span\",strong:\"strong\",ul:\"ul\",...a.components};return n(i,{children:[e(l.h1,{id:\"r-ile-çalışabilmek-için-gerekli-kurulumlar\",children:\"R ile Çalışabilmek için Gerekli Kurulumlar\"}),\"\\n\",e(l.p,{children:\"R ile çalışmak için bilgisayarımıza birkaç kurulum yapmamız gerekiyor. R, bir programlama dili ve yazılım ortamıdır. R Studio ise R ile çalışmak için geliştirilmiş bir IDE'dir.\"}),\"\\n\",e(l.p,{children:\"İki yazılım da açık kaynak kodlu ve özgür yazılımlardır. Kullanım ücreti ödemeden, ekstra lisanslama ile uğraşmadan kullanabilirsiniz. Bunun yanında R Studio'nun ücretli versiyonu da bulunmaktadır ancak bu dokümanda ücretsiz olan versiyonu anlatılacaktır.\"}),\"\\n\",e(l.h2,{id:\"r-kurulumu\",children:\"R Kurulumu\"}),\"\\n\",e(l.h3,{id:\"r-i̇ndirme-bağlantısı\",children:\"R İndirme Bağlantısı\"}),\"\\n\",n(l.p,{children:[\"R'ın kurulum dosyasınının dağıtımı birçok farklı ülke tarafından yapılmaktadır. Bu nedenle R'ı indirirken, bulunduğunuz ülkeye en yakın sunucuyu seçmeniz daha hızlı bir indirme işlemi sağlayacaktır. Türkiye için kurulum dosyaları \",e(l.a,{href:\"https://cran.gedik.edu.tr/\",children:\"İstanbul Gedik Üniversitesi\"}),\" ve \",e(l.a,{href:\"https://cran.pau.edu.tr/\",children:\"Denizli Pamukkale Üniversitesi\"}),\" tarafından dağıtılmaktadır.\"]}),\"\\n\",n(l.p,{children:[\"İstanbul'da bulunduğumuz için \",e(l.a,{href:\"https://cran.gedik.edu.tr/\",children:\"İstanbul Gedik Üniversitesi\"}),\" sunucusundan indirme işlemi yapacağız.\"]}),\"\\n\",e(l.h3,{id:\"i̇şletim-sistemi-seçimi\",children:\"İşletim Sistemi Seçimi\"}),\"\\n\",e(l.p,{children:\"İşletim sisteminize uygun olan en son sürüme tıklayın.\"}),\"\\n\",e(l.p,{children:e(l.img,{src:\"/static/kurulum_baglantilari-566b55.png\",alt:\"İşletim Sistemi Seçimi\"})}),\"\\n\",n(l.ul,{children:[\"\\n\",n(l.li,{children:[e(l.strong,{children:\"Windows\"}),\" için \",e(l.code,{children:\"base\"}),\" seçeneğini seçin.\"]}),\"\\n\",n(l.li,{children:[e(l.strong,{children:\"Mac\"}),\" için, eğer M serisi bir işlemciye sahipseniz \",e(l.code,{children:\"arm64\"}),\" seçeneğini seçin. Eğer intel işlemciye sahipseniz\",e(l.code,{children:\"x86_64\"}),\" seçeneğini seçin.\"]}),\"\\n\",n(l.li,{children:[e(l.strong,{children:\"Linux\"}),\" için uygun olan seçeneği seçin.\"]}),\"\\n\"]}),\"\\n\",e(l.h4,{id:\"linux-için-komut-satırı-ile-kurulum\",children:\"Linux için Komut Satırı ile Kurulum\"}),\"\\n\",e(l.p,{children:\"Debian/Ubuntu\"}),\"\\n\",e(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:e(l.pre,{tabIndex:\"0\",\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",children:e(l.code,{\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:n(l.span,{\"data-line\":\"\",children:[e(l.span,{style:{color:\"#F69D50\"},children:\"sudo\"}),e(l.span,{style:{color:\"#96D0FF\"},children:\" apt-get\"}),e(l.span,{style:{color:\"#96D0FF\"},children:\" install\"}),e(l.span,{style:{color:\"#96D0FF\"},children:\" r-base\"}),e(l.span,{style:{color:\"#ADBAC7\"},children:\" \"})]})})})}),\"\\n\",e(l.p,{children:\"Arch Linux\"}),\"\\n\",e(l.figure,{\"data-rehype-pretty-code-figure\":\"\",children:e(l.pre,{tabIndex:\"0\",\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",children:e(l.code,{\"data-language\":\"shell\",\"data-theme\":\"github-dark-dimmed\",style:{display:\"grid\"},children:n(l.span,{\"data-line\":\"\",children:[e(l.span,{style:{color:\"#F69D50\"},children:\"sudo\"}),e(l.span,{style:{color:\"#96D0FF\"},children:\" pacman\"}),e(l.span,{style:{color:\"#6CB6FF\"},children:\" -S\"}),e(l.span,{style:{color:\"#96D0FF\"},children:\" r\"})]})})})}),\"\\n\",e(l.p,{children:\"İndirme işlemleriniz bittikten sonra bilgisayarınızda R çalıştırabilir duruma geleceksiniz.\"}),\"\\n\",e(l.h2,{id:\"r-studio-kurulumu\",children:\"R Studio Kurulumu\"}),\"\\n\",e(l.h3,{id:\"r-studio-i̇ndirme-bağlantısı\",children:\"R Studio İndirme Bağlantısı\"}),\"\\n\",n(l.p,{children:[\"R Studio'nun indirme bağlantısına \",e(l.a,{href:\"https://posit.co/download/rstudio-desktop/\",children:\"buradan\"}),\" ulaşabilirsiniz.\"]}),\"\\n\",e(l.h3,{id:\"i̇şletim-sistemi-seçimi-1\",children:\"İşletim Sistemi Seçimi\"}),\"\\n\",e(l.p,{children:\"İşletim sisteminize uygun olan en son sürüme tıklayın.\"}),\"\\n\",e(l.p,{children:e(l.img,{src:\"/static/r_studio-cb39d3.png\",alt:\"İşletim Sistemi Seçimi\"})}),\"\\n\",e(l.p,{children:\"İndirdiğiniz dosyası yükledikten sonra R Studio bilgisayarınıza kurulmuş olacak. Artık R ve R Studio'yu kullanmaya başlayabilirsiniz.\"})]})}return{default:function(i={}){const{wrapper:n}=i.components||{};return n?e(n,{...i,children:e(_createMdxContent,{...i})}):_createMdxContent(i)}};",
+    "toc": [
+      {
+        "title": "R ile Çalışabilmek için Gerekli Kurulumlar",
+        "url": "#r-ile-çalışabilmek-için-gerekli-kurulumlar",
+        "items": [
+          {
+            "title": "R Kurulumu",
+            "url": "#r-kurulumu",
+            "items": [
+              {
+                "title": "R İndirme Bağlantısı",
+                "url": "#r-i̇ndirme-bağlantısı",
+                "items": []
+              },
+              {
+                "title": "İşletim Sistemi Seçimi",
+                "url": "#i̇şletim-sistemi-seçimi",
+                "items": [
+                  {
+                    "title": "Linux için Komut Satırı ile Kurulum",
+                    "url": "#linux-için-komut-satırı-ile-kurulum",
+                    "items": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "R Studio Kurulumu",
+            "url": "#r-studio-kurulumu",
+            "items": [
+              {
+                "title": "R Studio İndirme Bağlantısı",
+                "url": "#r-studio-i̇ndirme-bağlantısı",
+                "items": []
+              },
+              {
+                "title": "İşletim Sistemi Seçimi",
+                "url": "#i̇şletim-sistemi-seçimi-1",
+                "items": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "permalink": "/docs/r/kurulum"
   }
 ]

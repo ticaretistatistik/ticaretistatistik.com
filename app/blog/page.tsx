@@ -2,6 +2,7 @@ import { blog } from "#site/content";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight, Calendar } from "lucide-react";
+import { getAuthors } from "@/lib/authors";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogIndexPage() {
+  const allAuthors = getAuthors();
   const sortedPosts = blog.sort((a, b) => {
     if (!a.date || !b.date) return 0;
     return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -79,6 +81,30 @@ export default function BlogIndexPage() {
                       {post.description}
                     </p>
                   )}
+                  
+                  {post.authors && post.authors.length > 0 && (
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="flex -space-x-2">
+                        {post.authors.map(id => {
+                          const author = allAuthors[id];
+                          if (!author) return null;
+                          return (
+                            <img 
+                              key={author.key} 
+                              src={author.image_url} 
+                              alt={author.name} 
+                              title={author.name}
+                              className="w-8 h-8 rounded-full border-2 border-white dark:border-[#09090b] object-cover bg-zinc-100" 
+                            />
+                          );
+                        })}
+                      </div>
+                      <span className="text-sm text-zinc-500 dark:text-zinc-400 font-medium">
+                        {post.authors.map(id => allAuthors[id]?.name).filter(Boolean).join(", ")}
+                      </span>
+                    </div>
+                  )}
+
                   <div className="mt-auto flex items-center gap-2 text-sm font-medium text-black dark:text-white opacity-60 group-hover:opacity-100 group-hover:text-brand-yellow transition-all duration-300">
                     Devamını oku
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
