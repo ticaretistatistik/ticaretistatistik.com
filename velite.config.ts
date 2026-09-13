@@ -45,8 +45,16 @@ export default defineConfig({
         content: s.mdx(),
       }).transform((data) => {
         const cleanSlug = data.slug.replace(/^blog\//, '').replace(/^blog$/, 'index');
+        
+        let date = data.date;
+        const match = cleanSlug.match(/^(\d{4}-\d{2}-\d{2})-(.+)$/);
+        if (!date && match) {
+          date = new Date(match[1]).toISOString();
+        }
+
         return {
           ...data,
+          date,
           slug: cleanSlug,
           permalink: cleanSlug === 'index' ? '/blog' : `/blog/${cleanSlug}`,
         };
