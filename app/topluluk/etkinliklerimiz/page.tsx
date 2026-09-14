@@ -1,9 +1,15 @@
 import { Calendar, MapPin, Clock, ArrowRight, Instagram, Linkedin, Ticket, Users, Presentation } from "lucide-react";
+import { getEvents } from "@/lib/notion";
 
-export default function EventsPage() {
-  const pastEvents = [
+export const revalidate = 3600; // Sayfayı saatte bir yeniden oluştur (ISR)
+
+export default async function EventsPage() {
+  const notionEvents = await getEvents();
+  
+  // Eğer Notion entegrasyonu tamamlanmamışsa veya boş dönüyorsa örnek verileri kullan
+  const pastEvents = notionEvents.length > 0 ? notionEvents.filter(e => !e.isUpcoming) : [
     {
-      id: 1,
+      id: "1",
       title: "Tanışma Toplantısı ve Bölüm Oryantasyonu",
       date: "Ekim 2024",
       time: "15:00 - 17:00",
@@ -12,7 +18,7 @@ export default function EventsPage() {
       icon: Users
     },
     {
-      id: 2,
+      id: "2",
       title: "Veri Bilimi ve Yapay Zeka Kariyer Zirvesi",
       date: "Bahar 2024",
       time: "10:00 - 16:00",
@@ -21,6 +27,8 @@ export default function EventsPage() {
       icon: Presentation
     }
   ];
+
+  const upcomingEvents = notionEvents.filter(e => e.isUpcoming);
 
   return (
     <div className="min-h-screen pt-24 pb-32 text-zinc-900 dark:text-zinc-50">
@@ -52,31 +60,61 @@ export default function EventsPage() {
                 <h2 className="text-3xl font-medium tracking-tight">Yaklaşan Etkinlikler</h2>
               </div>
               
-              <div className="relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/20 backdrop-blur-xl p-10 md:p-16 text-center shadow-sm">
-                <div className="absolute top-0 right-0 p-32 bg-brand-yellow/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 p-32 bg-blue-500/10 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none"></div>
-                
-                <div className="relative z-10 flex flex-col items-center">
-                  <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 mb-6 shadow-inner border border-zinc-200/50 dark:border-zinc-700/50">
-                    <Calendar className="h-10 w-10 stroke-[1.5]" />
-                  </div>
-                  <h3 className="text-2xl font-medium text-black dark:text-white mb-4">Yeni Dönem Takvimi Hazırlanıyor</h3>
-                  <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-md mx-auto mb-8 font-light">
-                    Etkinlik planlamalarımız tüm hızıyla devam ediyor. Çok yakında sürpriz duyurularla karşınızda olacağız!
-                  </p>
+              {upcomingEvents.length > 0 ? (
+                <div className="flex flex-col gap-6">
+                  {upcomingEvents.map((event) => (
+                    <article key={event.id} className="group relative flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-brand-yellow/30 bg-white dark:bg-zinc-900/40 hover:border-brand-yellow transition-colors shadow-sm hover:shadow-lg overflow-hidden">
+                      <div className="absolute top-0 right-0 p-32 bg-brand-yellow/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+                      <div className="shrink-0 flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-yellow/10 text-brand-yellow">
+                        <Calendar className="w-8 h-8 stroke-[1.5]" />
+                      </div>
+                      <div className="flex-1 relative z-10">
+                        <h3 className="text-xl font-medium text-black dark:text-white mb-2">{event.title}</h3>
+                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed">
+                          {event.description}
+                        </p>
+                        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400 font-medium">
+                          <span className="flex items-center gap-2 text-brand-yellow">
+                            <Calendar className="w-4 h-4" /> {event.date}
+                          </span>
+                          <span className="flex items-center gap-2">
+                            <Clock className="w-4 h-4" /> {event.time}
+                          </span>
+                          <span className="flex items-center gap-2">
+                            <MapPin className="w-4 h-4" /> {event.location}
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ) : (
+                <div className="relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/20 backdrop-blur-xl p-10 md:p-16 text-center shadow-sm">
+                  <div className="absolute top-0 right-0 p-32 bg-brand-yellow/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+                  <div className="absolute bottom-0 left-0 p-32 bg-blue-500/10 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none"></div>
                   
-                  <div className="flex flex-wrap justify-center gap-4">
-                    <a href="https://instagram.com/ticaretistatistik" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors shadow-sm">
-                      <Instagram className="w-4 h-4" />
-                      Instagram'dan Takip Et
-                    </a>
-                    <a href="https://www.linkedin.com/company/i%CC%87statistik-toplulu%C4%9Futic" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-800 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors shadow-sm">
-                      <Linkedin className="w-4 h-4" />
-                      LinkedIn
-                    </a>
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 mb-6 shadow-inner border border-zinc-200/50 dark:border-zinc-700/50">
+                      <Calendar className="h-10 w-10 stroke-[1.5]" />
+                    </div>
+                    <h3 className="text-2xl font-medium text-black dark:text-white mb-4">Yeni Dönem Takvimi Hazırlanıyor</h3>
+                    <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-md mx-auto mb-8 font-light">
+                      Etkinlik planlamalarımız tüm hızıyla devam ediyor. Çok yakında sürpriz duyurularla karşınızda olacağız!
+                    </p>
+                    
+                    <div className="flex flex-wrap justify-center gap-4">
+                      <a href="https://instagram.com/ticaretistatistik" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors shadow-sm">
+                        <Instagram className="w-4 h-4" />
+                        Instagram'dan Takip Et
+                      </a>
+                      <a href="https://www.linkedin.com/company/i%CC%87statistik-toplulu%C4%9Futic" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-800 px-6 py-3 rounded-full text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors shadow-sm">
+                        <Linkedin className="w-4 h-4" />
+                        LinkedIn
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </section>
 
             {/* Past Events */}
