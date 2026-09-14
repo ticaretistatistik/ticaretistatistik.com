@@ -32,35 +32,8 @@ export default async function EventsPage() {
     };
   });
 
-  // Eğer hiçbir API'den veri gelmediyse (henüz kurulmadıysa), boş durmaması için varsayılan örnek verileri kullan
-  const hasApiData = mergedEvents.length > 0;
-  
-  const upcomingEvents = hasApiData 
-    ? mergedEvents.filter(e => e.isUpcoming) 
-    : [];
-    
-  const pastEvents = hasApiData 
-    ? mergedEvents.filter(e => !e.isUpcoming) 
-    : [
-      {
-        id: "1",
-        title: "Tanışma Toplantısı ve Bölüm Oryantasyonu",
-        date: "Ekim 2024",
-        time: "15:00 - 17:00",
-        location: "Sütlüce Kampüsü",
-        description: "Yeni eğitim yılına başlarken topluluğumuzla tanışma, bölüm akademisyenlerimizle bir araya gelme ve yeni dönem planlarımızı paylaşma fırsatı.",
-        icon: Users
-      },
-      {
-        id: "2",
-        title: "Veri Bilimi ve Yapay Zeka Kariyer Zirvesi",
-        date: "Bahar 2024",
-        time: "10:00 - 16:00",
-        location: "Konferans Salonu",
-        description: "Sektörün önde gelen isimleriyle veri biliminin geleceği, makine öğrenmesi uygulamaları ve mezuniyet sonrası kariyer fırsatları üzerine ilham verici bir etkinlik.",
-        icon: Presentation
-      }
-    ];
+  const upcomingEvents = mergedEvents.filter(e => e.isUpcoming);
+  const pastEvents = mergedEvents.filter(e => !e.isUpcoming);
 
   return (
     <div className="min-h-screen pt-24 pb-32 text-zinc-900 dark:text-zinc-50">
@@ -157,30 +130,36 @@ export default async function EventsPage() {
               </div>
 
               <div className="flex flex-col gap-6">
-                {pastEvents.map((event) => (
-                  <article key={event.id} className="group flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/30 hover:border-brand-yellow/30 transition-colors shadow-sm hover:shadow-md">
-                    <div className="shrink-0 flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 group-hover:bg-brand-yellow/10 group-hover:text-brand-yellow transition-colors">
-                      <event.icon className="w-8 h-8 stroke-[1.5]" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-medium text-black dark:text-white mb-2">{event.title}</h3>
-                      <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed">
-                        {event.description}
-                      </p>
-                      <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400 font-medium">
-                        <span className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" /> {event.date}
-                        </span>
-                        <span className="flex items-center gap-2">
-                          <Clock className="w-4 h-4" /> {event.time}
-                        </span>
-                        <span className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4" /> {event.location}
-                        </span>
+                {pastEvents.length > 0 ? (
+                  pastEvents.map((event) => (
+                    <article key={event.id} className="group flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/30 hover:border-brand-yellow/30 transition-colors shadow-sm hover:shadow-md">
+                      <div className="shrink-0 flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 group-hover:bg-brand-yellow/10 group-hover:text-brand-yellow transition-colors">
+                        <event.icon className="w-8 h-8 stroke-[1.5]" />
                       </div>
-                    </div>
-                  </article>
-                ))}
+                      <div className="flex-1">
+                        <h3 className="text-xl font-medium text-black dark:text-white mb-2">{event.title}</h3>
+                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed">
+                          {event.description}
+                        </p>
+                        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400 font-medium">
+                          <span className="flex items-center gap-2">
+                            <Calendar className="w-4 h-4" /> {event.date}
+                          </span>
+                          <span className="flex items-center gap-2">
+                            <Clock className="w-4 h-4" /> {event.time}
+                          </span>
+                          <span className="flex items-center gap-2">
+                            <MapPin className="w-4 h-4" /> {event.location}
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  ))
+                ) : (
+                  <div className="p-8 text-center border border-zinc-200 dark:border-zinc-800 rounded-3xl bg-zinc-50 dark:bg-zinc-900/20 text-zinc-500">
+                    Sistemde henüz geçmiş bir etkinlik kaydı bulunmuyor.
+                  </div>
+                )}
               </div>
             </section>
 
