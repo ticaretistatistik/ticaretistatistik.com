@@ -1,34 +1,66 @@
 import { Calendar, MapPin, Clock, ArrowRight, Instagram, Linkedin, Ticket, Users, Presentation } from "lucide-react";
-import { getEvents } from "@/lib/notion";
+import { getEvents as getNotionEvents } from "@/lib/notion";
+import { getGoogleCalendarEvents } from "@/lib/calendar";
 
-export const revalidate = 3600; // Sayfayı saatte bir yeniden oluştur (ISR)
+export const revalidate = 3600;
 
 export default async function EventsPage() {
-  const notionEvents = await getEvents();
+  const notionEvents = await getNotionEvents();
+  const calendarEvents = await getGoogleCalendarEvents();
   
-  // Eğer Notion entegrasyonu tamamlanmamışsa veya boş dönüyorsa örnek verileri kullan
-  const pastEvents = notionEvents.length > 0 ? notionEvents.filter(e => !e.isUpcoming) : [
-    {
-      id: "1",
-      title: "Tanışma Toplantısı ve Bölüm Oryantasyonu",
-      date: "Ekim 2024",
-      time: "15:00 - 17:00",
-      location: "Sütlüce Kampüsü",
-      description: "Yeni eğitim yılına başlarken topluluğumuzla tanışma, bölüm akademisyenlerimizle bir araya gelme ve yeni dönem planlarımızı paylaşma fırsatı.",
-      icon: Users
-    },
-    {
-      id: "2",
-      title: "Veri Bilimi ve Yapay Zeka Kariyer Zirvesi",
-      date: "Bahar 2024",
-      time: "10:00 - 16:00",
-      location: "Konferans Salonu",
-      description: "Sektörün önde gelen isimleriyle veri biliminin geleceği, makine öğrenmesi uygulamaları ve mezuniyet sonrası kariyer fırsatları üzerine ilham verici bir etkinlik.",
-      icon: Presentation
+  // Google Calendar takvimini ana kaynak (source of truth) kabul edip, 
+  // eşleşen bir Notion içeriği varsa Notion'daki zengin bilgileri (açıklama vb.) kullanıyoruz.
+  const mergedEvents = calendarEvents.map(calEvent => {
+    const matchingNotion = notionEvents.find(n => n.title.toLowerCase() === calEvent.title.toLowerCase());
+    
+    // Tarih ve saat formatlama (Google Calendar datasından)
+    const dateStr = calEvent.startDate.toLocaleDateString("tr-TR", { year: 'numeric', month: 'long', day: 'numeric' });
+    let timeStr = calEvent.startDate.toLocaleTimeString("tr-TR", { hour: '2-digit', minute:'2-digit' });
+    if (calEvent.endDate) {
+      timeStr += " - " + calEvent.endDate.toLocaleTimeString("tr-TR", { hour: '2-digit', minute:'2-digit' });
     }
-  ];
 
-  const upcomingEvents = notionEvents.filter(e => e.isUpcoming);
+    return {
+      id: calEvent.id,
+      title: matchingNotion?.title || calEvent.title,
+      description: matchingNotion?.description || calEvent.description || "",
+      location: matchingNotion?.location || calEvent.location || "Belirtilmedi",
+      date: dateStr,
+      time: timeStr !== "00:00" ? timeStr : "Saat belirtilmedi",
+      isUpcoming: calEvent.startDate > new Date(),
+      icon: Users // Varsayılan ikon
+    };
+  });
+
+  // Eğer hiçbir API'den veri gelmediyse (henüz kurulmadıysa), boş durmaması için varsayılan örnek verileri kullan
+  const hasApiData = mergedEvents.length > 0;
+  
+  const upcomingEvents = hasApiData 
+    ? mergedEvents.filter(e => e.isUpcoming) 
+    : [];
+    
+  const pastEvents = hasApiData 
+    ? mergedEvents.filter(e => !e.isUpcoming) 
+    : [
+      {
+        id: "1",
+        title: "Tanışma Toplantısı ve Bölüm Oryantasyonu",
+        date: "Ekim 2024",
+        time: "15:00 - 17:00",
+        location: "Sütlüce Kampüsü",
+        description: "Yeni eğitim yılına başlarken topluluğumuzla tanışma, bölüm akademisyenlerimizle bir araya gelme ve yeni dönem planlarımızı paylaşma fırsatı.",
+        icon: Users
+      },
+      {
+        id: "2",
+        title: "Veri Bilimi ve Yapay Zeka Kariyer Zirvesi",
+        date: "Bahar 2024",
+        time: "10:00 - 16:00",
+        location: "Konferans Salonu",
+        description: "Sektörün önde gelen isimleriyle veri biliminin geleceği, makine öğrenmesi uygulamaları ve mezuniyet sonrası kariyer fırsatları üzerine ilham verici bir etkinlik.",
+        icon: Presentation
+      }
+    ];
 
   return (
     <div className="min-h-screen pt-24 pb-32 text-zinc-900 dark:text-zinc-50">
