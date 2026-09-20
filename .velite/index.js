@@ -2,3 +2,5 @@
 
 export { default as docs } from './docs.json'
 export { default as blog } from './blog.json'
+export { default as team } from './team.json'
+export { default as archive } from './archive.json'

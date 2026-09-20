@@ -1,73 +1,101 @@
 import Link from "next/link";
-import { Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { Github, Instagram, Mail, MapPin, BarChart2 } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-black/5 dark:bg-brand-ink/50 py-12 px-4 transition-colors">
-      <div className="container mx-auto max-w-[1200px]">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
-            <Link href="/" className="inline-block mb-4">
-              <span className="font-serif font-bold text-xl text-foreground">
-                Ticaret<span className="text-brand-yellow italic">İstatistik</span>
+    <footer className="mt-auto border-t border-border bg-slate-50 dark:bg-slate-900/50">
+      <div className="container-custom py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+          
+          {/* Brand & About */}
+          <div className="md:col-span-1 flex flex-col items-start">
+            <Link href="/" className="flex items-center space-x-2 mb-4 group">
+              <div className="bg-brand-blue/10 p-2 rounded-lg group-hover:bg-brand-blue/20 transition-colors">
+                <BarChart2 className="w-5 h-5 text-brand-blue" />
+              </div>
+              <span className="font-bold text-lg text-brand-navy dark:text-white tracking-tight">
+                İstatistik<span className="text-brand-blue">Topluluğu</span>
               </span>
             </Link>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-              İstanbul Ticaret Üniversitesi İstatistik Bölümü Topluluğu. <br />
-              Birlikte öğreniyor, veriyi geleceğe dönüştürüyoruz.
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+              İstanbul Ticaret Üniversitesi İstatistik Bölümü öğrencileri tarafından kurulan, veri bilimi ve istatistik alanında değer üreten öğrenci topluluğu.
             </p>
-            <div className="flex gap-4">
-              <a href="https://instagram.com/ticaretistatistik" className="text-zinc-500 dark:text-zinc-400 hover:text-brand-yellow transition-colors">
+            <div className="flex items-center space-x-4">
+              <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-brand-blue transition-colors">
                 <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
               </a>
-              <a href="https://www.linkedin.com/company/i%CC%87statistik-toplulu%C4%9Futic" className="text-zinc-500 dark:text-zinc-400 hover:text-brand-yellow transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="https://github.com/ticaretistatistik" className="text-zinc-500 dark:text-zinc-400 hover:text-brand-yellow transition-colors">
+              <a href="https://github.com/iticu-istatistik" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-brand-blue transition-colors">
                 <Github className="h-5 w-5" />
+                <span className="sr-only">GitHub</span>
+              </a>
+              <a href="mailto:istatistik@ticaret.edu.tr" className="text-slate-400 hover:text-brand-blue transition-colors">
+                <Mail className="h-5 w-5" />
+                <span className="sr-only">Email</span>
               </a>
             </div>
           </div>
-          
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Topluluk</h4>
-            <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-              <li><Link href="/topluluk/hakkimizda" className="hover:text-brand-yellow transition-colors">Hakkımızda</Link></li>
-              <li><Link href="/topluluk/ekibimiz" className="hover:text-brand-yellow transition-colors">Yönetim Kurulu</Link></li>
-              <li><Link href="/topluluk/etkinliklerimiz" className="hover:text-brand-yellow transition-colors">Etkinlik Takvimi</Link></li>
-              <li><a href="https://open.spotify.com/show/..." className="hover:text-brand-yellow transition-colors">Podcast</a></li>
-            </ul>
-          </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Kaynaklar</h4>
-            <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-              <li><Link href="/docs/python" className="hover:text-brand-yellow transition-colors">Python Notları</Link></li>
-              <li><Link href="/docs/r" className="hover:text-brand-yellow transition-colors">R Notları</Link></li>
-              <li><Link href="/docs/jasp" className="hover:text-brand-yellow transition-colors">JASP Dokümantasyonu</Link></li>
-              <li><a href="https://hesapla.ticaretistatistik.com" className="hover:text-brand-yellow transition-colors">Not Hesaplayıcı</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">İletişim</h4>
-            <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-              <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                <a href="mailto:ticaretstat@gmail.com" className="hover:text-brand-yellow transition-colors">ticaretstat@gmail.com</a>
+            <h3 className="font-semibold text-brand-navy dark:text-white mb-4">Hızlı Bağlantılar</h3>
+            <ul className="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+              <li>
+                <Link href="/etkinlikler" className="hover:text-brand-blue transition-colors">Yaklaşan Etkinlikler</Link>
               </li>
-              <li className="mt-4 p-4 border border-border rounded-lg bg-white dark:bg-zinc-900/50">
-                <span className="block text-foreground font-medium mb-1">Aramıza Katıl</span>
-                <span className="block text-xs text-zinc-500 mb-3">Topluluk whatsapp grubuna katılmak için DM atın.</span>
-                <a href="https://instagram.com/ticaretistatistik" className="text-xs font-bold text-brand-ink bg-brand-yellow px-3 py-1.5 rounded-full hover:bg-brand-yellow/80 transition-colors inline-block">DM Gönder</a>
+              <li>
+                <Link href="/arsiv" className="hover:text-brand-blue transition-colors">Geçmiş Etkinlikler</Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-brand-blue transition-colors">Blog Yazıları</Link>
+              </li>
+              <li>
+                <Link href="/docs" className="hover:text-brand-blue transition-colors">Eğitim Dokümanları</Link>
+              </li>
+              <li>
+                <Link href="/ekibimiz" className="hover:text-brand-blue transition-colors">Yönetim Kurulu</Link>
               </li>
             </ul>
           </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="font-semibold text-brand-navy dark:text-white mb-4">Kaynaklar</h3>
+            <ul className="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+              <li>
+                <a href="https://ticaret.edu.tr" target="_blank" rel="noreferrer" className="hover:text-brand-blue transition-colors">Üniversite Web Sitesi</a>
+              </li>
+              <li>
+                <a href="https://ticaret.edu.tr/istatistik" target="_blank" rel="noreferrer" className="hover:text-brand-blue transition-colors">İstatistik Bölümü</a>
+              </li>
+              <li>
+                <Link href="/hakkimizda" className="hover:text-brand-blue transition-colors">Topluluk Tüzüğü</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="font-semibold text-brand-navy dark:text-white mb-4">İletişim</h3>
+            <ul className="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+              <li className="flex items-start">
+                <MapPin className="h-5 w-5 mr-2 text-brand-blue shrink-0" />
+                <span>Sütlüce Yerleşkesi, İmrahor Cd. No:90, 34445 Beyoğlu/İstanbul</span>
+              </li>
+              <li className="flex items-center">
+                <Mail className="h-5 w-5 mr-2 text-brand-blue shrink-0" />
+                <a href="mailto:istatistik@ticaret.edu.tr" className="hover:text-brand-blue transition-colors">istatistik@ticaret.edu.tr</a>
+              </li>
+            </ul>
+          </div>
+
         </div>
-        
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500">
-          <p>© {new Date().getFullYear()} Ticaret İstatistik Topluluğu. Tüm hakları saklıdır.</p>
-          <p className="mt-2 md:mt-0">Built with Next.js & Tailwind CSS.</p>
+
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-400">
+          <p>© {new Date().getFullYear()} İstanbul Ticaret Üniversitesi İstatistik Topluluğu. Tüm hakları saklıdır.</p>
+          <p className="flex items-center">
+            Geliştirici: <a href="https://github.com/ticaretistatistik" className="ml-1 text-brand-navy dark:text-white hover:text-brand-blue transition-colors font-medium">İstatistik Topluluğu IT Ekibi</a>
+          </p>
         </div>
       </div>
     </footer>
