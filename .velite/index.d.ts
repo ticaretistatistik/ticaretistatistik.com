@@ -10,8 +10,5 @@ export declare const docs: Doc[]
 export type Post = Collections['blog']['schema']['_output']
 export declare const blog: Post[]
 
-export type TeamMember = Collections['team']['schema']['_output']
-export declare const team: TeamMember[]
-
 export type ArchiveEvent = Collections['archive']['schema']['_output']
 export declare const archive: ArchiveEvent[]

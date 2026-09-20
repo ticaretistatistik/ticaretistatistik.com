@@ -4,41 +4,41 @@ import { ArrowRight, BookOpen, Calendar, Users, BarChart, Instagram, Twitter, Da
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* HERO SECTION - NEW THEME */}
-      <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center bg-slate-50 dark:bg-background overflow-hidden">
+      {/* HERO SECTION */}
+      <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center bg-slate-50 dark:bg-background overflow-x-hidden">
         {/* Dotted Background */}
         <div className="absolute inset-0 z-0 bg-[radial-gradient(circle,_#94a3b8_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#475569_1px,_transparent_1px)] opacity-20 [background-size:20px_20px]" />
-        
+
         <div className="relative z-10 pt-20 pb-20 w-full max-w-[1400px] mx-auto">
           <div className="flex relative gap-2 px-6 lg:items-center w-full flex-col justify-center">
-            
+
             {/* Line 1 */}
             <div className="lg:flex gap-6 items-center">
               <p className="text-sm text-slate-500 dark:text-slate-400 text-start lg:text-right leading-relaxed max-w-[250px] lg:max-w-[200px] mb-4 lg:mb-0">
                 İstanbul Ticaret Üniversitesi bünyesinde veri bilimi değerleri üreten topluluk.
               </p>
-              <h1 className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-light leading-none tracking-wider text-brand-navy dark:text-white">
+              <h1 className="text-[clamp(3rem,9vw,9rem)] font-light leading-none tracking-wider text-brand-navy dark:text-white whitespace-nowrap">
                 İSTATİSTİK
               </h1>
             </div>
 
             {/* Line 2 */}
             <div className="lg:flex gap-6 items-center">
-              <h1 className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] flex items-center font-light leading-none tracking-wider text-brand-navy dark:text-white">
+              <h1 className="text-[clamp(3rem,9vw,9rem)] flex items-center font-light leading-none tracking-wider text-brand-navy dark:text-white whitespace-nowrap">
                 <span>VERİ</span>
-                <Database className="w-16 h-16 md:w-24 md:h-24 lg:w-40 lg:h-40 text-brand-blue mx-2 md:mx-4 shrink-0" strokeWidth={1} />
+                <Database className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-28 xl:h-28 text-brand-blue mx-2 md:mx-3 shrink-0" strokeWidth={1} />
                 <span>BİLİMİ</span>
               </h1>
-              <p className="text-sm text-slate-500 dark:text-slate-400 pt-6 lg:pt-8 leading-relaxed max-w-[280px] lg:max-w-[220px]">
+              <p className="text-sm text-slate-500 dark:text-slate-400 pt-4 lg:pt-8 leading-relaxed max-w-[280px] lg:max-w-[220px]">
                 Sektör profesyonelleriyle buluşuyor, birlikte öğreniyor ve kendimizi geliştiriyoruz.
               </p>
             </div>
 
             {/* Line 3 */}
-            <div className="lg:flex gap-6 items-center">
-              <h1 className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] flex items-center font-light leading-none tracking-wider text-brand-navy dark:text-white">
+            <div className="lg:flex gap-6 items-center mt-2 lg:mt-0">
+              <h1 className="text-[clamp(2rem,5.5vw,6.5rem)] flex items-center font-light leading-none tracking-wider text-brand-navy dark:text-white whitespace-nowrap">
                 <span>MAKİNE</span>
-                <Binary className="w-12 h-12 md:w-20 md:h-20 lg:w-32 lg:h-32 text-slate-300 dark:text-slate-700 mx-2 md:mx-4 shrink-0" strokeWidth={1} />
+                <Binary className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 text-slate-300 dark:text-slate-700 mx-2 md:mx-3 shrink-0" strokeWidth={1} />
                 <span>ÖĞRENMESİ</span>
               </h1>
             </div>
@@ -46,8 +46,8 @@ export default function Home() {
           </div>
 
           {/* Location & Badge */}
-          <div className="mx-auto w-full px-6 gap-3 mt-16 md:mt-24">
-            <div className="lg:flex lg:mx-8 grid lg:justify-end items-center gap-6">
+          <div className="mx-auto w-full px-6 gap-3 mt-12 md:mt-20">
+            <div className="lg:flex lg:mx-8 grid lg:justify-end items-center gap-4 lg:gap-6">
               <div className="w-full lg:w-[400px] h-px bg-slate-200 dark:bg-slate-800 my-4" />
               <div className="text-xs md:text-sm text-slate-400 font-medium tracking-widest whitespace-nowrap">
                 İSTANBUL TİCARET ÜNİVERSİTESİ, SÜTLÜCE
@@ -62,9 +62,8 @@ export default function Home() {
           </div>
 
           {/* Bottom Action Area */}
-          <div className="px-6 lg:px-20 gap-8 items-end lg:flex pt-16 md:pt-24">
-            <div className="w-full lg:w-96 h-56 shadow-2xl border border-white/20 dark:border-slate-800/50 rounded-2xl overflow-hidden relative mb-8 lg:mb-0 group cursor-pointer">
-              {/* Optional background or image representing the community */}
+          <div className="px-6 lg:px-12 gap-8 items-end lg:flex pt-12 md:pt-20">
+            <div className="w-full max-w-sm lg:max-w-none lg:w-80 xl:w-96 h-56 shadow-2xl border border-white/20 dark:border-slate-800/50 rounded-2xl overflow-hidden relative mb-8 lg:mb-0 group cursor-pointer shrink-0">
               <div className="absolute inset-0 bg-brand-navy flex items-center justify-center p-6 text-center transition-transform group-hover:scale-105 duration-700">
                 <p className="text-white text-lg font-medium leading-relaxed">
                   "Gelecek, veriyi doğru okuyanların elinde şekillenecektir."
@@ -74,7 +73,7 @@ export default function Home() {
                 <span className="sr-only">Ekibimizle Tanış</span>
               </Link>
             </div>
-            
+
             <div className="flex flex-col gap-4">
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[300px]">
                 Aramıza katılmak ve etkinliklerimizden haberdar olmak için sosyal medya hesaplarımızı takip edebilirsiniz.
@@ -91,7 +90,7 @@ export default function Home() {
           </div>
 
           {/* Floating Vertical Award Badge */}
-          <div className="hidden xl:flex fixed right-0 top-1/2 h-40 items-center transform -translate-y-1/2 z-50">
+          <div className="hidden xl:flex fixed right-0 top-1/2 h-40 items-center -translate-y-1/2 z-50">
             <div className="bg-brand-blue text-white py-6 px-3 text-sm font-bold rounded-l-lg shadow-lg hover:pr-4 transition-all cursor-default">
               <span className="rotate-180 [writing-mode:vertical-rl] tracking-widest">
                 VERİ KULÜBÜ 2024
@@ -159,7 +158,7 @@ export default function Home() {
               <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                 Eğitim materyallerimiz, veri bilimi üzerine yazılarımız ve geçmiş etkinliklerimizin özetlerine tek bir noktadan ulaşın.
               </p>
-              
+
               <ul className="space-y-4 pt-4">
                 <li className="flex items-center text-slate-700 dark:text-slate-300">
                   <div className="mr-4 bg-brand-blue/10 p-2 rounded-full text-brand-blue">
@@ -175,7 +174,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            
+
             <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
               <Link href="/blog" className="flex flex-col p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-blue hover:shadow-md transition-all group">
                 <h3 className="text-lg font-semibold text-brand-navy dark:text-white mb-2 flex items-center justify-between">
@@ -184,7 +183,7 @@ export default function Home() {
                 </h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400">Öğrencilerimizden teknik yazılar, sektörel yorumlar ve makaleler.</p>
               </Link>
-              
+
               <Link href="/docs" className="flex flex-col p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-blue hover:shadow-md transition-all group">
                 <h3 className="text-lg font-semibold text-brand-navy dark:text-white mb-2 flex items-center justify-between">
                   Dokümanlar
