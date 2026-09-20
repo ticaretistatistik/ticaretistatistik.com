@@ -53,7 +53,7 @@ export default function Home() {
                 İSTANBUL TİCARET ÜNİVERSİTESİ, SÜTLÜCE
               </div>
               <div className="flex w-full lg:w-auto items-end gap-3">
-                <span className="text-2xl md:text-4xl font-thin text-brand-navy dark:text-slate-200">VERİ</span>
+                <span className="text-2xl md:text-4xl font-thin text-brand-navy dark:text-slate-200">İSTATİSTİK</span>
                 <span className="text-3xl md:text-5xl font-bold italic text-brand-blue">
                   topluluğu
                 </span>
