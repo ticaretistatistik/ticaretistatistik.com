@@ -60,19 +60,7 @@ export default defineConfig({
         };
       }),
     },
-    team: {
-      name: "TeamMember",
-      pattern: "team/**/*.{md,mdx,yml,json}",
-      schema: s.object({
-        name: s.string(),
-        role: s.string(),
-        image: s.image().optional(),
-        linkedin: s.string().url().optional(),
-        twitter: s.string().url().optional(),
-        order: s.number().default(99),
-        content: s.mdx().optional(),
-      })
-    },
+
     archive: {
       name: "ArchiveEvent",
       pattern: "archive/**/*.{md,mdx}",
