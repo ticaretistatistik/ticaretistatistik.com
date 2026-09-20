@@ -26,7 +26,7 @@ export function Sidebar() {
     const sortedDocs = [...docs].sort((a, b) => (a.sidebar_position ?? 99) - (b.sidebar_position ?? 99));
 
     const capitalize = (s: string) => {
-      const upper = ['jasp', 'spss', 'r', 'nps'];
+      const upper = ['jasp', 'spss', 'r', 'nps', 'sql', 'python'];
       if (upper.includes(s.toLowerCase())) return s.toUpperCase();
       return s.charAt(0).toUpperCase() + s.slice(1);
     };
@@ -90,7 +90,7 @@ export function Sidebar() {
   return (
     <div className="w-full">
       <div className="mb-8">
-        <h4 className="mb-4 rounded-md px-2 text-sm font-bold uppercase tracking-wider text-foreground">
+        <h4 className="mb-4 rounded-md px-2 text-sm font-bold uppercase tracking-wider text-brand-navy dark:text-white">
           İçerikler
         </h4>
         <div className="flex flex-col gap-1 w-full">
@@ -103,19 +103,19 @@ export function Sidebar() {
                 {node.children.length > 0 ? (
                   <details className="group" open={isActiveParent}>
                     <summary className={cn(
-                      "flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-sm font-bold transition-colors list-none select-none",
-                      isActiveParent ? "text-brand-yellow" : "text-foreground hover:bg-zinc-100 dark:hover:bg-white/5"
+                      "flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-colors list-none select-none",
+                      isActiveParent ? "text-brand-blue" : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"
                     )}>
                       {node.title}
-                      <ChevronRight className="h-4 w-4 transition-transform group-open:rotate-90" />
+                      <ChevronRight className="h-4 w-4 transition-transform group-open:rotate-90 text-slate-400" />
                     </summary>
-                    <div className="flex flex-col pl-4 mt-1 gap-1 border-l border-border/50 ml-4 mb-2">
+                    <div className="flex flex-col pl-4 mt-1 gap-1 border-l border-slate-200 dark:border-slate-800 ml-4 mb-2">
                       {node.isIndex && (
                         <Link 
                           href={node.permalink} 
                           className={cn(
                             "rounded-md px-3 py-1.5 text-sm transition-colors",
-                            isRootActive ? "text-brand-yellow font-bold bg-brand-yellow/10" : "text-zinc-600 dark:text-zinc-400 hover:text-foreground hover:bg-zinc-100 dark:hover:bg-white/5"
+                            isRootActive ? "text-brand-blue font-medium bg-brand-blue/5" : "text-slate-500 dark:text-slate-400 hover:text-brand-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50"
                           )}
                         >
                           Genel Bakış
@@ -129,7 +129,7 @@ export function Sidebar() {
                             href={child.permalink} 
                             className={cn(
                               "rounded-md px-3 py-1.5 text-sm transition-colors",
-                              isChildActive ? "text-brand-yellow font-bold bg-brand-yellow/10" : "text-zinc-600 dark:text-zinc-400 hover:text-foreground hover:bg-zinc-100 dark:hover:bg-white/5"
+                              isChildActive ? "text-brand-blue font-medium bg-brand-blue/5" : "text-slate-500 dark:text-slate-400 hover:text-brand-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50"
                             )}
                           >
                             {child.title}
@@ -142,8 +142,8 @@ export function Sidebar() {
                   <Link 
                     href={node.permalink} 
                     className={cn(
-                      "flex items-center rounded-lg px-3 py-2 text-sm transition-colors",
-                      isRootActive ? "bg-brand-yellow/10 text-brand-yellow font-bold" : "font-bold text-foreground hover:bg-zinc-100 dark:hover:bg-white/5"
+                      "flex items-center rounded-lg px-3 py-2 text-sm transition-colors font-medium",
+                      isRootActive ? "bg-brand-blue/10 text-brand-blue" : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"
                     )}
                   >
                     {node.title}
