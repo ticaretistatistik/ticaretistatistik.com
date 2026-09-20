@@ -89,14 +89,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Floating Vertical Award Badge */}
-          <div className="hidden xl:flex fixed right-0 top-1/2 h-40 items-center -translate-y-1/2 z-50">
-            <div className="bg-brand-blue text-white py-6 px-3 text-sm font-bold rounded-l-lg shadow-lg hover:pr-4 transition-all cursor-default">
-              <span className="rotate-180 [writing-mode:vertical-rl] tracking-widest">
-                VERİ KULÜBÜ 2024
-              </span>
-            </div>
-          </div>
+
 
         </div>
       </section>
