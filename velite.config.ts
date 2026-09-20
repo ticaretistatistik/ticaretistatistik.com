@@ -60,6 +60,39 @@ export default defineConfig({
         };
       }),
     },
+    team: {
+      name: "TeamMember",
+      pattern: "team/**/*.{md,mdx,yml,json}",
+      schema: s.object({
+        name: s.string(),
+        role: s.string(),
+        image: s.image().optional(),
+        linkedin: s.string().url().optional(),
+        twitter: s.string().url().optional(),
+        order: s.number().default(99),
+        content: s.mdx().optional(),
+      })
+    },
+    archive: {
+      name: "ArchiveEvent",
+      pattern: "archive/**/*.{md,mdx}",
+      schema: s.object({
+        title: s.string(),
+        date: s.isodate(),
+        description: s.string(),
+        cover: s.image().optional(),
+        gallery: s.array(s.image()).optional(),
+        slug: s.path(),
+        content: s.mdx(),
+      }).transform((data) => {
+        const cleanSlug = data.slug.replace(/^archive\//, '');
+        return {
+          ...data,
+          slug: cleanSlug,
+          permalink: `/arsiv/${cleanSlug}`,
+        };
+      }),
+    }
   },
   mdx: {
     rehypePlugins: [
