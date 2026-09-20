@@ -1,49 +1,109 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Calendar, Users, BarChart } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, Users, BarChart, Instagram, Twitter, Database, Binary } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* HERO SECTION */}
-      <section className="relative pt-24 pb-32 md:pt-36 md:pb-40 overflow-hidden bg-slate-50 dark:bg-slate-900/20">
-        {/* Subtle background decoration */}
-        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
+      {/* HERO SECTION - NEW THEME */}
+      <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center bg-slate-50 dark:bg-background overflow-hidden">
+        {/* Dotted Background */}
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle,_#94a3b8_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#475569_1px,_transparent_1px)] opacity-20 [background-size:20px_20px]" />
         
-        <div className="container-custom relative z-10 flex flex-col items-center text-center">
-          <div className="inline-flex items-center rounded-full border border-brand-blue/20 bg-brand-blue/5 px-3 py-1 text-sm text-brand-blue mb-8">
-            <span className="flex h-2 w-2 rounded-full bg-brand-blue mr-2 animate-pulse"></span>
-            Yeni dönem kayıtlarımız başladı!
+        <div className="relative z-10 pt-20 pb-20 w-full max-w-[1400px] mx-auto">
+          <div className="flex relative gap-2 px-6 lg:items-center w-full flex-col justify-center">
+            
+            {/* Line 1 */}
+            <div className="lg:flex gap-6 items-center">
+              <p className="text-sm text-slate-500 dark:text-slate-400 text-start lg:text-right leading-relaxed max-w-[250px] lg:max-w-[200px] mb-4 lg:mb-0">
+                İstanbul Ticaret Üniversitesi bünyesinde veri bilimi değerleri üreten topluluk.
+              </p>
+              <h1 className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-light leading-none tracking-wider text-brand-navy dark:text-white">
+                İSTATİSTİK
+              </h1>
+            </div>
+
+            {/* Line 2 */}
+            <div className="lg:flex gap-6 items-center">
+              <h1 className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] flex items-center font-light leading-none tracking-wider text-brand-navy dark:text-white">
+                <span>VERİ</span>
+                <Database className="w-16 h-16 md:w-24 md:h-24 lg:w-40 lg:h-40 text-brand-blue mx-2 md:mx-4 shrink-0" strokeWidth={1} />
+                <span>BİLİMİ</span>
+              </h1>
+              <p className="text-sm text-slate-500 dark:text-slate-400 pt-6 lg:pt-8 leading-relaxed max-w-[280px] lg:max-w-[220px]">
+                Sektör profesyonelleriyle buluşuyor, birlikte öğreniyor ve kendimizi geliştiriyoruz.
+              </p>
+            </div>
+
+            {/* Line 3 */}
+            <div className="lg:flex gap-6 items-center">
+              <h1 className="text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] flex items-center font-light leading-none tracking-wider text-brand-navy dark:text-white">
+                <span>MAKİNE</span>
+                <Binary className="w-12 h-12 md:w-20 md:h-20 lg:w-32 lg:h-32 text-slate-300 dark:text-slate-700 mx-2 md:mx-4 shrink-0" strokeWidth={1} />
+                <span>ÖĞRENMESİ</span>
+              </h1>
+            </div>
+
           </div>
-          
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-brand-navy dark:text-white mb-6 max-w-4xl">
-            Veriyle <span className="text-brand-blue">Geleceği</span> <br className="hidden md:block" /> Şekillendiriyoruz
-          </h1>
-          
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl leading-relaxed">
-            İstanbul Ticaret Üniversitesi İstatistik Topluluğu olarak, veri bilimi ve istatistik alanında kendimizi geliştiriyor, sektör profesyonelleriyle buluşuyor ve birlikte öğreniyoruz.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-            <Link 
-              href="/etkinlikler" 
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue/90 text-white font-medium h-12 px-8 rounded-lg transition-colors"
-            >
-              Etkinliklerimizi İncele
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
-            <Link 
-              href="/ekibimiz" 
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-brand-navy dark:text-white font-medium border border-slate-200 dark:border-slate-700 h-12 px-8 rounded-lg transition-colors"
-            >
-              Ekibimizle Tanış
-            </Link>
+
+          {/* Location & Badge */}
+          <div className="mx-auto w-full px-6 gap-3 mt-16 md:mt-24">
+            <div className="lg:flex lg:mx-8 grid lg:justify-end items-center gap-6">
+              <div className="w-full lg:w-[400px] h-px bg-slate-200 dark:bg-slate-800 my-4" />
+              <div className="text-xs md:text-sm text-slate-400 font-medium tracking-widest whitespace-nowrap">
+                İSTANBUL TİCARET ÜNİVERSİTESİ, SÜTLÜCE
+              </div>
+              <div className="flex w-full lg:w-auto items-end gap-3">
+                <span className="text-2xl md:text-4xl font-thin text-brand-navy dark:text-slate-200">VERİ</span>
+                <span className="text-3xl md:text-5xl font-bold italic text-brand-blue">
+                  topluluğu
+                </span>
+              </div>
+            </div>
           </div>
+
+          {/* Bottom Action Area */}
+          <div className="px-6 lg:px-20 gap-8 items-end lg:flex pt-16 md:pt-24">
+            <div className="w-full lg:w-96 h-56 shadow-2xl border border-white/20 dark:border-slate-800/50 rounded-2xl overflow-hidden relative mb-8 lg:mb-0 group cursor-pointer">
+              {/* Optional background or image representing the community */}
+              <div className="absolute inset-0 bg-brand-navy flex items-center justify-center p-6 text-center transition-transform group-hover:scale-105 duration-700">
+                <p className="text-white text-lg font-medium leading-relaxed">
+                  "Gelecek, veriyi doğru okuyanların elinde şekillenecektir."
+                </p>
+              </div>
+              <Link href="/ekibimiz" className="absolute inset-0 z-10">
+                <span className="sr-only">Ekibimizle Tanış</span>
+              </Link>
+            </div>
+            
+            <div className="flex flex-col gap-4">
+              <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[300px]">
+                Aramıza katılmak ve etkinliklerimizden haberdar olmak için sosyal medya hesaplarımızı takip edebilirsiniz.
+              </p>
+              <div className="flex gap-4">
+                <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all">
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a href="https://twitter.com/iticu-istatistik" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all">
+                  <Twitter className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Floating Vertical Award Badge */}
+          <div className="hidden xl:flex fixed right-0 top-1/2 h-40 items-center transform -translate-y-1/2 z-50">
+            <div className="bg-brand-blue text-white py-6 px-3 text-sm font-bold rounded-l-lg shadow-lg hover:pr-4 transition-all cursor-default">
+              <span className="rotate-180 [writing-mode:vertical-rl] tracking-widest">
+                VERİ KULÜBÜ 2024
+              </span>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* COMMUNITY SUMMARY SECTION */}
-      <section className="section-padding bg-white dark:bg-background">
+      <section className="section-padding bg-white dark:bg-slate-950 relative z-10 border-t border-slate-200 dark:border-slate-800">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy dark:text-white mb-4">
