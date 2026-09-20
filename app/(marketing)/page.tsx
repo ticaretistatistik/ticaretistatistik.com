@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Calendar, Users, BarChart, Instagram, Twitter, Database, Binary } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, Users, BarChart, Instagram, Linkedin, Database, Binary } from "lucide-react";
 
 export default function Home() {
   return (
@@ -126,7 +126,7 @@ export default function Home() {
                 Eğitim materyallerimiz, veri bilimi üzerine yazılarımız ve geçmiş etkinliklerimizin özetlerine tek bir noktadan ulaşın.
               </p>
 
-              <ul className="space-y-4 pt-4">
+              <ul className="space-y-4 pt-4 mb-8">
                 <li className="flex items-center text-slate-700 dark:text-slate-300">
                   <div className="mr-4 bg-brand-blue/10 p-2 rounded-full text-brand-blue">
                     <BookOpen className="w-4 h-4" />
@@ -140,6 +140,23 @@ export default function Home() {
                   <span className="font-medium">Veri analizi proje örnekleri</span>
                 </li>
               </ul>
+              
+              <div className="flex gap-4">
+                <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all group">
+                  <Instagram className="w-4 h-4 text-slate-600 dark:text-slate-400 group-hover:text-white" />
+                  <span className="sr-only">Instagram</span>
+                </a>
+                <a href="https://linkedin.com/company/iticu-istatistik" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all group">
+                  <Linkedin className="w-4 h-4 text-slate-600 dark:text-slate-400 group-hover:text-white" />
+                  <span className="sr-only">LinkedIn</span>
+                </a>
+                <a href="https://tiktok.com/@iticu.istatistik" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all group">
+                  <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-4 h-4 text-slate-600 dark:text-slate-400 group-hover:text-white transition-colors">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91.04.15 1.53.84 2.94 1.95 3.96 1.05.97 2.45 1.57 3.95 1.63v4.06c-1.63-.03-3.23-.48-4.6-1.3-.01 2.53-.02 5.06-.01 7.59.04 2.8-1.07 5.46-3.13 7.37-2.02 1.88-4.8 2.87-7.59 2.67-2.61-.19-5.06-1.42-6.72-3.41-1.6-1.93-2.39-4.44-2.19-7.01.23-2.64 1.56-5 3.59-6.65 1.93-1.56 4.41-2.32 6.91-2.13.01 1.34.02 2.68.02 4.02-1.3-.12-2.63.09-3.79.67-1.12.56-2.02 1.48-2.52 2.61-.48 1.13-.57 2.4-.24 3.56.32 1.12 1.05 2.08 2.05 2.65 1.02.58 2.22.75 3.34.48 1.07-.26 2.01-.93 2.6-1.87.57-.91.86-2.01.83-3.11-.02-5.46-.01-10.92-.01-16.38Z" />
+                  </svg>
+                  <span className="sr-only">TikTok</span>
+                </a>
+              </div>
             </div>
 
             <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
