@@ -61,33 +61,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Bottom Action Area */}
-          <div className="px-6 lg:px-12 gap-8 items-end lg:flex pt-12 md:pt-20">
-            <div className="w-full max-w-sm lg:max-w-none lg:w-80 xl:w-96 h-56 shadow-2xl border border-white/20 dark:border-slate-800/50 rounded-2xl overflow-hidden relative mb-8 lg:mb-0 group cursor-pointer shrink-0">
-              <div className="absolute inset-0 bg-brand-navy flex items-center justify-center p-6 text-center transition-transform group-hover:scale-105 duration-700">
-                <p className="text-white text-lg font-medium leading-relaxed">
-                  "Gelecek, veriyi doğru okuyanların elinde şekillenecektir."
-                </p>
-              </div>
-              <Link href="/ekibimiz" className="absolute inset-0 z-10">
-                <span className="sr-only">Ekibimizle Tanış</span>
-              </Link>
-            </div>
 
-            <div className="flex flex-col gap-4">
-              <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[300px]">
-                Aramıza katılmak ve etkinliklerimizden haberdar olmak için sosyal medya hesaplarımızı takip edebilirsiniz.
-              </p>
-              <div className="flex gap-4">
-                <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all">
-                  <Instagram className="w-4 h-4" />
-                </a>
-                <a href="https://twitter.com/iticu-istatistik" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all">
-                  <Twitter className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          </div>
 
 
 
