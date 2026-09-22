@@ -2,7 +2,6 @@
 title: "Dokümanlar"
 ---
 
-# Dokümanlar
 
 Site içerisinde yer alan dokümanlar aşağıdaki gibidir:
 

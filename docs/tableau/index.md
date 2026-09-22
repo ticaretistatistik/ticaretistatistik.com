@@ -4,7 +4,6 @@ description: Tableau, etkileşimli veri görselleştirmesi ve iş zekâsı için
 sidebar_position: 1
 ---
 
-# Tableau nedir?
 
 **Tableau**, büyük veri setleri üzerinde hızlı, etkileşimli görselleştirmeler ve panolar (dashboard) üretmeyi sağlayan bir görsel analitik platformudur. Kökeni Stanford Üniversitesi'ndeki **Polaris** projesine dayanır; 2003 yılında Chris Stolte, Christian Chabot ve Pat Hanrahan tarafından şirket olarak kurulmuş, 2019'da Salesforce tarafından satın alınmıştır. Bugün iş zekâsı (business intelligence) alanında dünyanın en yaygın kullanılan araçlarından biridir.
 

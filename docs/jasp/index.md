@@ -4,7 +4,6 @@ description: JASP, R altyapılı açık kaynaklı istatistiksel analiz yazılım
 sidebar_position: 1
 ---
 
-# JASP nedir?
 
 **JASP** (Jeffreys's Amazing Statistics Program), Amsterdam Üniversitesi Psikolojik Yöntemler Bölümü'nde Eric-Jan Wagenmakers önderliğindeki ekip tarafından geliştirilen, açık kaynaklı ve ücretsiz bir istatistiksel analiz yazılımıdır. İlk kararlı sürümü 2013 yılında yayımlanmıştır. GNU Affero General Public License altında dağıtılır ve arka planda tüm hesaplamaları R programlama dili üzerinden yürütür.
 

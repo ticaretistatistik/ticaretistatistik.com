@@ -3,7 +3,6 @@ title: Gerekli kurulumlar
 description: R ile Çalışmak çin Gerekli Kurulumlar
 ---
 
-# R ile Çalışabilmek için Gerekli Kurulumlar
 
 R ile çalışmak için bilgisayarımıza birkaç kurulum yapmamız gerekiyor. R, bir programlama dili ve yazılım ortamıdır. R Studio ise R ile çalışmak için geliştirilmiş bir IDE'dir.
 

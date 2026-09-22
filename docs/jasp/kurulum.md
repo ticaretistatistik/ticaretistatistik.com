@@ -4,7 +4,6 @@ description: JASP'ın Windows, macOS ve Linux üzerinde kurulumu, sistem gereksi
 sidebar_position: 2
 ---
 
-# Kurulum
 
 Bu bölüm, JASP'ın desteklenen işletim sistemlerinde kurulum adımlarını, sistem gereksinimlerini ve R ile entegrasyonunu açıklar. Güncel kararlı sürüme her zaman [jasp-stats.org/download](https://jasp-stats.org/download/) adresinden erişilebilir; resmi dağıtım dışındaki kaynaklardan edinilen kurulum paketlerinin kullanılması önerilmez.
 

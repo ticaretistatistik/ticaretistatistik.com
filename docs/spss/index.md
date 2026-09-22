@@ -4,7 +4,6 @@ description: SPSS dokümantasyonu şu an güncellenmektedir.
 sidebar_position: 2
 ---
 
-# Bakımda
 
 <Callout title="Bu sayfa şu an güncelleniyor">
 SPSS dokümantasyonu kapsamlı bir revizyon sürecinde. İçerik geçici olarak kaldırıldı; güncel ve doğrulanmış sürüm hazır olduğunda yeniden yayına alınacak.

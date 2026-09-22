@@ -4,7 +4,6 @@ description: Tableau'nun arayüz bileşenleri ve Sample Superstore veri seti üz
 sidebar_position: 3
 ---
 
-# Temel Kullanım
 
 Bu bölümde Tableau'nun arayüz mantığı özetlendikten sonra, her kurulumda hazır gelen **Sample - Superstore** veri seti üzerinde adım adım bir örnek yürütülecektir. Örnek; veriye bağlanmadan bir pano (dashboard) oluşturup yayımlamaya kadar olan temel iş akışını kapsar.
 
