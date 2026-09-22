@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Linkedin, Twitter, Users } from "lucide-react";
+import { Linkedin, Github, Users } from "lucide-react";
 import { teamMembers } from "@/lib/team";
 
 export const metadata: Metadata = {
@@ -68,15 +68,28 @@ export default function TeamPage() {
                     <span className="sr-only">LinkedIn</span>
                   </a>
                 )}
-                {member.twitter && (
+                {member.github && (
                   <a 
-                    href={member.twitter} 
+                    href={member.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-brand-blue hover:bg-brand-blue/10 transition-colors"
                   >
-                    <Twitter className="w-4 h-4" />
-                    <span className="sr-only">Twitter</span>
+                    <Github className="w-4 h-4" />
+                    <span className="sr-only">GitHub</span>
+                  </a>
+                )}
+                {member.medium && (
+                  <a 
+                    href={member.medium} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-brand-blue hover:bg-brand-blue/10 transition-colors"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-4 h-4">
+                      <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                    </svg>
+                    <span className="sr-only">Medium</span>
                   </a>
                 )}
               </div>
