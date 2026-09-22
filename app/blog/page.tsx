@@ -1,8 +1,8 @@
 import { blog } from "#site/content";
 import Link from "next/link";
 import { Metadata } from "next";
-import { ArrowRight, Calendar, User } from "lucide-react";
 import { getAuthors } from "@/lib/authors";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -17,88 +17,111 @@ export default function BlogIndexPage() {
   });
 
   return (
-    <div className="bg-slate-50 dark:bg-background min-h-screen">
-      <div className="container-custom pt-12 pb-24">
+    <div className="bg-background min-h-screen">
+      <div className="container-custom flex flex-col items-center gap-16 pt-12 pb-24">
         
         {/* Header Section */}
-        <header className="mb-16 text-center max-w-2xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-navy dark:text-white mb-6">
-            Topluluk Günlüğü
-          </h1>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+        <div className="text-center">
+          <h2 className="mx-auto mb-6 text-pretty text-3xl font-semibold md:text-4xl lg:max-w-3xl text-foreground">
+            Blog Posts
+          </h2>
+          <p className="mx-auto max-w-2xl text-slate-500 dark:text-slate-400 md:text-lg">
             Veri bilimi, yapay zeka, istatistik ekosistemine dair teknik yazılarımız ve etkinliklerimizden notlar.
           </p>
-        </header>
+        </div>
 
         {/* Posts List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sortedPosts.map((post) => (
-            <Link 
-              href={post.permalink} 
-              key={post.slug} 
-              className="flex flex-col bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-            >
-              {/* Cover Image */}
-              <div className="w-full aspect-[16/9] relative bg-slate-100 dark:bg-slate-800 overflow-hidden">
-                {post.cover ? (
-                  <img 
-                    src={typeof post.cover === 'string' ? post.cover : post.cover.src} 
-                    alt={post.title} 
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center bg-brand-blue/5">
-                    <span className="text-brand-blue/30 font-bold text-2xl tracking-widest uppercase">ITICU</span>
+        <div className="grid w-full gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
+          {sortedPosts.map((post) => {
+            const authors = post.authors?.map(id => allAuthors[id]).filter(Boolean) || [];
+            const primaryAuthor = authors[0];
+            const coverUrl = post.cover ? (typeof post.cover === 'string' ? post.cover : post.cover.src) : null;
+            
+            return (
+              <div 
+                key={post.slug} 
+                className="rounded-lg order-last border-0 bg-transparent shadow-none sm:order-first sm:col-span-12 lg:col-span-10 lg:col-start-2"
+              >
+                <div className="grid gap-y-6 sm:grid-cols-10 sm:gap-x-5 sm:gap-y-0 md:items-center md:gap-x-8 lg:gap-x-12">
+                  
+                  {/* Text Side */}
+                  <div className="sm:col-span-5">
+                    <div className="mb-4 md:mb-6">
+                      <div className="flex flex-wrap gap-3 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 md:gap-5 lg:gap-6">
+                        {post.tags && post.tags.length > 0 ? (
+                          post.tags.map(tag => (
+                            <span key={tag}>{tag}</span>
+                          ))
+                        ) : (
+                          <span>Blog</span>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl text-foreground">
+                      <Link href={post.permalink} className="hover:underline">
+                        {post.title}
+                      </Link>
+                    </h3>
+                    
+                    {post.description && (
+                      <p className="mt-4 text-slate-500 dark:text-slate-400 md:mt-5 line-clamp-3">
+                        {post.description}
+                      </p>
+                    )}
+                    
+                    <div className="mt-6 flex items-center space-x-4 text-sm md:mt-8">
+                      {primaryAuthor && (
+                        <>
+                          <span className="text-slate-500 dark:text-slate-400">{primaryAuthor.name}</span>
+                          <span className="text-slate-500 dark:text-slate-400">•</span>
+                        </>
+                      )}
+                      {post.date && (
+                        <span className="text-slate-500 dark:text-slate-400">
+                          {new Date(post.date).toLocaleDateString("tr-TR", { month: 'short', day: 'numeric', year: 'numeric' })}
+                        </span>
+                      )}
+                    </div>
+                    
+                    <div className="mt-6 flex items-center space-x-2 md:mt-8">
+                      <Link 
+                        href={post.permalink} 
+                        className="inline-flex items-center font-semibold hover:underline md:text-base text-foreground"
+                      >
+                        <span>Yazıyı oku</span>
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
-                )}
-                
-                {post.tags && post.tags.length > 0 && (
-                  <div className="absolute top-4 left-4 flex gap-2">
-                    <span className="text-xs font-semibold text-brand-blue bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-sm">
-                      {post.tags[0]}
-                    </span>
+
+                  {/* Image Side */}
+                  <div className="order-first sm:order-last sm:col-span-5">
+                    <Link href={post.permalink} className="block">
+                      <div className="aspect-[16/9] overflow-clip rounded-lg border border-border">
+                        {coverUrl ? (
+                          <img 
+                            alt={post.title} 
+                            className="h-full w-full object-cover transition-opacity duration-200 hover:opacity-70 bg-slate-100 dark:bg-slate-800" 
+                            src={coverUrl} 
+                          />
+                        ) : (
+                          <div className="h-full w-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
+                            <span className="text-slate-400 font-semibold uppercase tracking-widest">ITICU</span>
+                          </div>
+                        )}
+                      </div>
+                    </Link>
                   </div>
-                )}
-              </div>
-
-              {/* Content */}
-              <div className="p-6 flex flex-col flex-1">
-                <div className="flex items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400 mb-4">
-                  {post.date && (
-                    <time dateTime={post.date} className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5" />
-                      {new Date(post.date).toLocaleDateString("tr-TR", { year: 'numeric', month: 'long', day: 'numeric' })}
-                    </time>
-                  )}
-                  {post.authors && post.authors.length > 0 && (
-                    <span className="flex items-center gap-1.5">
-                      <User className="w-3.5 h-3.5" />
-                      {post.authors.map(id => allAuthors[id]?.name).filter(Boolean)[0]}
-                    </span>
-                  )}
-                </div>
-
-                <h2 className="text-xl font-bold text-brand-navy dark:text-white mb-3 group-hover:text-brand-blue transition-colors line-clamp-2">
-                  {post.title}
-                </h2>
-                
-                {post.description && (
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                    {post.description}
-                  </p>
-                )}
-                
-                <div className="mt-auto flex items-center text-sm font-semibold text-brand-blue">
-                  Yazıyı Oku
-                  <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                  
                 </div>
               </div>
-            </Link>
-          ))}
+            );
+          })}
         </div>
 
         {sortedPosts.length === 0 && (
-          <div className="py-24 text-center bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div className="py-24 text-center w-full">
             <p className="text-slate-500 dark:text-slate-400 text-lg font-medium">Henüz içerik yayınlanmamış.</p>
           </div>
         )}
