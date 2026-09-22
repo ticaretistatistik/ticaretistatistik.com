@@ -9,13 +9,12 @@ export function Footer() {
           
           {/* Brand & About */}
           <div className="md:col-span-1 flex flex-col items-start">
-            <Link href="/" className="flex items-center space-x-2 mb-4 group">
-              <div className="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
-                <BarChart2 className="w-5 h-5 text-brand-accent" />
-              </div>
-              <span className="font-bold text-lg text-brand-ink dark:text-white tracking-tight">
-                İstatistik<span className="text-brand-accent">Topluluğu</span>
-              </span>
+            <Link href="/" className="flex items-center mb-4 group">
+              <img 
+                src="/static/img/istatistik_ticaret_seffaf_sari_logo.png" 
+                alt="İstatistik Topluluğu" 
+                className="h-12 w-auto transition-transform group-hover:scale-105" 
+              />
             </Link>
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
               İstanbul Ticaret Üniversitesi İstatistik Bölümü öğrencileri tarafından kurulan, veri bilimi ve istatistik alanında değer üreten öğrenci topluluğu.
