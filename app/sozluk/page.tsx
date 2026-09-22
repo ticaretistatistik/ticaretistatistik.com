@@ -23,7 +23,7 @@ export default function SozlukPage() {
         <div className="inline-flex items-center space-x-2 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full px-4 py-1.5 mb-8 shadow-sm">
           <Sparkles className="w-4 h-4 text-brand-accent" />
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-            Büyük Güncelleme
+            Topluluk Projesi
           </span>
         </div>
         
@@ -33,12 +33,12 @@ export default function SozlukPage() {
             <BookOpen className="w-28 h-28 rotate-[-15deg] opacity-50" />
           </div>
           <h1 className="relative text-5xl md:text-7xl font-bold tracking-tighter text-brand-ink dark:text-white mb-6">
-            Kapsamlı <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-yellow-600 dark:to-brand-light">Sözlük</span> <br/>Çok Yakında.
+            Birlikte Büyüttüğümüz <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-yellow-600 dark:to-brand-light">Sözlük</span> <br/>Çok Yakında.
           </h1>
         </div>
         
         <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed mb-12 max-w-2xl mx-auto">
-          İstatistik, veri bilimi ve yapay zeka alanındaki yüzlerce terimi barındıran altyapımızı, sizlere çok daha hızlı ve zengin bir deneyim sunmak için baştan aşağı yeniliyoruz.
+          İstatistik, veri bilimi ve yapay zeka terimlerini siz değerli öğrencilerimizin katkılarıyla ilmek ilmek işlediğimiz açık kaynaklı sözlük altyapımızı, yepyeni bir deneyim için güncelliyoruz.
         </p>
         
         {/* Actions */}
