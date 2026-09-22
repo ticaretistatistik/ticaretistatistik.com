@@ -115,68 +115,84 @@ export default function Home() {
       </section>
 
       {/* QUICK LINKS SECTION */}
-      <section className="section-padding bg-slate-50 dark:bg-slate-900/20 border-t border-slate-100 dark:border-slate-800/50">
-        <div className="container-custom">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <div className="lg:w-1/2 space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-ink dark:text-white">
-                İçeriklerimizi Keşfedin
-              </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                Eğitim materyallerimiz, veri bilimi üzerine yazılarımız ve geçmiş etkinliklerimizin özetlerine tek bir noktadan ulaşın.
-              </p>
-
-              <ul className="space-y-4 pt-4 mb-8">
-                <li className="flex items-center text-slate-700 dark:text-slate-300">
-                  <div className="mr-4 bg-brand-accent/10 p-2 rounded-full text-brand-accent">
-                    <BookOpen className="w-4 h-4" />
-                  </div>
-                  <span className="font-medium">Kapsamlı ders notları ve dokümanlar</span>
-                </li>
-                <li className="flex items-center text-slate-700 dark:text-slate-300">
-                  <div className="mr-4 bg-brand-accent/10 p-2 rounded-full text-brand-accent">
-                    <BarChart className="w-4 h-4" />
-                  </div>
-                  <span className="font-medium">Veri analizi proje örnekleri</span>
-                </li>
-              </ul>
-              
-              <div className="flex gap-4">
-                <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all group">
-                  <Instagram className="w-4 h-4 text-slate-600 dark:text-slate-400 group-hover:text-white" />
-                  <span className="sr-only">Instagram</span>
-                </a>
-                <a href="https://linkedin.com/company/iticu-istatistik" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all group">
-                  <Linkedin className="w-4 h-4 text-slate-600 dark:text-slate-400 group-hover:text-white" />
-                  <span className="sr-only">LinkedIn</span>
-                </a>
-                <a href="https://tiktok.com/@iticu.istatistik" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all group">
-                  <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-4 h-4 text-slate-600 dark:text-slate-400 group-hover:text-white transition-colors">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91.04.15 1.53.84 2.94 1.95 3.96 1.05.97 2.45 1.57 3.95 1.63v4.06c-1.63-.03-3.23-.48-4.6-1.3-.01 2.53-.02 5.06-.01 7.59.04 2.8-1.07 5.46-3.13 7.37-2.02 1.88-4.8 2.87-7.59 2.67-2.61-.19-5.06-1.42-6.72-3.41-1.6-1.93-2.39-4.44-2.19-7.01.23-2.64 1.56-5 3.59-6.65 1.93-1.56 4.41-2.32 6.91-2.13.01 1.34.02 2.68.02 4.02-1.3-.12-2.63.09-3.79.67-1.12.56-2.02 1.48-2.52 2.61-.48 1.13-.57 2.4-.24 3.56.32 1.12 1.05 2.08 2.05 2.65 1.02.58 2.22.75 3.34.48 1.07-.26 2.01-.93 2.6-1.87.57-.91.86-2.01.83-3.11-.02-5.46-.01-10.92-.01-16.38Z" />
-                  </svg>
-                  <span className="sr-only">TikTok</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-              <Link href="/blog" className="flex flex-col p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-accent hover:shadow-md transition-all group">
-                <h3 className="text-lg font-semibold text-brand-ink dark:text-white mb-2 flex items-center justify-between">
-                  Blog
-                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-brand-accent group-hover:translate-x-1 transition-all" />
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">Öğrencilerimizden teknik yazılar, sektörel yorumlar ve makaleler.</p>
-              </Link>
-
-              <Link href="/docs" className="flex flex-col p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-accent hover:shadow-md transition-all group">
-                <h3 className="text-lg font-semibold text-brand-ink dark:text-white mb-2 flex items-center justify-between">
-                  Dokümanlar
-                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-brand-accent group-hover:translate-x-1 transition-all" />
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">Atölye sunumları, eğitim setleri ve pratik kaynakçalar.</p>
-              </Link>
-            </div>
+      <section className="section-padding bg-slate-50/50 dark:bg-slate-950/50 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none" />
+        
+        <div className="container-custom relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-ink dark:text-white mb-6 tracking-tight">
+              İçeriklerimizi Keşfedin
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+              Eğitim materyallerimiz, teknik yazılarımız ve özenle hazırlanan dokümanlarımızla veri bilimi yolculuğunuza hız katın.
+            </p>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Blog Card - Spans 2 columns on tablet/desktop */}
+            <Link href="/blog" className="md:col-span-2 group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-accent/50 hover:shadow-xl hover:shadow-brand-accent/5 transition-all duration-500 min-h-[280px] p-8">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 group-hover:scale-110 transition-all duration-500 text-brand-accent">
+                <BookOpen className="w-32 h-32" />
+              </div>
+              <div className="relative z-10 mt-auto">
+                <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center mb-6 text-brand-ink dark:text-white group-hover:bg-brand-accent group-hover:text-brand-ink transition-colors duration-300">
+                  <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                </div>
+                <h3 className="text-2xl font-bold text-brand-ink dark:text-white mb-3">Blog ve Makaleler</h3>
+                <p className="text-slate-600 dark:text-slate-400 max-w-md">
+                  Öğrencilerimizden ve sektörden teknik yazılar, pratik ipuçları ve veri bilimi üzerine kapsamlı analizler.
+                </p>
+              </div>
+            </Link>
+
+            {/* Dokümanlar Card */}
+            <Link href="/docs" className="group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-accent/50 hover:shadow-xl hover:shadow-brand-accent/5 transition-all duration-500 min-h-[280px] p-8">
+              <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 group-hover:scale-110 transition-all duration-500 text-brand-ink dark:text-white">
+                <Database className="w-24 h-24" />
+              </div>
+              <div className="relative z-10 mt-auto">
+                <h3 className="text-xl font-bold text-brand-ink dark:text-white mb-3 group-hover:text-brand-accent transition-colors">
+                  Dokümanlar
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                  Bootcamp notları, cheat sheet'ler ve rehberler.
+                </p>
+              </div>
+            </Link>
+
+            {/* Sözlük Card */}
+            <Link href="/sozluk" className="group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-brand-ink text-white border border-brand-ink dark:border-slate-800 hover:shadow-xl hover:shadow-brand-ink/20 transition-all duration-500 min-h-[240px] p-8">
+              <div className="relative z-10 mt-auto">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium mb-6 backdrop-blur-sm">
+                  <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                  Çok Yakında
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-brand-accent transition-colors">
+                  İstatistik Sözlüğü
+                </h3>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Öğrencilerimizin katkılarıyla hazırlanan açık kaynaklı terimler sözlüğü.
+                </p>
+              </div>
+            </Link>
+
+            {/* Arşiv Card */}
+            <Link href="/arsiv" className="md:col-span-2 group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-brand-accent/10 dark:bg-brand-accent/5 border border-brand-accent/20 hover:bg-brand-accent/20 hover:border-brand-accent/30 transition-all duration-500 min-h-[240px] p-8">
+              <div className="absolute bottom-0 right-0 p-8 opacity-20 group-hover:opacity-30 group-hover:-translate-y-2 transition-all duration-500 text-brand-accent">
+                <Binary className="w-32 h-32" />
+              </div>
+              <div className="relative z-10 mt-auto">
+                <h3 className="text-2xl font-bold text-brand-ink dark:text-white mb-3">
+                  Etkinlik Arşivi
+                </h3>
+                <p className="text-brand-ink/70 dark:text-slate-400 max-w-md">
+                  Geçmişte düzenlediğimiz zirveler, paneller ve atölyelerden geriye kalanlar, sunumlar ve özetler.
+                </p>
+              </div>
+            </Link>
+          </div>
+          
         </div>
       </section>
     </div>
