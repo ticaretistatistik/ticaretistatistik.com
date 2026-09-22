@@ -26,52 +26,43 @@ export default function TeamPage() {
         </header>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 w-full">
           {teamMembers.map((member, index) => (
-            <div 
-              key={index} 
-              className="group relative h-96 w-full overflow-hidden rounded-3xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-800"
+            <div
+              key={index}
+              className="group flex flex-col items-start gap-4"
             >
-              {/* Profile Image / Fallback */}
-              {member.image ? (
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center bg-brand-blue/5 text-brand-blue/40 text-7xl font-bold transition-all duration-500 group-hover:scale-105 group-hover:text-brand-blue/60 group-hover:bg-brand-blue/10">
-                  {member.name.charAt(0)}
-                </div>
-              )}
-
-              {/* Info Overlay */}
-              <div className="absolute bottom-3 left-3 right-3 rounded-2xl bg-white/95 p-4 backdrop-blur-md dark:bg-slate-900/95 shadow-sm transition-transform duration-300">
-                <div className="flex flex-col">
-                  <h3 className="text-lg font-bold text-brand-navy dark:text-white truncate">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2 truncate">
-                    {member.role}
-                  </p>
-                  
-                  {/* Socials - Reveal on hover */}
-                  <div className="flex items-center gap-3 overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300 ease-in-out mt-1">
+              <div className="relative w-full h-80 overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-brand-blue/5 text-brand-blue/40 text-7xl font-bold transition-transform duration-500 group-hover:scale-105 group-hover:text-brand-blue/60 group-hover:bg-brand-blue/10">
+                    {member.name.charAt(0)}
+                  </div>
+                )}
+                
+                {/* Dark overlay on hover */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-4">
+                  <div className="flex gap-2">
                     {member.linkedin && (
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-brand-blue transition-colors">
-                        <Linkedin className="w-5 h-5" />
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <Linkedin className="w-4 h-4" />
                         <span className="sr-only">LinkedIn</span>
                       </a>
                     )}
                     {member.github && (
-                      <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-brand-blue transition-colors">
-                        <Github className="w-5 h-5" />
+                      <a href={member.github} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <Github className="w-4 h-4" />
                         <span className="sr-only">GitHub</span>
                       </a>
                     )}
                     {member.medium && (
-                      <a href={member.medium} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-brand-blue transition-colors">
-                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-5 h-5">
+                      <a href={member.medium} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-4 h-4">
                           <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
                         </svg>
                         <span className="sr-only">Medium</span>
@@ -79,6 +70,16 @@ export default function TeamPage() {
                     )}
                   </div>
                 </div>
+              </div>
+              
+              {/* Text Info Below */}
+              <div className="flex flex-col gap-1 w-full px-1">
+                <h3 className="text-xl font-medium text-brand-navy dark:text-white">
+                  {member.name}
+                </h3>
+                <p className="text-sm font-normal text-slate-500 dark:text-slate-400">
+                  {member.role}
+                </p>
               </div>
             </div>
           ))}
