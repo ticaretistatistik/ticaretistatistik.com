@@ -13,7 +13,7 @@ export const teamMembers: TeamMember[] = [
     role: "Başkan",
     image: null,
     linkedin: "https://linkedin.com/in/yigitefeavci",
-    github: "https://github.com/yigitefeavci",
+    github: "https://github.com/yigit433",
     medium: null,
   },
   {
