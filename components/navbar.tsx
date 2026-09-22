@@ -41,6 +41,9 @@ export function Navbar() {
             <Link href="/blog" className="transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300">
               Blog
             </Link>
+            <Link href="/sozluk" className="transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300">
+              Sözlük
+            </Link>
             <Link href="/ekibimiz" className="transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300">
               Ekibimiz
             </Link>
@@ -129,6 +132,13 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Blog
+            </Link>
+            <Link 
+              href="/sozluk" 
+              className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Sözlük
             </Link>
             <Link 
               href="/ekibimiz" 
