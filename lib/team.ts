@@ -58,7 +58,7 @@ export const teamMembers: TeamMember[] = [
   }, 
   {
     name: "Elif Nur Yıldırım",
-    role: "Tasarım ve Sosyal Medya Birimi Başkanı",
+    role: "Sponsorluk ve Organizasyon Birimi Başkanı",
     image: null,
     linkedin: "https://www.linkedin.com/in/elifnuryildirim-istatistik/",
     github: null,
