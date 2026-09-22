@@ -44,8 +44,6 @@ export default async function DocPage({ params }: DocPageProps) {
     if (!params.slug || params.slug.length === 0) {
       return (
         <main className="relative py-12 lg:py-20 w-full min-h-[80vh]">
-          {/* Subtle bg glow */}
-          <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-brand-blue/5 to-transparent pointer-events-none -z-10"></div>
           
           <div className="mx-auto w-full min-w-0 max-w-4xl flex flex-col items-center text-center px-4">
             <div className="inline-flex items-center rounded-full border border-brand-blue/20 bg-brand-blue/10 px-4 py-1.5 text-sm font-medium text-brand-blue mb-8 shadow-sm">
