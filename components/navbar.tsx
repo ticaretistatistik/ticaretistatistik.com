@@ -28,45 +28,45 @@ export function Navbar() {
         
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center space-x-2 group" onClick={() => setIsMobileMenuOpen(false)}>
-            <div className="bg-brand-blue/10 p-2 rounded-lg group-hover:bg-brand-blue/20 transition-colors">
-              <BarChart2 className="w-5 h-5 text-brand-blue" />
+            <div className="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
+              <BarChart2 className="w-5 h-5 text-brand-accent" />
             </div>
-            <span className="font-bold text-lg text-brand-navy dark:text-white tracking-tight hidden sm:block">
-              İstatistik<span className="text-brand-blue">Topluluğu</span>
+            <span className="font-bold text-lg text-brand-ink dark:text-white tracking-tight hidden sm:block">
+              İstatistik<span className="text-brand-accent">Topluluğu</span>
             </span>
           </Link>
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            <Link href="/etkinlikler" className="transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300">
+            <Link href="/etkinlikler" className="transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300">
               Etkinlikler
             </Link>
-            <Link href="/blog" className="transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300">
+            <Link href="/blog" className="transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300">
               Blog
             </Link>
-            <Link href="/ekibimiz" className="transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300">
+            <Link href="/ekibimiz" className="transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300">
               Ekibimiz
             </Link>
             
             {/* Kaynaklar Dropdown */}
             <div className="relative group">
-              <button className="flex items-center gap-1 transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300 h-16">
+              <button className="flex items-center gap-1 transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300 h-16">
                 Kaynaklar
                 <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
               </button>
               <div className="absolute left-0 top-full -mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-lg py-2 mt-1">
-                  <Link href="/docs" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-blue">
+                  <Link href="/docs" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent">
                     Dokümanlar
                   </Link>
-                  <Link href="/arsiv" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-blue">
+                  <Link href="/arsiv" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent">
                     Arşiv
                   </Link>
                   <div className="h-px bg-slate-100 dark:bg-slate-800 my-1"></div>
-                  <a href="https://istanbulticaretuniversitesi.edupage.org/timetable/" target="_blank" rel="noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-blue flex items-center justify-between">
+                  <a href="https://istanbulticaretuniversitesi.edupage.org/timetable/" target="_blank" rel="noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent flex items-center justify-between">
                     Ders Programı
                   </a>
-                  <a href="https://hesapla.ticaretistatistik.com" target="_blank" rel="noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-blue flex items-center justify-between">
+                  <a href="https://hesapla.ticaretistatistik.com" target="_blank" rel="noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent flex items-center justify-between">
                     Not Hesaplama
                   </a>
                 </div>
@@ -88,11 +88,11 @@ export function Navbar() {
 
           <nav className="flex items-center gap-1">
             <ThemeToggle />
-            <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noreferrer" className="hidden sm:inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-blue h-9 w-9 text-slate-600 dark:text-slate-400">
+            <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noreferrer" className="hidden sm:inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-accent h-9 w-9 text-slate-600 dark:text-slate-400">
               <Instagram className="h-4 w-4" />
               <span className="sr-only">Instagram</span>
             </a>
-            <a href="https://github.com/iticu-istatistik" target="_blank" rel="noreferrer" className="hidden sm:inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-blue h-9 w-9 text-slate-600 dark:text-slate-400">
+            <a href="https://github.com/iticu-istatistik" target="_blank" rel="noreferrer" className="hidden sm:inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-accent h-9 w-9 text-slate-600 dark:text-slate-400">
               <Github className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
             </a>
@@ -121,21 +121,21 @@ export function Navbar() {
           <nav className="container-custom flex flex-col space-y-4 py-6">
             <Link 
               href="/etkinlikler" 
-              className="text-base font-medium transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300"
+              className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Etkinlikler
             </Link>
             <Link 
               href="/blog" 
-              className="text-base font-medium transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300"
+              className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Blog
             </Link>
             <Link 
               href="/ekibimiz" 
-              className="text-base font-medium transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300"
+              className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Ekibimiz
@@ -146,14 +146,14 @@ export function Navbar() {
               <div className="flex flex-col space-y-3 pl-3 border-l-2 border-slate-100 dark:border-slate-800">
                 <Link 
                   href="/docs" 
-                  className="text-base font-medium transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Dokümanlar
                 </Link>
                 <Link 
                   href="/arsiv" 
-                  className="text-base font-medium transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Arşiv
@@ -162,7 +162,7 @@ export function Navbar() {
                   href="https://istanbulticaretuniversitesi.edupage.org/timetable/" 
                   target="_blank" 
                   rel="noreferrer"
-                  className="text-base font-medium transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Ders Programı
@@ -171,7 +171,7 @@ export function Navbar() {
                   href="https://hesapla.ticaretistatistik.com" 
                   target="_blank" 
                   rel="noreferrer"
-                  className="text-base font-medium transition-colors hover:text-brand-blue text-slate-600 dark:text-slate-300"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Not Hesaplama
@@ -180,11 +180,11 @@ export function Navbar() {
             </div>
             
             <div className="flex items-center space-x-4 pt-6 mt-2 border-t border-slate-200 dark:border-slate-800">
-              <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noreferrer" className="text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-colors">
+              <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noreferrer" className="text-slate-600 dark:text-slate-400 hover:text-brand-accent transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="https://github.com/iticu-istatistik" target="_blank" rel="noreferrer" className="text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-colors">
+              <a href="https://github.com/iticu-istatistik" target="_blank" rel="noreferrer" className="text-slate-600 dark:text-slate-400 hover:text-brand-accent transition-colors">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>

@@ -14,10 +14,10 @@ export default function TeamPage() {
         
         {/* Header Section */}
         <header className="mb-20 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center justify-center bg-brand-blue/10 p-3 rounded-2xl mb-6">
-            <Users className="w-8 h-8 text-brand-blue" />
+          <div className="inline-flex items-center justify-center bg-brand-accent/10 p-3 rounded-2xl mb-6">
+            <Users className="w-8 h-8 text-brand-accent" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-navy dark:text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-ink dark:text-white mb-6">
             Ekibimizle Tanışın
           </h1>
           <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -40,7 +40,7 @@ export default function TeamPage() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-brand-blue/5 text-brand-blue/40 text-7xl font-bold transition-transform duration-500 group-hover:scale-105 group-hover:text-brand-blue/60 group-hover:bg-brand-blue/10">
+                  <div className="w-full h-full flex items-center justify-center bg-brand-accent/5 text-brand-accent/40 text-7xl font-bold transition-transform duration-500 group-hover:scale-105 group-hover:text-brand-accent/60 group-hover:bg-brand-accent/10">
                     {member.name.charAt(0)}
                   </div>
                 )}
@@ -74,7 +74,7 @@ export default function TeamPage() {
               
               {/* Text Info Below */}
               <div className="flex flex-col gap-1 w-full px-1">
-                <h3 className="text-xl font-medium text-brand-navy dark:text-white">
+                <h3 className="text-xl font-medium text-brand-ink dark:text-white">
                   {member.name}
                 </h3>
                 <p className="text-sm font-normal text-slate-500 dark:text-slate-400">

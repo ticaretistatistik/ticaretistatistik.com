@@ -90,7 +90,7 @@ export function Sidebar() {
   return (
     <div className="w-full">
       <div className="mb-8">
-        <h4 className="mb-4 rounded-md px-2 text-sm font-bold uppercase tracking-wider text-brand-navy dark:text-white">
+        <h4 className="mb-4 rounded-md px-2 text-sm font-bold uppercase tracking-wider text-brand-ink dark:text-white">
           İçerikler
         </h4>
         <div className="flex flex-col gap-1 w-full">
@@ -104,7 +104,7 @@ export function Sidebar() {
                   <details className="group" open={isActiveParent}>
                     <summary className={cn(
                       "flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-colors list-none select-none",
-                      isActiveParent ? "text-brand-blue" : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                      isActiveParent ? "text-brand-accent" : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"
                     )}>
                       {node.title}
                       <ChevronRight className="h-4 w-4 transition-transform group-open:rotate-90 text-slate-400" />
@@ -115,7 +115,7 @@ export function Sidebar() {
                           href={node.permalink} 
                           className={cn(
                             "rounded-md px-3 py-1.5 text-sm transition-colors",
-                            isRootActive ? "text-brand-blue font-medium bg-brand-blue/5" : "text-slate-500 dark:text-slate-400 hover:text-brand-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                            isRootActive ? "text-brand-accent font-medium bg-brand-accent/5" : "text-slate-500 dark:text-slate-400 hover:text-brand-ink dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50"
                           )}
                         >
                           Genel Bakış
@@ -129,7 +129,7 @@ export function Sidebar() {
                             href={child.permalink} 
                             className={cn(
                               "rounded-md px-3 py-1.5 text-sm transition-colors",
-                              isChildActive ? "text-brand-blue font-medium bg-brand-blue/5" : "text-slate-500 dark:text-slate-400 hover:text-brand-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                              isChildActive ? "text-brand-accent font-medium bg-brand-accent/5" : "text-slate-500 dark:text-slate-400 hover:text-brand-ink dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50"
                             )}
                           >
                             {child.title}
@@ -143,7 +143,7 @@ export function Sidebar() {
                     href={node.permalink} 
                     className={cn(
                       "flex items-center rounded-lg px-3 py-2 text-sm transition-colors font-medium",
-                      isRootActive ? "bg-brand-blue/10 text-brand-blue" : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                      isRootActive ? "bg-brand-accent/10 text-brand-accent" : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"
                     )}
                   >
                     {node.title}

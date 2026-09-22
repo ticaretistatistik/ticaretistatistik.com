@@ -57,7 +57,7 @@ export default async function PostPage({ params }: PostPageProps) {
       {/* Article Header (Hero) */}
       <header className="pt-24 pb-12 md:pt-32 md:pb-16 bg-slate-50 dark:bg-slate-900/30 border-b border-slate-100 dark:border-slate-800">
         <div className="container max-w-[800px] mx-auto px-6">
-          <Link href="/blog" className="inline-flex items-center text-sm font-medium text-brand-blue hover:text-brand-navy dark:hover:text-white transition-colors mb-8 group">
+          <Link href="/blog" className="inline-flex items-center text-sm font-medium text-brand-accent hover:text-brand-ink dark:hover:text-white transition-colors mb-8 group">
             <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
             Blog'a Dön
           </Link>
@@ -65,18 +65,18 @@ export default async function PostPage({ params }: PostPageProps) {
           <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-slate-500 dark:text-slate-400 mb-6">
             {post.date && (
               <time dateTime={post.date} className="flex items-center gap-2 bg-white dark:bg-slate-800 px-3 py-1 rounded-full shadow-sm border border-slate-200 dark:border-slate-700">
-                <Calendar className="w-4 h-4 text-brand-blue" />
+                <Calendar className="w-4 h-4 text-brand-accent" />
                 {new Date(post.date).toLocaleDateString("tr-TR", { year: 'numeric', month: 'long', day: 'numeric' })}
               </time>
             )}
             {post.tags && post.tags.map(tag => (
-              <span key={tag} className="px-3 py-1 bg-brand-blue/10 text-brand-blue rounded-full">
+              <span key={tag} className="px-3 py-1 bg-brand-accent/10 text-brand-accent rounded-full">
                 {tag}
               </span>
             ))}
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-brand-navy dark:text-white mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-brand-ink dark:text-white mb-6 leading-tight">
             {post.title}
           </h1>
 
@@ -97,14 +97,14 @@ export default async function PostPage({ params }: PostPageProps) {
                   className="flex items-center gap-4 group"
                 >
                   {author.image_url ? (
-                    <img src={author.image_url} alt={author.name} className="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-slate-800 shadow-sm group-hover:border-brand-blue transition-colors" />
+                    <img src={author.image_url} alt={author.name} className="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-slate-800 shadow-sm group-hover:border-brand-accent transition-colors" />
                   ) : (
                     <div className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500">
                       <span className="font-bold text-lg">{author.name.charAt(0)}</span>
                     </div>
                   )}
                   <div>
-                    <div className="text-sm font-bold text-brand-navy dark:text-white group-hover:text-brand-blue transition-colors">{author.name}</div>
+                    <div className="text-sm font-bold text-brand-ink dark:text-white group-hover:text-brand-accent transition-colors">{author.name}</div>
                     {author.title && <div className="text-sm text-slate-500 dark:text-slate-400">{author.title}</div>}
                   </div>
                 </a>
@@ -126,7 +126,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
         )}
         
-        <div className="prose prose-slate prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-brand-navy dark:prose-headings:text-white prose-a:text-brand-blue hover:prose-a:text-brand-blue/80 prose-img:rounded-xl">
+        <div className="prose prose-slate prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-brand-ink dark:prose-headings:text-white prose-a:text-brand-accent hover:prose-a:text-brand-accent/80 prose-img:rounded-xl">
           <MDXContent code={post.content} />
         </div>
       </div>

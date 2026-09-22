@@ -10,26 +10,26 @@ export function Footer() {
           {/* Brand & About */}
           <div className="md:col-span-1 flex flex-col items-start">
             <Link href="/" className="flex items-center space-x-2 mb-4 group">
-              <div className="bg-brand-blue/10 p-2 rounded-lg group-hover:bg-brand-blue/20 transition-colors">
-                <BarChart2 className="w-5 h-5 text-brand-blue" />
+              <div className="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
+                <BarChart2 className="w-5 h-5 text-brand-accent" />
               </div>
-              <span className="font-bold text-lg text-brand-navy dark:text-white tracking-tight">
-                İstatistik<span className="text-brand-blue">Topluluğu</span>
+              <span className="font-bold text-lg text-brand-ink dark:text-white tracking-tight">
+                İstatistik<span className="text-brand-accent">Topluluğu</span>
               </span>
             </Link>
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
               İstanbul Ticaret Üniversitesi İstatistik Bölümü öğrencileri tarafından kurulan, veri bilimi ve istatistik alanında değer üreten öğrenci topluluğu.
             </p>
             <div className="flex items-center space-x-4">
-              <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-brand-blue transition-colors">
+              <a href="https://instagram.com/iticu.istatistik" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-brand-accent transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="https://github.com/iticu-istatistik" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-brand-blue transition-colors">
+              <a href="https://github.com/iticu-istatistik" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-brand-accent transition-colors">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="mailto:istatistik@ticaret.edu.tr" className="text-slate-400 hover:text-brand-blue transition-colors">
+              <a href="mailto:istatistik@ticaret.edu.tr" className="text-slate-400 hover:text-brand-accent transition-colors">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </a>
@@ -38,53 +38,53 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-brand-navy dark:text-white mb-4">Hızlı Bağlantılar</h3>
+            <h3 className="font-semibold text-brand-ink dark:text-white mb-4">Hızlı Bağlantılar</h3>
             <ul className="space-y-3 text-sm text-slate-500 dark:text-slate-400">
               <li>
-                <Link href="/etkinlikler" className="hover:text-brand-blue transition-colors">Yaklaşan Etkinlikler</Link>
+                <Link href="/etkinlikler" className="hover:text-brand-accent transition-colors">Yaklaşan Etkinlikler</Link>
               </li>
               <li>
-                <Link href="/arsiv" className="hover:text-brand-blue transition-colors">Geçmiş Etkinlikler</Link>
+                <Link href="/arsiv" className="hover:text-brand-accent transition-colors">Geçmiş Etkinlikler</Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-brand-blue transition-colors">Blog Yazıları</Link>
+                <Link href="/blog" className="hover:text-brand-accent transition-colors">Blog Yazıları</Link>
               </li>
               <li>
-                <Link href="/docs" className="hover:text-brand-blue transition-colors">Eğitim Dokümanları</Link>
+                <Link href="/docs" className="hover:text-brand-accent transition-colors">Eğitim Dokümanları</Link>
               </li>
               <li>
-                <Link href="/ekibimiz" className="hover:text-brand-blue transition-colors">Yönetim Kurulu</Link>
+                <Link href="/ekibimiz" className="hover:text-brand-accent transition-colors">Yönetim Kurulu</Link>
               </li>
             </ul>
           </div>
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold text-brand-navy dark:text-white mb-4">Kaynaklar</h3>
+            <h3 className="font-semibold text-brand-ink dark:text-white mb-4">Kaynaklar</h3>
             <ul className="space-y-3 text-sm text-slate-500 dark:text-slate-400">
               <li>
-                <a href="https://ticaret.edu.tr" target="_blank" rel="noreferrer" className="hover:text-brand-blue transition-colors">Üniversite Web Sitesi</a>
+                <a href="https://ticaret.edu.tr" target="_blank" rel="noreferrer" className="hover:text-brand-accent transition-colors">Üniversite Web Sitesi</a>
               </li>
               <li>
-                <a href="https://ticaret.edu.tr/istatistik" target="_blank" rel="noreferrer" className="hover:text-brand-blue transition-colors">İstatistik Bölümü</a>
+                <a href="https://ticaret.edu.tr/istatistik" target="_blank" rel="noreferrer" className="hover:text-brand-accent transition-colors">İstatistik Bölümü</a>
               </li>
               <li>
-                <Link href="/hakkimizda" className="hover:text-brand-blue transition-colors">Topluluk Tüzüğü</Link>
+                <Link href="/hakkimizda" className="hover:text-brand-accent transition-colors">Topluluk Tüzüğü</Link>
               </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-brand-navy dark:text-white mb-4">İletişim</h3>
+            <h3 className="font-semibold text-brand-ink dark:text-white mb-4">İletişim</h3>
             <ul className="space-y-4 text-sm text-slate-500 dark:text-slate-400">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 mr-2 text-brand-blue shrink-0" />
+                <MapPin className="h-5 w-5 mr-2 text-brand-accent shrink-0" />
                 <span>Sütlüce Yerleşkesi, İmrahor Cd. No:90, 34445 Beyoğlu/İstanbul</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 mr-2 text-brand-blue shrink-0" />
-                <a href="mailto:istatistik@ticaret.edu.tr" className="hover:text-brand-blue transition-colors">istatistik@ticaret.edu.tr</a>
+                <Mail className="h-5 w-5 mr-2 text-brand-accent shrink-0" />
+                <a href="mailto:istatistik@ticaret.edu.tr" className="hover:text-brand-accent transition-colors">istatistik@ticaret.edu.tr</a>
               </li>
             </ul>
           </div>
@@ -94,7 +94,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-400">
           <p>© {new Date().getFullYear()} İstanbul Ticaret Üniversitesi İstatistik Topluluğu. Tüm hakları saklıdır.</p>
           <p className="flex items-center">
-            Geliştirici: <a href="https://github.com/ticaretistatistik" className="ml-1 text-brand-navy dark:text-white hover:text-brand-blue transition-colors font-medium">İstatistik Topluluğu IT Ekibi</a>
+            Geliştirici: <a href="https://github.com/ticaretistatistik" className="ml-1 text-brand-ink dark:text-white hover:text-brand-accent transition-colors font-medium">İstatistik Topluluğu IT Ekibi</a>
           </p>
         </div>
       </div>

@@ -20,10 +20,10 @@ export default function ArchiveIndexPage() {
         
         {/* Header Section */}
         <header className="mb-16 text-center max-w-2xl mx-auto">
-          <div className="inline-flex items-center justify-center bg-brand-blue/10 p-3 rounded-2xl mb-6">
-            <LayoutGrid className="w-8 h-8 text-brand-blue" />
+          <div className="inline-flex items-center justify-center bg-brand-accent/10 p-3 rounded-2xl mb-6">
+            <LayoutGrid className="w-8 h-8 text-brand-accent" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-navy dark:text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-ink dark:text-white mb-6">
             Etkinlik Arşivi
           </h1>
           <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -48,8 +48,8 @@ export default function ArchiveIndexPage() {
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                 ) : (
-                  <div className="absolute inset-0 flex items-center justify-center bg-brand-blue/5">
-                    <ImageIcon className="w-12 h-12 text-brand-blue/20" />
+                  <div className="absolute inset-0 flex items-center justify-center bg-brand-accent/5">
+                    <ImageIcon className="w-12 h-12 text-brand-accent/20" />
                   </div>
                 )}
                 
@@ -69,7 +69,7 @@ export default function ArchiveIndexPage() {
                   {new Date(item.date).toLocaleDateString("tr-TR", { year: 'numeric', month: 'long', day: 'numeric' })}
                 </time>
 
-                <h2 className="text-xl font-bold text-brand-navy dark:text-white mb-3 group-hover:text-brand-blue transition-colors line-clamp-2">
+                <h2 className="text-xl font-bold text-brand-ink dark:text-white mb-3 group-hover:text-brand-accent transition-colors line-clamp-2">
                   {item.title}
                 </h2>
                 
@@ -77,7 +77,7 @@ export default function ArchiveIndexPage() {
                   {item.description}
                 </p>
                 
-                <div className="mt-auto flex items-center text-sm font-semibold text-brand-blue border-t border-slate-100 dark:border-slate-800 pt-4">
+                <div className="mt-auto flex items-center text-sm font-semibold text-brand-accent border-t border-slate-100 dark:border-slate-800 pt-4">
                   Detayları İncele
                   <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
                 </div>

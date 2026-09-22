@@ -19,8 +19,8 @@ const config: Config = {
         foreground: "hsl(var(--foreground))",
         border: "hsl(var(--border))",
         brand: {
-          blue: "hsl(var(--brand-blue))",
-          navy: "hsl(var(--brand-navy))",
+          accent: "hsl(var(--brand-accent))",
+          ink: "hsl(var(--brand-ink))",
           light: "hsl(var(--brand-light))",
         }
       },
@@ -28,9 +28,9 @@ const config: Config = {
         DEFAULT: {
           css: {
             '--tw-prose-body': theme('colors.slate[700]'),
-            '--tw-prose-headings': theme('colors.brand.navy'),
-            '--tw-prose-links': theme('colors.brand.blue'),
-            '--tw-prose-code': theme('colors.brand.navy'),
+            '--tw-prose-headings': theme('colors.brand.ink'),
+            '--tw-prose-links': theme('colors.brand.accent'),
+            '--tw-prose-code': theme('colors.brand.ink'),
             '--tw-prose-pre-bg': theme('colors.slate[900]'),
             '--tw-prose-pre-code': theme('colors.slate[100]'),
             h1: { fontFamily: theme('fontFamily.sans')[0], fontWeight: '700' },

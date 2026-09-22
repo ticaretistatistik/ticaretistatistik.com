@@ -4,25 +4,27 @@
 
 @layer base {
   :root {
-    /* Pure white background with very light gray variations */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-    --border: 214 32% 91%;
+    /* hesapla.ticaretistatistik.com theme - Light */
+    --background: 60 23% 97%;  /* #fafaf7 */
+    --foreground: 0 0% 4%;     /* #0a0a0a - Ink */
+    --border: 60 11% 89%;      /* #e6e6e1 - Line */
     
-    /* Modern corporate blue and navy for accents */
-    --brand-blue: 212 100% 48%; /* Strong modern blue */
-    --brand-navy: 222 47% 15%; /* Deep navy blue for headings/dark mode */
-    --brand-light: 210 40% 98%; /* Very light gray/blue background for sections */
+    /* Brand/Accent Colors */
+    --brand-accent: 47 92% 53%; /* #f5c518 - Yellow accent */
+    --brand-ink: 0 0% 4%;       /* #0a0a0a - Ink */
+    --brand-light: 45 100% 78%; /* #ffe391 - Soft accent */
   }
 
   .dark {
-    /* Optional dark mode, leaning towards deep navy */
-    --background: 222 47% 7%;
-    --foreground: 210 40% 98%;
-    --border: 217 33% 15%; 
-    --brand-blue: 212 100% 60%;
-    --brand-navy: 210 40% 98%; 
-    --brand-light: 222 47% 11%;
+    /* hesapla.ticaretistatistik.com theme - Dark */
+    --background: 0 0% 4%;     /* #0a0a0a */
+    --foreground: 60 23% 97%;  /* #fafaf7 */
+    --border: 60 3% 16%;       /* #2a2a28 */
+    
+    /* Brand/Accent Colors */
+    --brand-accent: 47 92% 53%; /* #f5c518 - Yellow accent */
+    --brand-ink: 60 23% 97%;    /* #fafaf7 - Light ink for dark mode */
+    --brand-light: 45 100% 78%; /* #ffe391 */
   }
 }
 
@@ -31,7 +33,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased selection:bg-brand-blue/20 selection:text-brand-navy;
+    @apply bg-background text-foreground antialiased selection:bg-brand-accent/20 selection:text-brand-ink;
   }
   
   /* Smooth theme transitions */
@@ -40,7 +42,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans tracking-tight text-brand-navy dark:text-foreground;
+    @apply font-sans tracking-tight text-brand-ink;
   }
 }
 
