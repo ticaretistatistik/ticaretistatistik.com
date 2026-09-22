@@ -27,12 +27,10 @@ export function Navbar() {
       <div className="container-custom flex h-16 items-center justify-between">
         
         <div className="flex items-center gap-8">
-          <Link href="/" className="flex items-center group" onClick={() => setIsMobileMenuOpen(false)}>
-            <img 
-              src="/static/img/istatistik_ticaret_seffaf_sari_logo.png" 
-              alt="İstatistik Topluluğu" 
-              className="h-10 sm:h-12 w-auto transition-transform group-hover:scale-105" 
-            />
+          <Link href="/" className="flex items-center space-x-3 group" onClick={() => setIsMobileMenuOpen(false)}>
+            <span className="font-bold text-lg text-brand-ink dark:text-white tracking-tight hidden sm:block">
+              İstatistik<span className="text-brand-accent">Ticaret</span>
+            </span>
           </Link>
           
           {/* Desktop Nav */}
