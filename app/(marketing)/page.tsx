@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Calendar, Users, BarChart, Instagram, Linkedin, Database, Binary } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, Users, BarChart, Instagram, Linkedin, Database, Binary, Github } from "lucide-react";
 
 export default function Home() {
   return (
@@ -193,6 +193,52 @@ export default function Home() {
             </Link>
           </div>
           
+        </div>
+      </section>
+
+      {/* SOCIAL MEDIA SECTION */}
+      <section className="section-padding bg-white dark:bg-background border-t border-slate-200 dark:border-slate-800">
+        <div className="container-custom">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-ink dark:text-white mb-4">
+              Topluluğumuzun Bir Parçası Olun
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400">
+              Etkinliklerimizden anında haberdar olmak ve bizimle iletişimde kalmak için sosyal medya hesaplarımızı takip edebilirsiniz.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {/* Instagram */}
+            <a href="https://instagram.com/istatistikticaret" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-[#E1306C]/50 hover:shadow-xl hover:shadow-[#E1306C]/10 hover:-translate-y-1 transition-all duration-300 group">
+              <Instagram className="w-10 h-10 text-slate-400 group-hover:text-[#E1306C] mb-4 transition-colors" />
+              <span className="font-semibold text-brand-ink dark:text-white group-hover:text-[#E1306C] transition-colors">Instagram</span>
+              <span className="text-xs sm:text-sm text-slate-500 mt-1">@istatistikticaret</span>
+            </a>
+
+            {/* LinkedIn */}
+            <a href="https://linkedin.com/company/istatistikticaret" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-[#0A66C2]/50 hover:shadow-xl hover:shadow-[#0A66C2]/10 hover:-translate-y-1 transition-all duration-300 group">
+              <Linkedin className="w-10 h-10 text-slate-400 group-hover:text-[#0A66C2] mb-4 transition-colors" />
+              <span className="font-semibold text-brand-ink dark:text-white group-hover:text-[#0A66C2] transition-colors">LinkedIn</span>
+              <span className="text-xs sm:text-sm text-slate-500 mt-1">/istatistikticaret</span>
+            </a>
+
+            {/* GitHub */}
+            <a href="https://github.com/ticaretistatistik" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-slate-600 dark:hover:border-slate-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <Github className="w-10 h-10 text-slate-400 group-hover:text-slate-800 dark:group-hover:text-white mb-4 transition-colors" />
+              <span className="font-semibold text-brand-ink dark:text-white group-hover:text-slate-800 dark:group-hover:text-white transition-colors">GitHub</span>
+              <span className="text-xs sm:text-sm text-slate-500 mt-1">@ticaretistatistik</span>
+            </a>
+
+            {/* TikTok */}
+            <a href="https://tiktok.com/@istatistikticaret" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-slate-800 dark:hover:border-slate-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-10 h-10 text-slate-400 group-hover:text-brand-ink dark:group-hover:text-white mb-4 transition-colors">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91.04.15 1.53.84 2.94 1.95 3.96 1.05.97 2.45 1.57 3.95 1.63v4.06c-1.63-.03-3.23-.48-4.6-1.3-.01 2.53-.02 5.06-.01 7.59.04 2.8-1.07 5.46-3.13 7.37-2.02 1.88-4.8 2.87-7.59 2.67-2.61-.19-5.06-1.42-6.72-3.41-1.6-1.93-2.39-4.44-2.19-7.01.23-2.64 1.56-5 3.59-6.65 1.93-1.56 4.41-2.32 6.91-2.13.01 1.34.02 2.68.02 4.02-1.3-.12-2.63.09-3.79.67-1.12.56-2.02 1.48-2.52 2.61-.48 1.13-.57 2.4-.24 3.56.32 1.12 1.05 2.08 2.05 2.65 1.02.58 2.22.75 3.34.48 1.07-.26 2.01-.93 2.6-1.87.57-.91.86-2.01.83-3.11-.02-5.46-.01-10.92-.01-16.38Z" />
+              </svg>
+              <span className="font-semibold text-brand-ink dark:text-white transition-colors">TikTok</span>
+              <span className="text-xs sm:text-sm text-slate-500 mt-1">@istatistikticaret</span>
+            </a>
+          </div>
         </div>
       </section>
     </div>

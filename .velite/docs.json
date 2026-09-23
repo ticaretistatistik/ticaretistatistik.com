@@ -121,15 +121,6 @@
     "permalink": "/docs/python/tensorflow_nedir"
   },
   {
-    "title": "Bakımda",
-    "description": "SPSS dokümantasyonu şu an güncellenmektedir.",
-    "slug": "spss",
-    "sidebar_position": 2,
-    "content": "const{Fragment:n,jsx:e,jsxs:r}=arguments[0];function _createMdxContent(t){const i={a:\"a\",li:\"li\",p:\"p\",strong:\"strong\",ul:\"ul\",...t.components};return r(n,{children:[r(i.p,{children:[\"Bu süreçte SPSS kurulumu ve lisans aktivasyonu için \",e(i.strong,{children:\"resmi ve güncel kaynak\"}),\" her zaman İstanbul Ticaret Üniversitesi Bilgi İşlem Daire Başkanlığı'dır:\"]}),\"\\n\",r(i.ul,{children:[\"\\n\",r(i.li,{children:[e(i.strong,{children:\"Resmi kurulum sayfası:\"}),\" \",e(i.a,{href:\"https://bim.ticaret.edu.tr/spss/\",children:\"bim.ticaret.edu.tr/spss\"})]}),\"\\n\",r(i.li,{children:[e(i.strong,{children:\"E-posta:\"}),\" \",e(i.a,{href:\"mailto:bim@ticaret.edu.tr\",children:\"bim@ticaret.edu.tr\"})]}),\"\\n\",r(i.li,{children:[e(i.strong,{children:\"Telefon:\"}),\" 444 0 413\"]}),\"\\n\"]}),\"\\n\",e(i.p,{children:\"Sayfa yayına alındığında buradaki uyarı kalkacak ve güncel içerik yerini alacak.\"})]})}return{default:function(n={}){const{wrapper:r}=n.components||{};return r?e(r,{...n,children:e(_createMdxContent,{...n})}):_createMdxContent(n)}};",
-    "toc": [],
-    "permalink": "/docs/spss"
-  },
-  {
     "title": "R nedir?",
     "description": "R programming language",
     "slug": "r",
@@ -196,6 +187,15 @@
       }
     ],
     "permalink": "/docs/r/kurulum"
+  },
+  {
+    "title": "Bakımda",
+    "description": "SPSS dokümantasyonu şu an güncellenmektedir.",
+    "slug": "spss",
+    "sidebar_position": 2,
+    "content": "const{Fragment:n,jsx:e,jsxs:r}=arguments[0];function _createMdxContent(t){const i={a:\"a\",li:\"li\",p:\"p\",strong:\"strong\",ul:\"ul\",...t.components};return r(n,{children:[r(i.p,{children:[\"Bu süreçte SPSS kurulumu ve lisans aktivasyonu için \",e(i.strong,{children:\"resmi ve güncel kaynak\"}),\" her zaman İstanbul Ticaret Üniversitesi Bilgi İşlem Daire Başkanlığı'dır:\"]}),\"\\n\",r(i.ul,{children:[\"\\n\",r(i.li,{children:[e(i.strong,{children:\"Resmi kurulum sayfası:\"}),\" \",e(i.a,{href:\"https://bim.ticaret.edu.tr/spss/\",children:\"bim.ticaret.edu.tr/spss\"})]}),\"\\n\",r(i.li,{children:[e(i.strong,{children:\"E-posta:\"}),\" \",e(i.a,{href:\"mailto:bim@ticaret.edu.tr\",children:\"bim@ticaret.edu.tr\"})]}),\"\\n\",r(i.li,{children:[e(i.strong,{children:\"Telefon:\"}),\" 444 0 413\"]}),\"\\n\"]}),\"\\n\",e(i.p,{children:\"Sayfa yayına alındığında buradaki uyarı kalkacak ve güncel içerik yerini alacak.\"})]})}return{default:function(n={}){const{wrapper:r}=n.components||{};return r?e(r,{...n,children:e(_createMdxContent,{...n})}):_createMdxContent(n)}};",
+    "toc": [],
+    "permalink": "/docs/spss"
   },
   {
     "title": "Tableau nedir?",
