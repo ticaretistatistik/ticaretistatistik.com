@@ -95,6 +95,23 @@ export default async function EventDetailPage({ params }: Props) {
             <h3 className="text-xl font-semibold mb-4 text-brand-ink dark:text-white">Etkinlik Hakkında</h3>
             <p className="whitespace-pre-wrap leading-relaxed">{event.description}</p>
           </div>
+
+          {event.location && event.location !== "Konum belirtilmedi" && !event.location.toLowerCase().includes("online") && (
+            <div className="mt-12 pt-10 border-t border-slate-100 dark:border-slate-800">
+              <h3 className="text-xl font-semibold mb-6 text-brand-ink dark:text-white">Harita</h3>
+              <div className="w-full h-64 md:h-96 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-inner">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(event.location)}&output=embed`}
+                ></iframe>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
