@@ -28,7 +28,7 @@ export function Footer() {
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="mailto:istatistik@ticaret.edu.tr" className="text-slate-400 hover:text-brand-accent transition-colors">
+              <a href="mailto:ticaretstat@gmail.com" className="text-slate-400 hover:text-brand-accent transition-colors">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </a>
@@ -83,7 +83,7 @@ export function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-brand-accent shrink-0" />
-                <a href="mailto:istatistik@ticaret.edu.tr" className="hover:text-brand-accent transition-colors">istatistik@ticaret.edu.tr</a>
+                <a href="mailto:ticaretstat@gmail.com" className="hover:text-brand-accent transition-colors">ticaretstat@gmail.com</a>
               </li>
             </ul>
           </div>
