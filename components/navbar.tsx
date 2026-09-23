@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Search, Github, Instagram, Menu, X, BarChart2, ChevronDown } from "lucide-react";
+import { Search, Github, Instagram, Menu, X, BarChart2, ChevronDown, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
 
 import { ThemeToggle } from "./theme-toggle";
@@ -64,10 +64,12 @@ export function Navbar() {
                   </Link>
                   <div className="h-px bg-slate-100 dark:bg-slate-800 my-1"></div>
                   <a href="https://istanbulticaretuniversitesi.edupage.org/timetable/" target="_blank" rel="noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent flex items-center justify-between">
-                    Ders Programı
+                    <span>Ders Programı</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-50" />
                   </a>
                   <a href="https://hesapla.ticaretistatistik.com" target="_blank" rel="noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent flex items-center justify-between">
-                    Not Hesaplama
+                    <span>Not Hesaplama</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-50" />
                   </a>
                 </div>
               </div>
@@ -175,19 +177,21 @@ export function Navbar() {
                   href="https://istanbulticaretuniversitesi.edupage.org/timetable/" 
                   target="_blank" 
                   rel="noreferrer"
-                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300 flex items-center justify-between"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Ders Programı
+                  <span>Ders Programı</span>
+                  <ExternalLink className="w-4 h-4 opacity-50" />
                 </a>
                 <a 
                   href="https://hesapla.ticaretistatistik.com" 
                   target="_blank" 
                   rel="noreferrer"
-                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300 flex items-center justify-between"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Not Hesaplama
+                  <span>Not Hesaplama</span>
+                  <ExternalLink className="w-4 h-4 opacity-50" />
                 </a>
               </div>
             </div>
