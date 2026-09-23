@@ -93,7 +93,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-400">
           <p>© {new Date().getFullYear()} İstanbul Ticaret Üniversitesi İstatistik Topluluğu. Tüm hakları saklıdır.</p>
           <p className="flex items-center">
-            Geliştirici: <a href="https://github.com/ticaretistatistik" className="ml-1 text-brand-ink dark:text-white hover:text-brand-accent transition-colors font-medium">İstatistik Topluluğu IT Ekibi</a>
+            Geliştirici: <a href="https://github.com/ticaretistatistik" className="ml-1 text-brand-ink dark:text-white hover:text-brand-accent transition-colors font-medium">İstatistik Topluluğu Veri ve Gelişim Birimi</a>
           </p>
         </div>
       </div>
