@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Linkedin, Github, Users } from "lucide-react";
+import { Linkedin, Github, Users, Globe } from "lucide-react";
 import { teamMembers } from "@/lib/team";
 
 export const metadata: Metadata = {
@@ -66,6 +66,12 @@ export default function TeamPage() {
                           <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
                         </svg>
                         <span className="sr-only">Medium</span>
+                      </a>
+                    )}
+                    {member.website && (
+                      <a href={member.website} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <Globe className="w-4 h-4" />
+                        <span className="sr-only">Kişisel Web Sitesi</span>
                       </a>
                     )}
                   </div>

@@ -5,6 +5,7 @@ export interface TeamMember {
   linkedin?: string | null;
   github?: string | null;
   medium?: string | null;
+  website?: string | null;
 }
 
 export const teamMembers: TeamMember[] = [
@@ -15,6 +16,7 @@ export const teamMembers: TeamMember[] = [
     linkedin: "https://linkedin.com/in/yigitefeavci",
     github: "https://github.com/yigit433",
     medium: null,
+    website: "https://yigit433.vercel.app/",
   },
   {
     name: "Melike Çumak",
