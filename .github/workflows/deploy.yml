@@ -49,6 +49,9 @@ jobs:
           # Variable (Settings > Secrets and variables > Actions > Variables)
           # named GLOSSARY_SHEET_CSV_URL. If unset, the committed JSON is used.
           GLOSSARY_SHEET_CSV_URL: ${{ vars.GLOSSARY_SHEET_CSV_URL }}
+          GOOGLE_CALENDAR_ICAL_URL: ${{ secrets.GOOGLE_CALENDAR_ICAL_URL }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_EVENTS_DATABASE_ID: ${{ secrets.NOTION_EVENTS_DATABASE_ID }}
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
