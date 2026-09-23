@@ -5,6 +5,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { SearchDialog } from "@/components/search-dialog";
 
+import { StatisticalLoader } from "@/components/statistical-loader";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="tr" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans bg-background text-foreground transition-colors duration-300 ease-in-out`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <StatisticalLoader />
           <Navbar />
           <main className="min-h-screen pt-16 flex flex-col">
             {children}
