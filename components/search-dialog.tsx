@@ -53,8 +53,16 @@ export function SearchDialog() {
         setOpen((open) => !open);
       }
     };
+    
+    const openSearch = () => setOpen(true);
+
     document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
+    window.addEventListener("open-search", openSearch);
+    
+    return () => {
+      document.removeEventListener("keydown", down);
+      window.removeEventListener("open-search", openSearch);
+    };
   }, []);
 
   const results = React.useMemo(() => {

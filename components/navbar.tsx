@@ -77,7 +77,10 @@ export function Navbar() {
 
         <div className="flex items-center space-x-2 md:space-x-4">
           <div className="hidden sm:flex flex-1 md:w-auto md:flex-none">
-            <button className="inline-flex items-center justify-between rounded-full font-medium transition-colors border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 h-9 px-4 py-2 w-48 lg:w-64 text-sm text-slate-500 dark:text-slate-400 relative">
+            <button 
+              onClick={() => window.dispatchEvent(new Event('open-search'))}
+              className="inline-flex items-center justify-between rounded-full font-medium transition-colors border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 h-9 px-4 py-2 w-48 lg:w-64 text-sm text-slate-500 dark:text-slate-400 relative"
+            >
               <span className="hidden lg:inline-flex">Sitede ara...</span>
               <span className="inline-flex lg:hidden">Ara...</span>
               <kbd className="pointer-events-none absolute right-1.5 top-1.5 hidden h-6 select-none items-center gap-1 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-2 font-mono text-[10px] font-medium sm:flex text-slate-500 dark:text-slate-400">
@@ -98,7 +101,10 @@ export function Navbar() {
             </a>
             
             {/* Search Icon for Mobile */}
-            <button className="sm:hidden inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 h-9 w-9 text-slate-600 dark:text-slate-400">
+            <button 
+              onClick={() => window.dispatchEvent(new Event('open-search'))}
+              className="sm:hidden inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 h-9 w-9 text-slate-600 dark:text-slate-400"
+            >
               <Search className="h-5 w-5" />
               <span className="sr-only">Ara</span>
             </button>
