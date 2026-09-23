@@ -1,4 +1,5 @@
 import { Calendar, MapPin, Clock, ArrowRight, Instagram, Linkedin, Ticket, Users, Presentation } from "lucide-react";
+import Link from "next/link";
 import { getEvents as getNotionEvents } from "@/lib/notion";
 import { getEvents as getGoogleCalendarEvents } from "@/lib/calendar";
 
@@ -68,7 +69,7 @@ export default async function EventsPage() {
               {upcomingEvents.length > 0 ? (
                 <div className="flex flex-col gap-6">
                   {upcomingEvents.map((event) => (
-                    <article key={event.id} className="group relative flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-brand-yellow/30 bg-white dark:bg-zinc-900/40 hover:border-brand-yellow transition-colors shadow-sm hover:shadow-lg overflow-hidden">
+                    <Link href={`/etkinlikler/${event.id}`} key={event.id} className="group relative flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-brand-yellow/30 bg-white dark:bg-zinc-900/40 hover:border-brand-yellow transition-colors shadow-sm overflow-hidden block">
                       <div className="absolute top-0 right-0 p-32 bg-brand-yellow/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
                       <div className="shrink-0 flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-yellow/10 text-brand-yellow">
                         <Calendar className="w-8 h-8 stroke-[1.5]" />
@@ -90,7 +91,7 @@ export default async function EventsPage() {
                           </span>
                         </div>
                       </div>
-                    </article>
+                    </Link>
                   ))}
                 </div>
               ) : (
@@ -132,7 +133,7 @@ export default async function EventsPage() {
               <div className="flex flex-col gap-6">
                 {pastEvents.length > 0 ? (
                   pastEvents.map((event) => (
-                    <article key={event.id} className="group flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/30 hover:border-brand-yellow/30 transition-colors shadow-sm hover:shadow-md">
+                    <Link href={`/etkinlikler/${event.id}`} key={event.id} className="group flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/30 hover:border-brand-yellow/30 transition-colors shadow-sm block">
                       <div className="shrink-0 flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 group-hover:bg-brand-yellow/10 group-hover:text-brand-yellow transition-colors">
                         <event.icon className="w-8 h-8 stroke-[1.5]" />
                       </div>
@@ -153,7 +154,7 @@ export default async function EventsPage() {
                           </span>
                         </div>
                       </div>
-                    </article>
+                    </Link>
                   ))
                 ) : (
                   <div className="p-8 text-center border border-zinc-200 dark:border-zinc-800 rounded-3xl bg-zinc-50 dark:bg-zinc-900/20 text-zinc-500">

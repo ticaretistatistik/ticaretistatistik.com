@@ -51,7 +51,7 @@ export default async function EventsPage() {
           {upcomingEvents.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {upcomingEvents.map(event => (
-                <div key={event.id} className="group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col hover:border-brand-accent/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <Link href={`/etkinlikler/${event.id}`} key={event.id} className="group bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col hover:border-brand-accent/50 transition-all duration-300">
                   <div className="flex justify-between items-start mb-6">
                     <span className="inline-flex items-center px-3 py-1 rounded-full bg-brand-accent/10 text-brand-accent text-xs font-semibold tracking-wide uppercase">
                       {event.category}
@@ -83,7 +83,7 @@ export default async function EventsPage() {
                       {event.location}
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           ) : (
