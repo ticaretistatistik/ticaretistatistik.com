@@ -74,6 +74,37 @@ export function Navbar() {
                 </div>
               </div>
             </div>
+            {/* Müfredatlar Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1 transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300 h-16">
+                Müfredatlar
+                <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+              <div className="absolute left-0 top-full -mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-lg py-2 mt-1">
+                  <a href="https://ticaret.edu.tr/istatistik/wp-content/uploads/sites/30/2025/10/2025-2026-Istatistik-Bolumu-Mufredat.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent flex items-center justify-between">
+                    <span>2025-2026</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-50" />
+                  </a>
+                  <a href="https://ticaret.edu.tr/istatistik/wp-content/uploads/sites/30/2024/10/2024-2025-Istatistik-Mufredat.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent flex items-center justify-between">
+                    <span>2024-2025</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-50" />
+                  </a>
+                  <a href="https://ticaret.edu.tr/istatistik/wp-content/uploads/sites/30/2023/09/Istatislik.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent flex items-center justify-between">
+                    <span>2023-2024</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-50" />
+                  </a>
+                  <a href="https://ticaret.edu.tr/istatistik/wp-content/uploads/sites/30/2022/09/2022-2023_Istatistik_Mufredati.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent flex items-center justify-between">
+                    <span>2022-2023</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-50" />
+                  </a>
+                  <a href="https://ticaret.edu.tr/istatistik/wp-content/uploads/sites/30/2022/01/2021-2022_ISTATISTIK_Mufredat.pdf" target="_blank" rel="noopener noreferrer" className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-accent flex items-center justify-between">
+                    <span>2021-2022</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-50" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </nav>
         </div>
 
@@ -191,6 +222,62 @@ export function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span>Not Hesaplama</span>
+                  <ExternalLink className="w-4 h-4 opacity-50" />
+                </a>
+              </div>
+            </div>
+            
+            <div className="pt-4 border-t border-slate-100 dark:border-slate-800/50">
+              <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4 px-1">Müfredatlar</div>
+              <div className="flex flex-col space-y-3 pl-3 border-l-2 border-slate-100 dark:border-slate-800">
+                <a 
+                  href="https://ticaret.edu.tr/istatistik/wp-content/uploads/sites/30/2025/10/2025-2026-Istatistik-Bolumu-Mufredat.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300 flex items-center justify-between"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span>2025-2026</span>
+                  <ExternalLink className="w-4 h-4 opacity-50" />
+                </a>
+                <a 
+                  href="https://ticaret.edu.tr/istatistik/wp-content/uploads/sites/30/2024/10/2024-2025-Istatistik-Mufredat.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300 flex items-center justify-between"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span>2024-2025</span>
+                  <ExternalLink className="w-4 h-4 opacity-50" />
+                </a>
+                <a 
+                  href="https://ticaret.edu.tr/istatistik/wp-content/uploads/sites/30/2023/09/Istatislik.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300 flex items-center justify-between"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span>2023-2024</span>
+                  <ExternalLink className="w-4 h-4 opacity-50" />
+                </a>
+                <a 
+                  href="https://ticaret.edu.tr/istatistik/wp-content/uploads/sites/30/2022/09/2022-2023_Istatistik_Mufredati.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300 flex items-center justify-between"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span>2022-2023</span>
+                  <ExternalLink className="w-4 h-4 opacity-50" />
+                </a>
+                <a 
+                  href="https://ticaret.edu.tr/istatistik/wp-content/uploads/sites/30/2022/01/2021-2022_ISTATISTIK_Mufredat.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-base font-medium transition-colors hover:text-brand-accent text-slate-600 dark:text-slate-300 flex items-center justify-between"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span>2021-2022</span>
                   <ExternalLink className="w-4 h-4 opacity-50" />
                 </a>
               </div>
