@@ -1,35 +1,35 @@
 # Ticaret İstatistik
 
-İstanbul Ticaret Üniversitesi İstatistik Bölümü öğrencileri için hazırlanan açık kaynak yardımcı doküman sitesi. Ders notları, topluluk etkinlikleri, podcast bölümleri ve blog yazıları tek bir yerden ulaşılabilecek şekilde derlenmiştir.
+İstanbul Ticaret Üniversitesi İstatistik Bölümü öğrencileri için hazırlanan açık kaynak yardımcı doküman ve topluluk portalı. Ders notları, topluluk etkinlikleri, yönetim kurulu, blog yazıları ve arşivlere tek bir noktadan modern bir arayüzle erişim sağlar.
 
-**Üretim adresi:** [ticaretistatistik.com](https://ticaretistatistik.com)
+**Canlı URL:** [ticaretistatistik.com](https://ticaretistatistik.com)
 
 ## İçindekiler
 
-1. [Proje hakkında](#proje-hakkında)
-2. [Teknoloji yığını](#teknoloji-yığını)
+1. [Proje Hakkında](#proje-hakkında)
+2. [Teknoloji Yığını](#teknoloji-yığını)
 3. [Gereksinimler](#gereksinimler)
 4. [Kurulum](#kurulum)
 5. [Geliştirme](#geliştirme)
-6. [Proje yapısı](#proje-yapısı)
-7. [İçerik ekleme](#i̇çerik-ekleme)
-8. [Tasarım sistemi](#tasarım-sistemi)
-9. [Katkıda bulunanlar](#katkıda-bulunanlar)
-10. [Katkıda bulunma rehberi](#katkıda-bulunma-rehberi)
-11. [Lisans](#lisans)
+6. [Proje Yapısı](#proje-yapısı)
+7. [İçerik Yönetimi (MDX)](#i̇çerik-yönetimi-mdx)
+8. [Tasarım Sistemi](#tasarım-sistemi)
+9. [Katkıda Bulunma Rehberi](#katkıda-bulunma-rehberi)
+10. [Lisans](#lisans)
 
-## Proje hakkında
+## Proje Hakkında
 
-Site; ders dokümantasyonu, blog yazıları, podcast arşivi, topluluk etkinlikleri ve **Not Hesaplayıcı** ([hesapla.ticaretistatistik.com](https://hesapla.ticaretistatistik.com/)) gibi yardımcı araçlara tek bir editoryal çatı altından erişim sağlar. Tüm içerikler Markdown / MDX ile yazılmıştır ve topluluk üyelerinin katkısına açıktır.
+Önceki altyapısından (Docusaurus) tamamen modern bir **Next.js (App Router)** mimarisine geçiş yapan sitemiz; hız, esneklik ve daha zengin kullanıcı deneyimi sunar. Site üzerinden; ders dokümanları, blog yazıları, etkinlik takvimleri (Google Calendar API entegrasyonlu), geçmiş panel arşivleri ve topluluk iletişim araçlarına ulaşılabilmektedir.
 
-## Teknoloji yığını
+## Teknoloji Yığını
 
-- **Docusaurus 3.10** (`classic` preset) — içerik yönetimi, docs + blog rotaları
-- **React 18** — sayfa bileşenleri
-- **Inter + Fraunces + JetBrains Mono** — editoryal tipografi (Google Fonts üzerinden)
-- **KaTeX (remark-math + rehype-katex)** — matematiksel gösterim
-- **Swiper + react-player** — video carouselleri
-- **react-icons** — feature kartları ve CTA ikonları
+- **Next.js 15 (App Router)** — Sunucu tarafı render (SSR) ve gelişmiş sayfa yönlendirmesi
+- **React 19** — Modern arayüz inşası
+- **Tailwind CSS v3** — Utility-first, marka renklerine göre özelleştirilmiş stil sistemi
+- **Velite** — Yüksek performanslı ve tipli (type-safe) Markdown/MDX içerik yönetimi
+- **Lucide React** — Minimalist ve modern ikon seti
+- **Radix UI** — Erişilebilir ve stil bağımsız UI (Search Modal vb. bileşenler)
+- **Google Calendar API v3** — Dinamik "Etkinlikler" sayfası entegrasyonu
 
 ## Gereksinimler
 
@@ -44,102 +44,73 @@ cd ticaretistatistik.com
 npm install
 ```
 
+### Çevre Değişkenleri (.env)
+
+Etkinlikler sayfasının düzgün çalışabilmesi için `.env` dosyasını oluşturmanız ve Google Takvim bilgilerinizi eklemeniz gerekmektedir:
+
+```env
+GOOGLE_CALENDAR_API_KEY="Sizin_Google_API_Anahtarınız"
+GOOGLE_CALENDAR_ID="ticaretstat@gmail.com"
+```
+*(Not: Bu bilgiler girilmezse Etkinlikler sayfası hata vermez, yalnızca "planlanmış etkinlik bulunmuyor" tasarımı gösterir.)*
+
 ## Geliştirme
 
 ```bash
-npm start        # development sunucu: http://localhost:3000
-npm run build    # production çıktısı üretir (build/ klasörü)
-npm run serve    # build çıktısını yerelde sunar
-npm run clear    # Docusaurus önbelleğini temizler
+npm run dev      # Development sunucusunu başlatır: http://localhost:3000
+npm run build    # Production (canlı) çıktısını üretir ve Velite MDX dosyalarını derler
+npm run start    # Derlenmiş production çıktısını yerelde sunar
 ```
 
-## Proje yapısı
+## Proje Yapısı
 
-```
+```text
 .
-├── blog/                   # Blog yazıları (tarih-prefix klasörleri)
-│   └── authors.yml         # Yazar meta bilgileri
-├── docs/                   # Ders dokümanları (sidebar.js ile yapılandırılır)
-├── src/
-│   ├── components/
-│   │   ├── home/           # Anasayfa bölümleri (Hero, Stats, vb.)
-│   │   └── HomepageFeatures/
-│   ├── css/
-│   │   └── custom.css      # Design token sistemi
-│   ├── pages/              # Özel sayfalar (index, 404, topluluk/*)
-│   ├── theme/              # Docusaurus swizzle'ları
-│   └── utils/
-│       └── generatePreview.js   # Blog paylaşım görseli üretici
-├── static/                 # Public asset'ler (img/, docs/)
-├── docusaurus.config.js    # Ana yapılandırma
-└── sidebars.js             # Docs navigation
+├── app/                    # Next.js App Router sayfaları (page.tsx, layout.tsx)
+│   ├── (marketing)/        # Anasayfa
+│   ├── arsiv/              # Etkinlik ve video arşivi
+│   ├── blog/               # Blog rotaları
+│   ├── docs/               # Eğitim dokümanları
+│   ├── ekibimiz/           # Takım sayfası
+│   └── etkinlikler/        # Dinamik Google Takvim etkinlikleri
+├── components/             # Tekrar kullanılabilir UI bileşenleri (Navbar, Footer, VideoGallery)
+├── content/                # Velite ile yönetilen MDX/Markdown dosyaları (blog, docs, archive)
+├── lib/                    # Helper fonksiyonları ve statik datalar (team.ts, calendar.ts)
+├── public/                 # Statik varlıklar (favicon vb.)
+├── static/                 # Genel proje içi görseller (static/img/)
+├── velite.config.ts        # MDX içerik şeması ve yapılandırması
+└── tailwind.config.ts      # Tailwind CSS yapılandırması (Marka renkleri vb.)
 ```
 
-## İçerik ekleme
+## İçerik Yönetimi (MDX)
 
-### Yeni blog yazısı
+Blog yazıları, dokümanlar ve arşiv verileri artık `content/` klasörü altından yönetilmektedir.
 
-```
-blog/YYYY-MM-DD-slug/
-├── index.md                # Frontmatter + içerik
-└── ...                     # İlgili görseller
-```
-
-Frontmatter şablonu:
-
-```yaml
+### Yeni Blog Yazısı Ekleme
+`content/blog/yeni-yazi.mdx` dosyası oluşturun:
+```mdx
 ---
-slug: yazi-slug
-title: Yazı Başlığı
-authors: [kullanici-id]    # blog/authors.yml içinden
-tags: [etiket1, etiket2]
+title: "Örnek Yazı"
+description: "Bu yazının kısa bir açıklaması."
+date: 2026-10-15
+published: true
 ---
+Yazınızın içeriği buraya gelecek...
 ```
 
-Uzun yazılarda anasayfa özetini `<!-- truncate -->` ile sınırlandır.
+*Not: Tüm MDX dosyaları `velite` aracıyla otomatik olarak okunur ve `app/` altındaki sayfalarda derlenip tip (type) desteği ile sunulur.*
 
-### Yeni yazar ekleme
+## Tasarım Sistemi
 
-`blog/authors.yml` içine ekle:
+Sitenin kurumsal renkleri, global değişkenler olarak `app/globals.css` ve `tailwind.config.ts` dosyalarında tanımlanmıştır:
+- **Brand Accent (Sarı)**: `--brand-accent` (`#f5c518`) — Hover efektleri, butonlar ve ikonlar
+- **Brand Ink (Koyu/Lacivert-Siyah)**: `--brand-ink` (`#0a0a0a`) — Başlıklar ve ana metinler
+- Proje genelinde `brand-blue` veya `brand-navy` gibi eski Docusaurus class'ları yerine standart Tailwind (`slate`, `zinc` vb.) veya marka özel `brand-accent`, `brand-ink` sınıfları kullanılmaktadır.
 
-```yaml
-kullaniciid:
-  name: Ad Soyad
-  title: Ünvan
-  url: https://github.com/kullanici
-  image_url: https://github.com/kullanici.png
-```
+## Katkıda Bulunma Rehberi
 
-### Yeni doküman ekleme
-
-`docs/<konu>/...` altına Markdown dosyası oluştur ve gerekirse `sidebars.js` içinde grupla.
-
-## Tasarım sistemi
-
-Tüm renk, tipografi, aralık ve gölge tokenları `src/css/custom.css` dosyasındaki `:root` ve `[data-theme='dark']` bloklarında tanımlıdır. Özet:
-
-- **Birincil renk**: `--brand-yellow` (#f5cf06) — vurgu olarak kullanılır, ana yüzey rengi değil
-- **Ink**: `--brand-ink` — başlıklar ve ana metin
-- **Yüzeyler**: warm cream (`--brand-surface`) + raised (`--brand-surface-raised`)
-- **Tipografi**: Inter (gövde) + Fraunces (başlık, italic display) + JetBrains Mono (kod)
-- **Spacing**: 4px tabanlı `--space-1` ... `--space-24`
-- **Radii**: `--radius-sm/md/lg/pill`
-- **Motion**: `--ease-out` + `--dur-fast/base/slow`
-
-Yeni bileşen yazarken bu tokenları kullan — sabit değer (hardcoded hex, px) yazma.
-
-## Katkıda bulunanlar
-
-<a href="https://github.com/ticaretistatistik/ticaretistatistik.com/graphs/contributors">
-  <img alt="Katkıda bulunanların profil fotoğrafları" src="https://contrib.rocks/image?repo=ticaretistatistik/ticaretistatistik.com" />
-</a>
-
-## Katkıda bulunma rehberi
-
-Yazı yazmak veya kod katkısında bulunmak için [CONTRIBUTING.md](./CONTRIBUTING.md) dosyasını inceleyebilirsin. PR'lar, issue'lar ve tartışmalar her zaman açıktır.
+Yazı yazmak veya kod katkısında bulunmak için PR'lar, issue'lar ve tartışmalar her zaman açıktır. Repoyu "fork"layıp kendi değişikliklerinizi ana dala (main) PR olarak gönderebilirsiniz.
 
 ## Lisans
 
-Bu proje `GPL-3.0` lisansı ile lisanslanmıştır. Detaylar için [LICENSE](./LICENSE) dosyasına bakınız.
-
-This project is licensed under the `GPL-3.0` License. See the [LICENSE](./LICENSE) file for details.
+Bu proje `GPL-3.0` lisansı ile lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakınız.
