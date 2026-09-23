@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Yiğit Efe Avcı",
+    "role": "Topluluk Başkanı",
+    "period": "2026-2027",
+    "bio": "Topluluğun genel vizyonunu belirler ve stratejik hedeflere ulaşılmasını sağlar. Yenilikçi projeler ve kurumsal işbirliklerine öncülük eder.",
+    "initials": "YA",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/yigitefeavci/",
+      "mail": "mailto:yigitefeavci@outlook.com.tr"
+    }
+  },
+  {
+    "id": 2,
+    "name": "İkra Demir",
+    "role": "Başkan Yardımcısı",
+    "period": "2026-2027",
+    "bio": "Topluluğun operasyonel süreçlerini koordine eder. Birimler arası uyumu sağlayarak projelerin ve etkinliklerin eksiksiz yürütülmesini üstlenir.",
+    "initials": "İD",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/g-ikra-demir-425a33339/",
+      "mail": "mailto:ticaretstat@gmail.com"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Melike Çumak",
+    "role": "Başkan Yardımcısı",
+    "period": "2026-2027",
+    "bio": "Yönetim stratejilerinin uygulanmasına destek olur. Topluluk içi iletişimi ve etkinliklerin planlama aşamalarındaki organizasyonu yönetir.",
+    "initials": "MÇ",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/melike-%C3%A7umak-29a51b331/",
+      "mail": "mailto:ticaretstat@gmail.com"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Ezgi Hale Öztürk",
+    "role": "Veri ve Gelişim Birimi Başkanı",
+    "period": "2026-2027",
+    "bio": "İstatistik ve veri bilimi eğitimlerinin içeriklerini tasarlar. Üyelerin teknik yetkinliklerini artıracak atölye ve gelişim programlarını yürütür.",
+    "initials": "EÖ",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/ezgihale%C3%B6zt%C3%BCrk123/",
+      "mail": "mailto:ticaretstat@gmail.com"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Burcu Avcu",
+    "role": "Sosyal Medya ve Tasarım Birimi Başkanı",
+    "period": "2026-2027",
+    "bio": "Topluluğun marka kimliğini ve dijital görünürlüğünü yönetir. Özgün tasarımlar hazırlayarak sosyal medya stratejilerine yön verir.",
+    "initials": "BA",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/burcu-avcu-b2939b389/",
+      "mail": "mailto:ticaretstat@gmail.com"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Elif Nur Yıldırım",
+    "role": "Organizasyon ve Sponsorluk Birimi Başkanı",
+    "period": "2026-2027",
+    "bio": "Etkinliklerin operasyonel süreçlerini planlar. Kurumsal ağ kurarak topluluğa sponsorluk ve kaynak yönetimi konularında destek sağlar.",
+    "initials": "EY",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/elifnuryildirim-istatistik/",
+      "mail": "mailto:ticaretstat@gmail.com"
+    }
+  }
+]

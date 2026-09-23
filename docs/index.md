@@ -1,4 +1,7 @@
-# Dokümanlar
+---
+title: "Dokümanlar"
+---
+
 
 Site içerisinde yer alan dokümanlar aşağıdaki gibidir:
 

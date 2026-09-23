@@ -1,20 +1,14 @@
 mertsismanoglu:
   name: Mert Şişmanoğlu
-  title: Veri ve Gelişim Birimi Üyesi
+  title: Topluluk Üyesi
   url: https://github.com/mertssmnoglu
   image_url: https://github.com/mertssmnoglu.png
 
 yigitefeavci:
   name: Yiğit Efe Avcı
-  title: Veri ve Gelişim Birimi Başkanı
+  title: Topluluk Başkanı
   url: https://github.com/yigit433
   image_url: https://github.com/yigit433.png
-
-kubilayerislik:
-  name: Kubilay Erişlik
-  title: Arş. Gör. Dr.
-  url: https://github.com/kubilayerislik
-  image_url: https://github.com/kubilayerislik.png
 
 denizgerceker:
   name: Deniz Gerçeker
@@ -24,7 +18,7 @@ denizgerceker:
 
 yakupvatansever:
   name: Yakup Vatansever
-  title: Sosyal Medya ve Tasarım Birimi Başkanı
+  title: Mezun Öğrenci
   url: https://github.com/yakupvatansever
   image_url: https://github.com/yakupvatansever.png
 
@@ -36,6 +30,6 @@ aslisuveybeoz:
 
 ahmetince:
   name: Ahmet İnce
-  title: Veri ve Gelişim Birimi Üyesi
+  title: Topluluk Üyesi
   url: https://ticaret.edu.tr/istatistik/
   image_url: /img/icon-cropped.png

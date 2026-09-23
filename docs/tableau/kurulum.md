@@ -4,7 +4,6 @@ description: Tableau Desktop'ın öğrenci lisansıyla veya Tableau Public'in ü
 sidebar_position: 2
 ---
 
-# Kurulum
 
 Tableau iki farklı yol üzerinden ücretsiz olarak edinilebilir: **Tableau for Students** programı aracılığıyla alınan bir yıllık akademik Desktop lisansı veya sınırsız süreli ama çalışmaları herkese açık kaydeden **Tableau Public** sürümü. Bu bölümde her iki yolun kurulum adımları, sistem gereksinimleri ve lisans aktivasyon süreci anlatılmıştır.
 
