@@ -11,7 +11,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Yiğit Efe Avcı",
     role: "Başkan",
-    image: null,
+    image: "/static/img/team/YigitEfeAvci.jpg",
     linkedin: "https://linkedin.com/in/yigitefeavci",
     github: "https://github.com/yigit433",
     medium: null,
@@ -19,7 +19,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Melike Çumak",
     role: "Başkan Yardımcısı",
-    image: null,
+    image: "/static/img/team/MelikeCumak.jpg",
     linkedin: "https://www.linkedin.com/in/melike-%C3%A7umak-29a51b331/",
     github: null,
     medium: null,
@@ -27,7 +27,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "İkra Demir",
     role: "Başkan Yardımcısı",
-    image: null,
+    image: "/static/img/team/IkraDemir.jpg",
     linkedin: "https://www.linkedin.com/in/g-ikra-demir-425a33339/",
     github: null,
     medium: null,
@@ -35,7 +35,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Ezgi Hale Öztürk",
     role: "Veri ve Gelişim Birimi Başkanı",
-    image: null,
+    image: "/static/img/team/EzgiHaleOzturk.jpg",
     linkedin: "https://www.linkedin.com/in/ezgihale%C3%B6zt%C3%BCrk123/",
     github: null,
     medium: null,
@@ -51,7 +51,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Burcu Avcu",
     role: "Tasarım ve Sosyal Medya Birimi Başkanı",
-    image: null,
+    image: "/static/img/team/BurcuAvcu.jpg",
     linkedin: "https://www.linkedin.com/in/burcu-avcu-b2939b389/",
     github: null,
     medium: null,
@@ -59,7 +59,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Elif Nur Yıldırım",
     role: "Sponsorluk ve Organizasyon Birimi Başkanı",
-    image: null,
+    image: "/static/img/team/ElifNurYildirim.jpg",
     linkedin: "https://www.linkedin.com/in/elifnuryildirim-istatistik/",
     github: null,
     medium: null,
