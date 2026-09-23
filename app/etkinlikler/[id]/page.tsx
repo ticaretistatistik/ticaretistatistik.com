@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const events = await getEvents();
-  const event = events.find((e) => e.id === params.id);
+  const decodedId = decodeURIComponent(params.id);
+  const event = events.find((e) => e.id === decodedId || e.id === params.id);
 
   if (!event) {
     return { title: "Etkinlik Bulunamadı" };
@@ -31,7 +32,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EventDetailPage({ params }: Props) {
   const events = await getEvents();
-  const event = events.find((e) => e.id === params.id);
+  const decodedId = decodeURIComponent(params.id);
+  const event = events.find((e) => e.id === decodedId || e.id === params.id);
 
   if (!event) {
     notFound();

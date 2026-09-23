@@ -97,7 +97,7 @@ export async function getEvents(): Promise<CalendarEvent[]> {
       description = String(description).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
       return {
-        id: item.uid + "-" + startDate.getTime(),
+        id: (item.uid || "").replace(/[^a-zA-Z0-9]/g, "-") + "-" + startDate.getTime(),
         title: title,
         date: formatterDate.format(startDate),
         time: timeString,
