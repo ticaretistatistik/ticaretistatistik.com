@@ -93,7 +93,10 @@ export default async function EventDetailPage({ params }: Props) {
 
           <div className="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
             <h3 className="text-xl font-semibold mb-4 text-brand-ink dark:text-white">Etkinlik Hakkında</h3>
-            <p className="whitespace-pre-wrap leading-relaxed">{event.description}</p>
+            <div 
+              className="leading-relaxed whitespace-pre-wrap break-words"
+              dangerouslySetInnerHTML={{ __html: event.htmlDescription || event.description }}
+            />
           </div>
 
           {event.location && event.location !== "Konum belirtilmedi" && !event.location.toLowerCase().includes("online") && (

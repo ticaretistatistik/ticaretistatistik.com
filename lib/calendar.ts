@@ -12,6 +12,7 @@ export interface CalendarEvent {
   rawDate: Date;
   startDate: Date;
   endDate?: Date;
+  htmlDescription?: string;
 }
 
 export async function getEvents(): Promise<CalendarEvent[]> {
@@ -92,9 +93,27 @@ export async function getEvents(): Promise<CalendarEvent[]> {
         title = match[2];
       }
 
-      // Format description: remove raw HTML and excessive whitespace
-      let description = item.description || "Bu etkinlik için bir açıklama girilmemiş.";
-      description = String(description).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+      // Format description: preserve newlines but remove HTML tags for the short text version
+      let rawDesc = item.description || "Bu etkinlik için bir açıklama girilmemiş.";
+      let description = String(rawDesc)
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<\/p>/gi, '\n\n')
+        .replace(/<[^>]+>/g, '')
+        .replace(/&nbsp;/g, ' ')
+        .trim();
+        
+      // For the detailed HTML version, we can try to linkify raw text if it doesn't have <a> tags
+      let htmlDesc = String(rawDesc);
+      // If it's plain text with just URLs (no <a href>), let's auto-link them
+      if (!htmlDesc.includes('<a ')) {
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        htmlDesc = htmlDesc.replace(urlRegex, '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-brand-accent hover:underline">$1</a>');
+        // also replace newlines with <br> since it's raw text
+        htmlDesc = htmlDesc.replace(/\n/g, '<br/>');
+      } else {
+        // If it already has HTML (from Google Calendar's rich text editor), just make sure links open in new tab
+        htmlDesc = htmlDesc.replace(/<a /g, '<a target="_blank" rel="noopener noreferrer" class="text-brand-accent hover:underline" ');
+      }
 
       return {
         id: (item.uid || "").replace(/[^a-zA-Z0-9]/g, "-") + "-" + startDate.getTime(),
@@ -103,6 +122,7 @@ export async function getEvents(): Promise<CalendarEvent[]> {
         time: timeString,
         location: item.location || "Konum belirtilmedi",
         description: description,
+        htmlDescription: htmlDesc,
         status: isPast ? "past" : "upcoming",
         category: category,
         rawDate: startDate,
