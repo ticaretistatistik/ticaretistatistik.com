@@ -29,6 +29,9 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
+  if (archive.length === 0) {
+    return [{ slug: ["_empty"] }];
+  }
   return archive.map((event) => ({
     slug: event.slug.split("/"),
   }));

@@ -30,6 +30,9 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
+  if (docs.length === 0) {
+    return [{ slug: [] }, { slug: ["_empty"] }];
+  }
   const paths = docs.map((doc) => ({
     slug: doc.slug.split("/"),
   }));

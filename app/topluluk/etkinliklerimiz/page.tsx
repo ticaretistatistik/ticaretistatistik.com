@@ -1,6 +1,6 @@
 import { Calendar, MapPin, Clock, ArrowRight, Instagram, Linkedin, Ticket, Users, Presentation } from "lucide-react";
 import { getEvents as getNotionEvents } from "@/lib/notion";
-import { getGoogleCalendarEvents } from "@/lib/calendar";
+import { getEvents as getGoogleCalendarEvents } from "@/lib/calendar";
 
 export const revalidate = 3600;
 

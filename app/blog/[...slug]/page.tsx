@@ -35,6 +35,9 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
+  if (blog.length === 0) {
+    return [{ slug: ["_empty"] }];
+  }
   return blog.map((post) => ({
     slug: post.slug.split("/"),
   }));
