@@ -128,7 +128,7 @@ export function Navbar() {
               <Instagram className="h-4 w-4" />
               <span className="sr-only">Instagram</span>
             </a>
-            <a href="https://github.com/iticu-istatistik" target="_blank" rel="noreferrer" className="hidden sm:inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-accent h-9 w-9 text-slate-600 dark:text-slate-400">
+            <a href="https://github.com/ticaretistatistik" target="_blank" rel="noreferrer" className="hidden sm:inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-accent h-9 w-9 text-slate-600 dark:text-slate-400">
               <Github className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
             </a>
@@ -288,7 +288,7 @@ export function Navbar() {
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="https://github.com/iticu-istatistik" target="_blank" rel="noreferrer" className="text-slate-600 dark:text-slate-400 hover:text-brand-accent transition-colors">
+              <a href="https://github.com/ticaretistatistik" target="_blank" rel="noreferrer" className="text-slate-600 dark:text-slate-400 hover:text-brand-accent transition-colors">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>

@@ -24,7 +24,7 @@ export function Footer() {
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="https://github.com/iticu-istatistik" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-brand-accent transition-colors">
+              <a href="https://github.com/ticaretistatistik" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-brand-accent transition-colors">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>
