@@ -10,6 +10,8 @@ export interface CalendarEvent {
   status: "upcoming" | "past";
   category: string;
   rawDate: Date;
+  startDate: Date;
+  endDate?: Date;
 }
 
 export async function getEvents(): Promise<CalendarEvent[]> {
@@ -38,7 +40,7 @@ export async function getEvents(): Promise<CalendarEvent[]> {
 
     for (const k in data) {
       if (data.hasOwnProperty(k)) {
-        const ev = data[k];
+        const ev: any = data[k];
         if (ev.type !== 'VEVENT') continue;
 
         if (ev.rrule) {
@@ -104,6 +106,8 @@ export async function getEvents(): Promise<CalendarEvent[]> {
         status: isPast ? "past" : "upcoming",
         category: category,
         rawDate: startDate,
+        startDate: startDate,
+        endDate: endDate || undefined,
       };
     });
 
