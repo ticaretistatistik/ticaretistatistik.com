@@ -100,7 +100,7 @@ export default async function EventsPage() {
                       </div>
                       <div className="flex-1 relative z-10">
                         <h3 className="text-xl font-medium text-black dark:text-white mb-2">{event.title}</h3>
-                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed">
+                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed line-clamp-2">
                           {event.description}
                         </p>
                         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400 font-medium">
@@ -163,7 +163,7 @@ export default async function EventsPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-medium text-black dark:text-white mb-2">{event.title}</h3>
-                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed">
+                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed line-clamp-2">
                           {event.description}
                         </p>
                         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400 font-medium">
