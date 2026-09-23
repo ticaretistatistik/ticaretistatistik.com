@@ -29,12 +29,18 @@ export default async function EventsPage() {
       date: dateStr,
       time: timeStr !== "00:00" ? timeStr : "Saat belirtilmedi",
       isUpcoming: calEvent.startDate > new Date(),
-      icon: Users // Varsayılan ikon
+      icon: Users, // Varsayılan ikon
+      rawDate: calEvent.startDate
     };
   });
 
-  const upcomingEvents = mergedEvents.filter(e => e.isUpcoming);
-  const pastEvents = mergedEvents.filter(e => !e.isUpcoming);
+  const upcomingEvents = mergedEvents
+    .filter(e => e.isUpcoming)
+    .sort((a, b) => a.rawDate.getTime() - b.rawDate.getTime());
+
+  const pastEvents = mergedEvents
+    .filter(e => !e.isUpcoming)
+    .sort((a, b) => b.rawDate.getTime() - a.rawDate.getTime());
 
   return (
     <div className="min-h-screen pt-24 pb-32 text-zinc-900 dark:text-zinc-50">
@@ -177,8 +183,9 @@ export default async function EventsPage() {
                 <p className="text-zinc-600 dark:text-zinc-400 mb-6 font-light leading-relaxed">
                   Topluluğumuzun etkinliklerinde yer almak, veri bilimi ekosistemine katkı sağlamak ve geleceğin istatistikçileriyle buluşmak ister misiniz?
                 </p>
-                <a href="mailto:ticaretstat@gmail.com" className="inline-flex items-center gap-2 text-brand-yellow font-medium hover:gap-3 transition-all">
-                  ticaretstat@gmail.com <ArrowRight className="w-4 h-4" />
+                <a href="mailto:sponsorluk.ticaretstat@gmail.com" className="group flex flex-wrap items-center gap-2 text-brand-yellow font-medium transition-all w-full">
+                  <span className="break-all">sponsorluk.ticaretstat@gmail.com</span> 
+                  <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
