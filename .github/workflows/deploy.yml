@@ -34,13 +34,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Cache Docusaurus build
+      - name: Cache Next.js build
         uses: actions/cache@v4
         with:
-          path: .docusaurus
-          key: ${{ runner.os }}-docusaurus-${{ hashFiles('**/package-lock.json', '**/docusaurus.config.js') }}
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-docusaurus-
+            ${{ runner.os }}-nextjs-
 
       - name: Build website
         run: npm run build
@@ -53,7 +53,7 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: out
 
   deploy:
     name: Deploy to GitHub Pages

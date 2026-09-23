@@ -21,13 +21,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Cache Docusaurus build
+      - name: Cache Next.js build
         uses: actions/cache@v4
         with:
-          path: .docusaurus
-          key: ${{ runner.os }}-docusaurus-${{ hashFiles('**/package-lock.json', '**/docusaurus.config.js') }}
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-docusaurus-
+            ${{ runner.os }}-nextjs-
 
       - name: Test build website
         run: npm run build
