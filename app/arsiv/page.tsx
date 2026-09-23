@@ -2,6 +2,7 @@ import { archive } from "#site/content";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight, Calendar, ImageIcon, LayoutGrid } from "lucide-react";
+import { VideoGallery } from "@/components/video-gallery";
 
 export const metadata: Metadata = {
   title: "Arşiv",
@@ -87,13 +88,27 @@ export default function ArchiveIndexPage() {
         </div>
 
         {sortedArchives.length === 0 && (
-          <div className="py-24 text-center bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800">
+          <div className="py-24 text-center bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 mb-16">
             <div className="inline-flex justify-center items-center w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 mb-4">
               <LayoutGrid className="w-8 h-8 text-slate-400" />
             </div>
-            <p className="text-slate-500 dark:text-slate-400 text-lg font-medium">Henüz arşivlenmiş bir etkinlik bulunmuyor.</p>
+            <p className="text-slate-500 dark:text-slate-400 text-lg font-medium">Henüz arşivlenmiş bir etkinlik fotoğrafı bulunmuyor.</p>
           </div>
         )}
+
+        {/* Video Kayıtları Section */}
+        <div id="video-gallery-section" className="mt-24 pt-16 border-t border-slate-200 dark:border-slate-800">
+          <header className="mb-12 text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-brand-ink dark:text-white mb-4">
+              Panel ve Söyleşi Kayıtları
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400">
+              Geçmişteki en popüler yayınlarımız, röportajlarımız ve konferans videolarımız.
+            </p>
+          </header>
+
+          <VideoGallery />
+        </div>
       </div>
     </div>
   );
