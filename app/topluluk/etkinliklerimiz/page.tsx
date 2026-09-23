@@ -61,9 +61,27 @@ export default async function EventsPage() {
           </div>
         </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          {/* Main Content - Upcoming & Past Events */}
-          <div className="lg:col-span-8 flex flex-col gap-20">
+        {/* Sponsorship Banner */}
+        <div className="mb-20 rounded-3xl border border-brand-yellow/30 bg-gradient-to-r from-brand-yellow/5 to-transparent dark:from-brand-yellow/10 p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
+            <div className="w-16 h-16 shrink-0 rounded-2xl bg-brand-yellow/10 text-brand-yellow flex items-center justify-center">
+              <Ticket className="w-8 h-8 stroke-[1.5]" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-medium text-black dark:text-white mb-2">Sponsorluk & İş Birliği</h3>
+              <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed max-w-2xl">
+                Topluluğumuzun etkinliklerinde yer almak, veri bilimi ekosistemine katkı sağlamak ve geleceğin istatistikçileriyle buluşmak ister misiniz?
+              </p>
+            </div>
+          </div>
+          <a href="mailto:sponsorluk.ticaretstat@gmail.com" className="shrink-0 group flex items-center justify-center gap-3 bg-brand-yellow text-black px-8 py-4 rounded-2xl font-medium hover:bg-yellow-400 transition-colors shadow-sm w-full md:w-auto text-center">
+            <span>İletişime Geçin</span> 
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+
+        <div>
+          <div className="flex flex-col gap-20">
             
             {/* Upcoming Events */}
             <section>
@@ -170,25 +188,6 @@ export default async function EventsPage() {
               </div>
             </section>
 
-          </div>
-
-          {/* Sidebar / Info */}
-          <div className="lg:col-span-4">
-            <div className="sticky top-32 flex flex-col gap-8">
-              <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 p-8 shadow-sm">
-                <div className="w-12 h-12 rounded-full bg-brand-yellow/10 text-brand-yellow flex items-center justify-center mb-6">
-                  <Ticket className="w-6 h-6 stroke-[1.5]" />
-                </div>
-                <h3 className="text-xl font-medium text-black dark:text-white mb-3">Sponsorluk & İş Birliği</h3>
-                <p className="text-zinc-600 dark:text-zinc-400 mb-6 font-light leading-relaxed">
-                  Topluluğumuzun etkinliklerinde yer almak, veri bilimi ekosistemine katkı sağlamak ve geleceğin istatistikçileriyle buluşmak ister misiniz?
-                </p>
-                <a href="mailto:sponsorluk.ticaretstat@gmail.com" className="group flex flex-wrap items-center gap-2 text-brand-yellow font-medium transition-all w-full">
-                  <span className="break-all">sponsorluk.ticaretstat@gmail.com</span> 
-                  <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
