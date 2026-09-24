@@ -1,15 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Calendar, Users, BarChart, Instagram, Linkedin, Database, Binary, Github, MapPin, Clock } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, Users, BarChart, Instagram, Linkedin, Database, Binary, Github } from "lucide-react";
 
-import { getEvents } from "@/lib/calendar";
-
-export default async function Home() {
-  const events = await getEvents();
-  const upcomingEvents = events
-    .filter(e => e.status === "upcoming")
-    .sort((a, b) => a.rawDate.getTime() - b.rawDate.getTime())
-    .slice(0, 3);
-
+export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* HERO SECTION */}
@@ -121,56 +113,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
-      {/* UPCOMING EVENTS SECTION */}
-      {upcomingEvents.length > 0 && (
-        <section className="section-padding bg-slate-50 dark:bg-background relative z-10 border-t border-slate-200 dark:border-slate-800">
-          <div className="container-custom">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-yellow/10 text-brand-yellow text-sm font-medium mb-4">
-                  <span className="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
-                  Yakında
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-brand-ink dark:text-white">
-                  Yaklaşan Etkinlikler
-                </h2>
-              </div>
-              <Link href="/topluluk/etkinliklerimiz" className="group flex items-center gap-2 text-brand-ink dark:text-white font-medium hover:text-brand-accent transition-colors">
-                Tümünü Gör <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {upcomingEvents.map((event) => (
-                <Link href={`/etkinlikler/${event.id}`} key={event.id} className="group relative flex flex-col p-6 md:p-8 rounded-3xl border border-brand-yellow/30 bg-white dark:bg-zinc-900/40 hover:border-brand-yellow transition-colors shadow-sm overflow-hidden block">
-                  <div className="absolute top-0 right-0 p-32 bg-brand-yellow/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-                  <div className="shrink-0 flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-yellow/10 text-brand-yellow mb-6">
-                    <Calendar className="w-6 h-6 stroke-[1.5]" />
-                  </div>
-                  <div className="flex-1 relative z-10 flex flex-col">
-                    <h3 className="text-xl font-medium text-black dark:text-white mb-3 group-hover:text-brand-accent transition-colors">{event.title}</h3>
-                    <p className="text-zinc-600 dark:text-zinc-400 mb-6 font-light leading-relaxed line-clamp-2">
-                      {event.description}
-                    </p>
-                    <div className="mt-auto flex flex-col gap-3 text-sm text-zinc-500 dark:text-zinc-400 font-medium border-t border-slate-100 dark:border-slate-800 pt-6">
-                      <span className="flex items-center gap-2 text-brand-yellow">
-                        <Calendar className="w-4 h-4" /> {event.date}
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <Clock className="w-4 h-4" /> {event.time}
-                      </span>
-                      <span className="flex items-center gap-2 line-clamp-1">
-                        <MapPin className="w-4 h-4 shrink-0" /> {event.location}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* QUICK LINKS SECTION */}
       <section className="section-padding bg-slate-50/50 dark:bg-slate-950/50 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden">

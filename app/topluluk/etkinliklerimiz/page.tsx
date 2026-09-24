@@ -1,5 +1,4 @@
 import { Calendar, MapPin, Clock, ArrowRight, Instagram, Linkedin, Ticket, Users, Presentation } from "lucide-react";
-import Link from "next/link";
 import { getEvents as getNotionEvents } from "@/lib/notion";
 import { getEvents as getGoogleCalendarEvents } from "@/lib/calendar";
 
@@ -29,18 +28,12 @@ export default async function EventsPage() {
       date: dateStr,
       time: timeStr !== "00:00" ? timeStr : "Saat belirtilmedi",
       isUpcoming: calEvent.startDate > new Date(),
-      icon: Users, // Varsayılan ikon
-      rawDate: calEvent.startDate
+      icon: Users // Varsayılan ikon
     };
   });
 
-  const upcomingEvents = mergedEvents
-    .filter(e => e.isUpcoming)
-    .sort((a, b) => a.rawDate.getTime() - b.rawDate.getTime());
-
-  const pastEvents = mergedEvents
-    .filter(e => !e.isUpcoming)
-    .sort((a, b) => b.rawDate.getTime() - a.rawDate.getTime());
+  const upcomingEvents = mergedEvents.filter(e => e.isUpcoming);
+  const pastEvents = mergedEvents.filter(e => !e.isUpcoming);
 
   return (
     <div className="min-h-screen pt-24 pb-32 text-zinc-900 dark:text-zinc-50">
@@ -61,27 +54,9 @@ export default async function EventsPage() {
           </div>
         </header>
 
-        {/* Sponsorship Banner */}
-        <div className="mb-20 rounded-3xl border border-brand-yellow/30 bg-gradient-to-r from-brand-yellow/5 to-transparent dark:from-brand-yellow/10 p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
-            <div className="w-16 h-16 shrink-0 rounded-2xl bg-brand-yellow/10 text-brand-yellow flex items-center justify-center">
-              <Ticket className="w-8 h-8 stroke-[1.5]" />
-            </div>
-            <div>
-              <h3 className="text-2xl font-medium text-black dark:text-white mb-2">Sponsorluk & İş Birliği</h3>
-              <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed max-w-2xl">
-                Topluluğumuzun etkinliklerinde yer almak, veri bilimi ekosistemine katkı sağlamak ve geleceğin istatistikçileriyle buluşmak ister misiniz?
-              </p>
-            </div>
-          </div>
-          <a href="mailto:sponsorluk.ticaretstat@gmail.com" className="shrink-0 group flex items-center justify-center gap-3 bg-brand-yellow text-black px-8 py-4 rounded-2xl font-medium hover:bg-yellow-400 transition-colors shadow-sm w-full md:w-auto text-center">
-            <span>İletişime Geçin</span> 
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
-
-        <div>
-          <div className="flex flex-col gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          {/* Main Content - Upcoming & Past Events */}
+          <div className="lg:col-span-8 flex flex-col gap-20">
             
             {/* Upcoming Events */}
             <section>
@@ -93,14 +68,14 @@ export default async function EventsPage() {
               {upcomingEvents.length > 0 ? (
                 <div className="flex flex-col gap-6">
                   {upcomingEvents.map((event) => (
-                    <Link href={`/etkinlikler/${event.id}`} key={event.id} className="group relative flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-brand-yellow/30 bg-white dark:bg-zinc-900/40 hover:border-brand-yellow transition-colors shadow-sm overflow-hidden block">
+                    <article key={event.id} className="group relative flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-brand-yellow/30 bg-white dark:bg-zinc-900/40 hover:border-brand-yellow transition-colors shadow-sm hover:shadow-lg overflow-hidden">
                       <div className="absolute top-0 right-0 p-32 bg-brand-yellow/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
                       <div className="shrink-0 flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-yellow/10 text-brand-yellow">
                         <Calendar className="w-8 h-8 stroke-[1.5]" />
                       </div>
                       <div className="flex-1 relative z-10">
                         <h3 className="text-xl font-medium text-black dark:text-white mb-2">{event.title}</h3>
-                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed line-clamp-2">
+                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed">
                           {event.description}
                         </p>
                         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400 font-medium">
@@ -115,7 +90,7 @@ export default async function EventsPage() {
                           </span>
                         </div>
                       </div>
-                    </Link>
+                    </article>
                   ))}
                 </div>
               ) : (
@@ -157,13 +132,13 @@ export default async function EventsPage() {
               <div className="flex flex-col gap-6">
                 {pastEvents.length > 0 ? (
                   pastEvents.map((event) => (
-                    <Link href={`/etkinlikler/${event.id}`} key={event.id} className="group flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/30 hover:border-brand-yellow/30 transition-colors shadow-sm block">
+                    <article key={event.id} className="group flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/30 hover:border-brand-yellow/30 transition-colors shadow-sm hover:shadow-md">
                       <div className="shrink-0 flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 group-hover:bg-brand-yellow/10 group-hover:text-brand-yellow transition-colors">
                         <event.icon className="w-8 h-8 stroke-[1.5]" />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-medium text-black dark:text-white mb-2">{event.title}</h3>
-                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed line-clamp-2">
+                        <p className="text-zinc-600 dark:text-zinc-400 mb-4 font-light leading-relaxed">
                           {event.description}
                         </p>
                         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400 font-medium">
@@ -178,7 +153,7 @@ export default async function EventsPage() {
                           </span>
                         </div>
                       </div>
-                    </Link>
+                    </article>
                   ))
                 ) : (
                   <div className="p-8 text-center border border-zinc-200 dark:border-zinc-800 rounded-3xl bg-zinc-50 dark:bg-zinc-900/20 text-zinc-500">
@@ -188,6 +163,24 @@ export default async function EventsPage() {
               </div>
             </section>
 
+          </div>
+
+          {/* Sidebar / Info */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-32 flex flex-col gap-8">
+              <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 p-8 shadow-sm">
+                <div className="w-12 h-12 rounded-full bg-brand-yellow/10 text-brand-yellow flex items-center justify-center mb-6">
+                  <Ticket className="w-6 h-6 stroke-[1.5]" />
+                </div>
+                <h3 className="text-xl font-medium text-black dark:text-white mb-3">Sponsorluk & İş Birliği</h3>
+                <p className="text-zinc-600 dark:text-zinc-400 mb-6 font-light leading-relaxed">
+                  Topluluğumuzun etkinliklerinde yer almak, veri bilimi ekosistemine katkı sağlamak ve geleceğin istatistikçileriyle buluşmak ister misiniz?
+                </p>
+                <a href="mailto:ticaretstat@gmail.com" className="inline-flex items-center gap-2 text-brand-yellow font-medium hover:gap-3 transition-all">
+                  ticaretstat@gmail.com <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
