@@ -12,22 +12,15 @@ export default async function EventsPage() {
   // eşleşen bir Notion içeriği varsa Notion'daki zengin bilgileri (açıklama vb.) kullanıyoruz.
   const mergedEvents = calendarEvents.map(calEvent => {
     const matchingNotion = notionEvents.find(n => n.title.toLowerCase() === calEvent.title.toLowerCase());
-    
-    // Tarih ve saat formatlama (Google Calendar datasından)
-    const dateStr = calEvent.startDate.toLocaleDateString("tr-TR", { year: 'numeric', month: 'long', day: 'numeric' });
-    let timeStr = calEvent.startDate.toLocaleTimeString("tr-TR", { hour: '2-digit', minute:'2-digit' });
-    if (calEvent.endDate) {
-      timeStr += " - " + calEvent.endDate.toLocaleTimeString("tr-TR", { hour: '2-digit', minute:'2-digit' });
-    }
 
     return {
       id: calEvent.id,
       title: matchingNotion?.title || calEvent.title,
       description: matchingNotion?.description || calEvent.description || "",
       location: matchingNotion?.location || calEvent.location || "Belirtilmedi",
-      date: dateStr,
-      time: timeStr !== "00:00" ? timeStr : "Saat belirtilmedi",
-      isUpcoming: calEvent.startDate > new Date(),
+      date: calEvent.date,
+      time: calEvent.time,
+      isUpcoming: calEvent.status === "upcoming",
       icon: Users // Varsayılan ikon
     };
   });

@@ -95,7 +95,7 @@ export default async function EventDetailPage({ params }: Props) {
             <h3 className="text-xl font-semibold mb-4 text-brand-ink dark:text-white">Etkinlik Hakkında</h3>
             <div 
               className="leading-relaxed whitespace-pre-wrap break-words"
-              dangerouslySetInnerHTML={{ __html: event.htmlDescription || event.description }}
+              dangerouslySetInnerHTML={{ __html: event.description }}
             />
           </div>
 

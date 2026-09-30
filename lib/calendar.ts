@@ -1,3 +1,5 @@
+import ical from 'node-ical';
+
 export interface CalendarEvent {
   id: string;
   title: string;
@@ -11,64 +13,69 @@ export interface CalendarEvent {
 }
 
 export async function getEvents(): Promise<CalendarEvent[]> {
-  const API_KEY = process.env.GOOGLE_CALENDAR_API_KEY;
-  const CALENDAR_ID = process.env.GOOGLE_CALENDAR_ID;
-
-  if (!API_KEY || !CALENDAR_ID) {
-    console.warn("⚠️ GOOGLE_CALENDAR_API_KEY veya GOOGLE_CALENDAR_ID .env dosyasında bulunamadı.");
-    return [];
-  }
-
-  const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&singleEvents=true&orderBy=startTime`;
+  const url = "https://calendar.google.com/calendar/ical/3358654a63a1e4c7d975799b72ab7f2ef78554d12243f928f8886012fa6ff271%40group.calendar.google.com/public/basic.ics";
 
   try {
     const res = await fetch(url, { next: { revalidate: 3600 } });
     if (!res.ok) {
-      console.error("Google Calendar API hatası:", res.status, res.statusText);
+      console.error("iCal fetch error:", res.status, res.statusText);
       return [];
     }
-
-    const data = await res.json();
-    const items = data.items || [];
+    const icalData = await res.text();
+    const parsedData = ical.sync.parseICS(icalData);
+    
     const now = new Date();
+    const events: CalendarEvent[] = [];
 
-    const events: CalendarEvent[] = items.map((item: any) => {
-      const startDateTime = item.start.dateTime || item.start.date;
-      const endDateTime = item.end.dateTime || item.end.date;
-      
-      const startDate = new Date(startDateTime);
-      const isPast = startDate < now;
+    for (const key in parsedData) {
+      const rawEvent = parsedData[key];
+      if (!rawEvent || rawEvent.type !== 'VEVENT') continue;
+
+      const event = rawEvent as any; // TypeScript hatalarını (event özelliği yok, vs.) önlemek için any cast yapıyoruz
+
+      const startDate = new Date(event.start);
+      const endDate = new Date(event.end);
+      // We also check if end of the day is past so we show it as upcoming while it's ongoing
+      const isPast = endDate < now;
 
       const formatterDate = new Intl.DateTimeFormat('tr-TR', { day: '2-digit', month: 'long', year: 'numeric' });
       const formatterTime = new Intl.DateTimeFormat('tr-TR', { hour: '2-digit', minute: '2-digit' });
 
+      // If datetype is 'date', it's usually a full day event
       let timeString = "Tüm Gün";
-      if (item.start.dateTime && item.end.dateTime) {
-        timeString = `${formatterTime.format(startDate)} - ${formatterTime.format(new Date(endDateTime))}`;
+      if (event.datetype !== 'date' && event.start && event.end) {
+        // Only format time if it actually has time, full day events start at 00:00
+        timeString = `${formatterTime.format(startDate)} - ${formatterTime.format(endDate)}`;
       }
 
-      // We extract category from the title if it exists like "[Atölye] Python"
       let category = "Etkinlik";
-      let title = item.summary || "İsimsiz Etkinlik";
+      let title = event.summary || "İsimsiz Etkinlik";
       
-      const match = title.match(/^\[(.*?)\]\s*(.*)/);
+      const match = typeof title === 'string' ? title.match(/^\[(.*?)\]\s*(.*)/) : null;
       if (match) {
         category = match[1];
         title = match[2];
       }
 
-      return {
-        id: item.id,
+      let description = typeof event.description === 'string' ? event.description : "Bu etkinlik için bir açıklama girilmemiş.";
+      if (typeof event.description === 'object' && event.description !== null && 'val' in event.description) {
+        description = event.description.val || description;
+      }
+
+      events.push({
+        id: event.uid || key,
         title: title,
         date: formatterDate.format(startDate),
         time: timeString,
-        location: item.location || "Konum belirtilmedi",
-        description: item.description || "Bu etkinlik için bir açıklama girilmemiş.",
+        location: event.location || "Konum belirtilmedi",
+        description: description,
         status: isPast ? "past" : "upcoming",
         category: category,
         rawDate: startDate,
-      };
-    });
+      });
+    }
+
+    events.sort((a, b) => a.rawDate.getTime() - b.rawDate.getTime());
 
     return events;
   } catch (error) {
