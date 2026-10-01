@@ -28,7 +28,7 @@ export function Navbar() {
         
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center space-x-3 group" onClick={() => setIsMobileMenuOpen(false)}>
-            <span className="font-bold text-lg text-brand-ink dark:text-white tracking-tight hidden sm:block">
+            <span className="font-bold text-lg text-brand-ink dark:text-white tracking-tight">
               İstatistik<span className="text-brand-accent">Ticaret</span>
             </span>
           </Link>
