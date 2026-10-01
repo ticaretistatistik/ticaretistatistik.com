@@ -67,9 +67,7 @@ export function Footer() {
               <li>
                 <a href="https://ticaret.edu.tr/istatistik" target="_blank" rel="noreferrer" className="hover:text-brand-accent transition-colors">İstatistik Bölümü</a>
               </li>
-              <li>
-                <Link href="/hakkimizda" className="hover:text-brand-accent transition-colors">Topluluk Tüzüğü</Link>
-              </li>
+
             </ul>
           </div>
 
