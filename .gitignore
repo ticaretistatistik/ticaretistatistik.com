@@ -31,3 +31,9 @@ pnpm-debug.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Typescript build cache
+tsconfig.tsbuildinfo
+
+# Velite generated assets
+public/static/
