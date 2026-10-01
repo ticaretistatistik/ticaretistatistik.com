@@ -162,7 +162,7 @@ export default function Home() {
             </Link>
 
             {/* Sözlük Card */}
-            <Link href="/sozluk" className="group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-brand-ink text-white border border-brand-ink dark:border-zinc-800 hover:shadow-xl hover:shadow-brand-ink/20 transition-all duration-500 min-h-[240px] p-8">
+            <Link href="/sozluk" className="group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-zinc-950 dark:bg-zinc-900/40 text-white border border-zinc-900 dark:border-zinc-800/50 hover:shadow-xl hover:shadow-zinc-950/20 dark:hover:shadow-black/40 transition-all duration-500 min-h-[240px] p-8">
               <div className="relative z-10 mt-auto">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium mb-6 backdrop-blur-sm">
                   <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
