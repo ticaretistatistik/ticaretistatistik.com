@@ -1,4 +1,0 @@
-Terim,İngilizce,Tanım,Örnek,İlgili
-Ortalama,Mean,"Tüm değerlerin toplamının gözlem sayısına bölünmesi. Merkezî eğilimin en bilinen ölçüsü; ancak aykırı değerlere duyarlıdır.","{4, 6, 8, 10, 12} setinin ortalaması (4+6+8+10+12)/5 = 8'dir.",
-Regresyon,Regression,"Bir bağımlı değişkenin bir veya daha fazla bağımsız değişkenle ilişkisini modelleyen istatistiksel yöntem. Doğrusal regresyon en basit biçimidir.",Ev fiyatının metrekareye göre modellenmesi: Fiyat = β₀ + β₁ × Metrekare + ε.,
-Standart sapma,Standard deviation,"Verinin ortalama etrafında ne kadar yayıldığını gösteren ölçü. Varyansın kareköküdür, orijinal veriyle aynı birimdedir.","İki sınıfın ortalama puanı 70 olsun. Birincide standart sapma 5, ikincide 15 ise birinci sınıftaki puanlar ortalamaya çok daha yakındır.",
