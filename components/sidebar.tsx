@@ -104,18 +104,18 @@ export function Sidebar() {
                   <details className="group" open={isActiveParent}>
                     <summary className={cn(
                       "flex cursor-pointer items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-colors list-none select-none",
-                      isActiveParent ? "text-brand-accent" : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                      isActiveParent ? "text-brand-accent" : "text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
                     )}>
                       {node.title}
-                      <ChevronRight className="h-4 w-4 transition-transform group-open:rotate-90 text-slate-400" />
+                      <ChevronRight className="h-4 w-4 transition-transform group-open:rotate-90 text-zinc-400" />
                     </summary>
-                    <div className="flex flex-col pl-4 mt-1 gap-1 border-l border-slate-200 dark:border-slate-800 ml-4 mb-2">
+                    <div className="flex flex-col pl-4 mt-1 gap-1 border-l border-zinc-200 dark:border-zinc-800 ml-4 mb-2">
                       {node.isIndex && (
                         <Link 
                           href={node.permalink} 
                           className={cn(
                             "rounded-md px-3 py-1.5 text-sm transition-colors",
-                            isRootActive ? "text-brand-accent font-medium bg-brand-accent/5" : "text-slate-500 dark:text-slate-400 hover:text-brand-ink dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                            isRootActive ? "text-brand-accent font-medium bg-brand-accent/5" : "text-zinc-500 dark:text-zinc-400 hover:text-brand-ink dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
                           )}
                         >
                           Genel Bakış
@@ -129,7 +129,7 @@ export function Sidebar() {
                             href={child.permalink} 
                             className={cn(
                               "rounded-md px-3 py-1.5 text-sm transition-colors",
-                              isChildActive ? "text-brand-accent font-medium bg-brand-accent/5" : "text-slate-500 dark:text-slate-400 hover:text-brand-ink dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                              isChildActive ? "text-brand-accent font-medium bg-brand-accent/5" : "text-zinc-500 dark:text-zinc-400 hover:text-brand-ink dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
                             )}
                           >
                             {child.title}
@@ -143,7 +143,7 @@ export function Sidebar() {
                     href={node.permalink} 
                     className={cn(
                       "flex items-center rounded-lg px-3 py-2 text-sm transition-colors font-medium",
-                      isRootActive ? "bg-brand-accent/10 text-brand-accent" : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/50"
+                      isRootActive ? "bg-brand-accent/10 text-brand-accent" : "text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
                     )}
                   >
                     {node.title}

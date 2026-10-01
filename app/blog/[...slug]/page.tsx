@@ -58,16 +58,16 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <article className="min-h-screen bg-white dark:bg-background pb-24">
       {/* Article Header (Hero) */}
-      <header className="pt-24 pb-12 md:pt-32 md:pb-16 bg-slate-50 dark:bg-slate-900/30 border-b border-slate-100 dark:border-slate-800">
+      <header className="pt-24 pb-12 md:pt-32 md:pb-16 bg-zinc-50 dark:bg-zinc-900/30 border-b border-zinc-100 dark:border-zinc-800">
         <div className="container max-w-[800px] mx-auto px-6">
           <Link href="/blog" className="inline-flex items-center text-sm font-medium text-brand-accent hover:text-brand-ink dark:hover:text-white transition-colors mb-8 group">
-            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-tranzinc-x-1 transition-transform" />
             Blog'a Dön
           </Link>
           
-          <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-slate-500 dark:text-slate-400 mb-6">
+          <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-6">
             {post.date && (
-              <time dateTime={post.date} className="flex items-center gap-2 bg-white dark:bg-slate-800 px-3 py-1 rounded-full shadow-sm border border-slate-200 dark:border-slate-700">
+              <time dateTime={post.date} className="flex items-center gap-2 bg-white dark:bg-zinc-800 px-3 py-1 rounded-full shadow-sm border border-zinc-200 dark:border-zinc-700">
                 <Calendar className="w-4 h-4 text-brand-accent" />
                 {new Date(post.date).toLocaleDateString("tr-TR", { year: 'numeric', month: 'long', day: 'numeric' })}
               </time>
@@ -84,7 +84,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </h1>
 
           {post.description && (
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl">
+            <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl">
               {post.description}
             </p>
           )}
@@ -100,15 +100,15 @@ export default async function PostPage({ params }: PostPageProps) {
                   className="flex items-center gap-4 group"
                 >
                   {author.image_url ? (
-                    <img src={author.image_url} alt={author.name} className="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-slate-800 shadow-sm group-hover:border-brand-accent transition-colors" />
+                    <img src={author.image_url} alt={author.name} className="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-zinc-800 shadow-sm group-hover:border-brand-accent transition-colors" />
                   ) : (
-                    <div className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500">
+                    <div className="w-12 h-12 rounded-full bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center text-zinc-500">
                       <span className="font-bold text-lg">{author.name.charAt(0)}</span>
                     </div>
                   )}
                   <div>
                     <div className="text-sm font-bold text-brand-ink dark:text-white group-hover:text-brand-accent transition-colors">{author.name}</div>
-                    {author.title && <div className="text-sm text-slate-500 dark:text-slate-400">{author.title}</div>}
+                    {author.title && <div className="text-sm text-zinc-500 dark:text-zinc-400">{author.title}</div>}
                   </div>
                 </a>
               ))}
@@ -120,7 +120,7 @@ export default async function PostPage({ params }: PostPageProps) {
       {/* Article Content */}
       <div className="container max-w-[800px] mx-auto px-6 mt-10 md:mt-16">
         {post.cover && (
-          <div className="mb-16 w-full relative rounded-2xl overflow-hidden shadow-md aspect-[21/9] md:aspect-[2.5/1] bg-slate-100 dark:bg-slate-800">
+          <div className="mb-16 w-full relative rounded-2xl overflow-hidden shadow-md aspect-[21/9] md:aspect-[2.5/1] bg-zinc-100 dark:bg-zinc-800">
             <img 
               src={typeof post.cover === 'string' ? post.cover : post.cover.src} 
               alt={post.title} 
@@ -129,7 +129,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
         )}
         
-        <div className="prose prose-slate prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-brand-ink dark:prose-headings:text-white prose-a:text-brand-accent hover:prose-a:text-brand-accent/80 prose-img:rounded-xl">
+        <div className="prose prose-zinc prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-brand-ink dark:prose-headings:text-white prose-a:text-brand-accent hover:prose-a:text-brand-accent/80 prose-img:rounded-xl">
           <MDXContent code={post.content} />
         </div>
       </div>

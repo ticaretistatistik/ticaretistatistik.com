@@ -75,7 +75,7 @@ const components = {
   DownloadFileFeature: ({ content, file, icon }: any) => {
     const isWin = icon === 'windows';
     return (
-      <a href={file?.url} download={file?.name} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-3 px-5 py-3 bg-zinc-50 dark:bg-zinc-900/50 border border-border hover:border-brand-yellow/50 rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 w-full sm:w-auto">
+      <a href={file?.url} download={file?.name} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-3 px-5 py-3 bg-zinc-50 dark:bg-zinc-900/50 border border-border hover:border-brand-yellow/50 rounded-2xl transition-all duration-300 hover:shadow-lg hover:-tranzinc-y-0.5 w-full sm:w-auto">
         <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-white dark:bg-black border border-border shadow-sm group-hover:scale-110 group-hover:border-brand-yellow/50 transition-all duration-300 shrink-0">
           {isWin ? (
             <AppWindow className="w-5 h-5 text-blue-500" />

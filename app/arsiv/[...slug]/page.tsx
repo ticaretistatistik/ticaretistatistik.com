@@ -47,15 +47,15 @@ export default async function ArchiveEventPage({ params }: ArchivePageProps) {
   return (
     <article className="min-h-screen bg-white dark:bg-background pb-24">
       {/* Event Header */}
-      <header className="pt-24 pb-12 md:pt-32 md:pb-16 bg-slate-50 dark:bg-slate-900/30 border-b border-slate-100 dark:border-slate-800">
+      <header className="pt-24 pb-12 md:pt-32 md:pb-16 bg-zinc-50 dark:bg-zinc-900/30 border-b border-zinc-100 dark:border-zinc-800">
         <div className="container max-w-[900px] mx-auto px-6 text-center">
           <Link href="/arsiv" className="inline-flex items-center text-sm font-medium text-brand-accent hover:text-brand-ink dark:hover:text-white transition-colors mb-8 group">
-            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-tranzinc-x-1 transition-transform" />
             Arşive Dön
           </Link>
           
           <div className="flex justify-center mb-6">
-            <time dateTime={event.date} className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-2 rounded-full shadow-sm border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300">
+            <time dateTime={event.date} className="inline-flex items-center gap-2 bg-white dark:bg-zinc-800 px-4 py-2 rounded-full shadow-sm border border-zinc-200 dark:border-zinc-700 text-sm font-medium text-zinc-600 dark:text-zinc-300">
               <Calendar className="w-4 h-4 text-brand-accent" />
               {new Date(event.date).toLocaleDateString("tr-TR", { year: 'numeric', month: 'long', day: 'numeric' })}
             </time>
@@ -65,7 +65,7 @@ export default async function ArchiveEventPage({ params }: ArchivePageProps) {
             {event.title}
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl mx-auto">
             {event.description}
           </p>
         </div>
@@ -76,7 +76,7 @@ export default async function ArchiveEventPage({ params }: ArchivePageProps) {
         
         {/* Cover Image */}
         {event.cover && (
-          <div className="mb-16 w-full relative rounded-3xl overflow-hidden shadow-lg aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+          <div className="mb-16 w-full relative rounded-3xl overflow-hidden shadow-lg aspect-[16/9] bg-zinc-100 dark:bg-zinc-800">
             <img 
               src={typeof event.cover === 'string' ? event.cover : event.cover.src} 
               alt={event.title} 
@@ -86,13 +86,13 @@ export default async function ArchiveEventPage({ params }: ArchivePageProps) {
         )}
         
         {/* MDX Text Content */}
-        <div className="prose prose-slate prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-brand-ink dark:prose-headings:text-white prose-a:text-brand-accent hover:prose-a:text-brand-accent/80 prose-img:rounded-2xl mb-16">
+        <div className="prose prose-zinc prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-brand-ink dark:prose-headings:text-white prose-a:text-brand-accent hover:prose-a:text-brand-accent/80 prose-img:rounded-2xl mb-16">
           <MDXContent code={event.content} />
         </div>
 
         {/* Optional Gallery Section */}
         {event.gallery && event.gallery.length > 0 && (
-          <div className="mt-16 pt-16 border-t border-slate-200 dark:border-slate-800">
+          <div className="mt-16 pt-16 border-t border-zinc-200 dark:border-zinc-800">
             <h3 className="text-2xl font-bold text-brand-ink dark:text-white mb-8 flex items-center">
               <LayoutGrid className="w-6 h-6 mr-3 text-brand-accent" />
               Etkinlik Galerisi
@@ -100,7 +100,7 @@ export default async function ArchiveEventPage({ params }: ArchivePageProps) {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {event.gallery.map((img, idx) => (
-                <div key={idx} className="aspect-square relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 group shadow-sm hover:shadow-lg transition-all">
+                <div key={idx} className="aspect-square relative rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 group shadow-sm hover:shadow-lg transition-all">
                   <img 
                     src={typeof img === 'string' ? img : (img as any).src} 
                     alt={`${event.title} galeri görseli ${idx + 1}`} 

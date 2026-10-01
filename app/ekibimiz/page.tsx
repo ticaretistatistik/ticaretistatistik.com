@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function TeamPage() {
   return (
-    <div className="bg-slate-50 dark:bg-background min-h-screen">
+    <div className="bg-zinc-50 dark:bg-background min-h-screen">
       <div className="container-custom pt-12 pb-24">
         
         {/* Header Section */}
@@ -20,7 +20,7 @@ export default function TeamPage() {
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-ink dark:text-white mb-6">
             Ekibimizle Tanışın
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+          <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Topluluğumuzun vizyonunu ileriye taşıyan, veri bilimine tutkulu ve çalışkan yönetim kurulu üyelerimiz.
           </p>
         </header>
@@ -32,7 +32,7 @@ export default function TeamPage() {
               key={index}
               className="group flex flex-col items-start gap-4"
             >
-              <div className="relative w-full h-80 overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800">
+              <div className="relative w-full h-80 overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800">
                 {member.image ? (
                   <img
                     src={member.image}
@@ -46,22 +46,22 @@ export default function TeamPage() {
                 )}
                 
                 {/* Dark overlay on hover */}
-                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-4">
+                <div className="absolute inset-0 bg-zinc-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-4">
                   <div className="flex gap-2">
                     {member.linkedin && (
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
                         <Linkedin className="w-4 h-4" />
                         <span className="sr-only">LinkedIn</span>
                       </a>
                     )}
                     {member.github && (
-                      <a href={member.github} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <a href={member.github} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
                         <Github className="w-4 h-4" />
                         <span className="sr-only">GitHub</span>
                       </a>
                     )}
                     {member.medium && (
-                      <a href={member.medium} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <a href={member.medium} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
                         <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" className="w-4 h-4">
                           <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
                         </svg>
@@ -69,7 +69,7 @@ export default function TeamPage() {
                       </a>
                     )}
                     {member.website && (
-                      <a href={member.website} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <a href={member.website} target="_blank" rel="noopener noreferrer" className="flex w-fit bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
                         <Globe className="w-4 h-4" />
                         <span className="sr-only">Kişisel Web Sitesi</span>
                       </a>
@@ -83,7 +83,7 @@ export default function TeamPage() {
                 <h3 className="text-xl font-medium text-brand-ink dark:text-white">
                   {member.name}
                 </h3>
-                <p className="text-sm font-normal text-slate-500 dark:text-slate-400">
+                <p className="text-sm font-normal text-zinc-500 dark:text-zinc-400">
                   {member.role}
                 </p>
               </div>

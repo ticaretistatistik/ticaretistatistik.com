@@ -13,23 +13,23 @@ export default function SozlukPage() {
       
       {/* Abstract Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-accent/10 blur-[120px] rounded-full" />
+        <div className="absolute top-1/4 left-1/2 -tranzinc-x-1/2 w-[600px] h-[400px] bg-brand-accent/10 blur-[120px] rounded-full" />
         <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
       </div>
       
       <div className="container-custom relative z-10 py-24 text-center max-w-4xl mx-auto flex flex-col items-center">
         
         {/* Badge */}
-        <div className="inline-flex items-center space-x-2 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full px-4 py-1.5 mb-8 shadow-sm">
+        <div className="inline-flex items-center space-x-2 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full px-4 py-1.5 mb-8 shadow-sm">
           <Sparkles className="w-4 h-4 text-brand-accent" />
-          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+          <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
             Topluluk Projesi
           </span>
         </div>
         
         {/* Main Content */}
         <div className="relative mb-8">
-          <div className="absolute -top-8 -left-10 text-slate-100 dark:text-slate-800/40">
+          <div className="absolute -top-8 -left-10 text-zinc-100 dark:text-zinc-800/40">
             <BookOpen className="w-28 h-28 rotate-[-15deg] opacity-50" />
           </div>
           <h1 className="relative text-5xl md:text-7xl font-bold tracking-tighter text-brand-ink dark:text-white mb-6">
@@ -37,7 +37,7 @@ export default function SozlukPage() {
           </h1>
         </div>
         
-        <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 leading-relaxed mb-12 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed mb-12 max-w-2xl mx-auto">
           İstatistik, veri bilimi ve yapay zeka terimlerini siz değerli öğrencilerimizin katkılarıyla ilmek ilmek işlediğimiz açık kaynaklı sözlük altyapımızı, yepyeni bir deneyim için güncelliyoruz.
         </p>
         
@@ -52,7 +52,7 @@ export default function SozlukPage() {
           </Link>
           <Link 
             href="/" 
-            className="flex items-center justify-center space-x-2 rounded-lg font-medium transition-all border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 h-12 px-8 w-full sm:w-auto"
+            className="flex items-center justify-center space-x-2 rounded-lg font-medium transition-all border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 h-12 px-8 w-full sm:w-auto"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>Ana Sayfaya Dön</span>
@@ -60,13 +60,13 @@ export default function SozlukPage() {
         </div>
 
         {/* Separator / Status indicator */}
-        <div className="mt-24 pt-8 border-t border-slate-200/60 dark:border-slate-800/60 w-full max-w-md flex justify-center">
-          <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/50 px-4 py-2 rounded-full border border-slate-100 dark:border-slate-800">
+        <div className="mt-24 pt-8 border-t border-zinc-200/60 dark:border-zinc-800/60 w-full max-w-md flex justify-center">
+          <div className="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-900/50 px-4 py-2 rounded-full border border-zinc-100 dark:border-zinc-800">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-accent"></span>
             </span>
-            <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
+            <span className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
               Arka planda çalışmalarımız sürüyor
             </span>
           </div>

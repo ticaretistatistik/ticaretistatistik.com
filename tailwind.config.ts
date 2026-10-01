@@ -27,12 +27,12 @@ const config: Config = {
       typography: (theme: any) => ({
         DEFAULT: {
           css: {
-            '--tw-prose-body': theme('colors.slate[700]'),
+            '--tw-prose-body': theme('colors.zinc[700]'),
             '--tw-prose-headings': theme('colors.brand.ink'),
             '--tw-prose-links': theme('colors.brand.accent'),
             '--tw-prose-code': theme('colors.brand.ink'),
-            '--tw-prose-pre-bg': theme('colors.slate[900]'),
-            '--tw-prose-pre-code': theme('colors.slate[100]'),
+            '--tw-prose-pre-bg': theme('colors.zinc[900]'),
+            '--tw-prose-pre-code': theme('colors.zinc[100]'),
             h1: { fontFamily: theme('fontFamily.sans')[0], fontWeight: '700' },
             h2: { fontFamily: theme('fontFamily.sans')[0], fontWeight: '600' },
             h3: { fontFamily: theme('fontFamily.sans')[0], fontWeight: '600' },

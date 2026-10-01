@@ -16,7 +16,7 @@ export default function ArchiveIndexPage() {
   });
 
   return (
-    <div className="bg-slate-50 dark:bg-background min-h-screen">
+    <div className="bg-zinc-50 dark:bg-background min-h-screen">
       <div className="container-custom pt-12 pb-24">
         
         {/* Header Section */}
@@ -27,7 +27,7 @@ export default function ArchiveIndexPage() {
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-ink dark:text-white mb-6">
             Etkinlik Arşivi
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+          <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Geçmişte düzenlediğimiz zirveler, atölyeler ve tüm etkinliklerin özetleri ve fotoğraf galerileri.
           </p>
         </header>
@@ -38,10 +38,10 @@ export default function ArchiveIndexPage() {
             <Link 
               href={item.permalink} 
               key={item.slug} 
-              className="flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              className="flex flex-col bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:-tranzinc-y-1 transition-all duration-300 group"
             >
               {/* Cover Image */}
-              <div className="w-full aspect-[4/3] relative bg-slate-100 dark:bg-slate-800 overflow-hidden">
+              <div className="w-full aspect-[4/3] relative bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
                 {item.cover ? (
                   <img 
                     src={typeof item.cover === 'string' ? item.cover : item.cover.src} 
@@ -65,7 +65,7 @@ export default function ArchiveIndexPage() {
 
               {/* Content */}
               <div className="p-6 flex flex-col flex-1">
-                <time dateTime={item.date} className="flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 mb-3">
+                <time dateTime={item.date} className="flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-3">
                   <Calendar className="w-3.5 h-3.5" />
                   {new Date(item.date).toLocaleDateString("tr-TR", { year: 'numeric', month: 'long', day: 'numeric' })}
                 </time>
@@ -74,13 +74,13 @@ export default function ArchiveIndexPage() {
                   {item.title}
                 </h2>
                 
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3">
                   {item.description}
                 </p>
                 
-                <div className="mt-auto flex items-center text-sm font-semibold text-brand-accent border-t border-slate-100 dark:border-slate-800 pt-4">
+                <div className="mt-auto flex items-center text-sm font-semibold text-brand-accent border-t border-zinc-100 dark:border-zinc-800 pt-4">
                   Detayları İncele
-                  <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 ml-1 transform group-hover:tranzinc-x-1 transition-transform" />
                 </div>
               </div>
             </Link>
@@ -88,21 +88,21 @@ export default function ArchiveIndexPage() {
         </div>
 
         {sortedArchives.length === 0 && (
-          <div className="py-24 text-center bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 mb-16">
-            <div className="inline-flex justify-center items-center w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 mb-4">
-              <LayoutGrid className="w-8 h-8 text-slate-400" />
+          <div className="py-24 text-center bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 mb-16">
+            <div className="inline-flex justify-center items-center w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-800 mb-4">
+              <LayoutGrid className="w-8 h-8 text-zinc-400" />
             </div>
-            <p className="text-slate-500 dark:text-slate-400 text-lg font-medium">Henüz arşivlenmiş bir etkinlik fotoğrafı bulunmuyor.</p>
+            <p className="text-zinc-500 dark:text-zinc-400 text-lg font-medium">Henüz arşivlenmiş bir etkinlik fotoğrafı bulunmuyor.</p>
           </div>
         )}
 
         {/* Video Kayıtları Section */}
-        <div id="video-gallery-section" className="mt-24 pt-16 border-t border-slate-200 dark:border-slate-800">
+        <div id="video-gallery-section" className="mt-24 pt-16 border-t border-zinc-200 dark:border-zinc-800">
           <header className="mb-12 text-center max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-brand-ink dark:text-white mb-4">
               Panel ve Söyleşi Kayıtları
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
+            <p className="text-lg text-zinc-600 dark:text-zinc-400">
               Geçmişteki en popüler yayınlarımız, röportajlarımız ve konferans videolarımız.
             </p>
           </header>

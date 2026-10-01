@@ -25,7 +25,7 @@ export default function BlogIndexPage() {
           <h2 className="mx-auto mb-6 text-pretty text-3xl font-semibold md:text-4xl lg:max-w-3xl text-foreground">
             Blog Posts
           </h2>
-          <p className="mx-auto max-w-2xl text-slate-500 dark:text-slate-400 md:text-lg">
+          <p className="mx-auto max-w-2xl text-zinc-500 dark:text-zinc-400 md:text-lg">
             Veri bilimi, yapay zeka, istatistik ekosistemine dair teknik yazılarımız ve etkinliklerimizden notlar.
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function BlogIndexPage() {
                   {/* Text Side */}
                   <div className="sm:col-span-5">
                     <div className="mb-4 md:mb-6">
-                      <div className="flex flex-wrap gap-3 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 md:gap-5 lg:gap-6">
+                      <div className="flex flex-wrap gap-3 text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 md:gap-5 lg:gap-6">
                         {post.tags && post.tags.length > 0 ? (
                           post.tags.map(tag => (
                             <span key={tag}>{tag}</span>
@@ -65,7 +65,7 @@ export default function BlogIndexPage() {
                     </h3>
                     
                     {post.description && (
-                      <p className="mt-4 text-slate-500 dark:text-slate-400 md:mt-5 line-clamp-3">
+                      <p className="mt-4 text-zinc-500 dark:text-zinc-400 md:mt-5 line-clamp-3">
                         {post.description}
                       </p>
                     )}
@@ -73,12 +73,12 @@ export default function BlogIndexPage() {
                     <div className="mt-6 flex items-center space-x-4 text-sm md:mt-8">
                       {primaryAuthor && (
                         <>
-                          <span className="text-slate-500 dark:text-slate-400">{primaryAuthor.name}</span>
-                          <span className="text-slate-500 dark:text-slate-400">•</span>
+                          <span className="text-zinc-500 dark:text-zinc-400">{primaryAuthor.name}</span>
+                          <span className="text-zinc-500 dark:text-zinc-400">•</span>
                         </>
                       )}
                       {post.date && (
-                        <span className="text-slate-500 dark:text-slate-400">
+                        <span className="text-zinc-500 dark:text-zinc-400">
                           {new Date(post.date).toLocaleDateString("tr-TR", { month: 'short', day: 'numeric', year: 'numeric' })}
                         </span>
                       )}
@@ -102,12 +102,12 @@ export default function BlogIndexPage() {
                         {coverUrl ? (
                           <img 
                             alt={post.title} 
-                            className="h-full w-full object-cover transition-opacity duration-200 hover:opacity-70 bg-slate-100 dark:bg-slate-800" 
+                            className="h-full w-full object-cover transition-opacity duration-200 hover:opacity-70 bg-zinc-100 dark:bg-zinc-800" 
                             src={coverUrl} 
                           />
                         ) : (
-                          <div className="h-full w-full flex items-center justify-center bg-slate-100 dark:bg-slate-800">
-                            <span className="text-slate-400 font-semibold uppercase tracking-widest">ITICU</span>
+                          <div className="h-full w-full flex items-center justify-center bg-zinc-100 dark:bg-zinc-800">
+                            <span className="text-zinc-400 font-semibold uppercase tracking-widest">ITICU</span>
                           </div>
                         )}
                       </div>
@@ -122,7 +122,7 @@ export default function BlogIndexPage() {
 
         {sortedPosts.length === 0 && (
           <div className="py-24 text-center w-full">
-            <p className="text-slate-500 dark:text-slate-400 text-lg font-medium">Henüz içerik yayınlanmamış.</p>
+            <p className="text-zinc-500 dark:text-zinc-400 text-lg font-medium">Henüz içerik yayınlanmamış.</p>
           </div>
         )}
       </div>

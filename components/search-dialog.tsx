@@ -82,7 +82,7 @@ export function SearchDialog() {
     <DialogPrimitive.Root open={open} onOpenChange={setOpen}>
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/40 dark:bg-black/80 backdrop-blur-sm transition-all duration-700 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
-        <DialogPrimitive.Content className="fixed left-1/2 top-[20%] sm:top-[30%] md:top-1/4 z-50 w-full max-w-2xl -translate-x-1/2 gap-0 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-0 shadow-2xl sm:rounded-xl overflow-hidden transition-all duration-700 ease-out data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-[0.98] data-[state=closed]:slide-out-to-top-[15%] data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-[0.98] data-[state=open]:slide-in-from-top-[15%]">
+        <DialogPrimitive.Content className="fixed left-1/2 top-[20%] sm:top-[30%] md:top-1/4 z-50 w-full max-w-2xl -tranzinc-x-1/2 gap-0 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-0 shadow-2xl sm:rounded-xl overflow-hidden transition-all duration-700 ease-out data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-[0.98] data-[state=closed]:slide-out-to-top-[15%] data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-[0.98] data-[state=open]:slide-in-from-top-[15%]">
           <div className="flex items-center border-b border-zinc-200 dark:border-zinc-800 px-4">
             <Search className="mr-3 h-5 w-5 shrink-0 text-zinc-500" />
             <input

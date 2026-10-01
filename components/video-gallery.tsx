@@ -47,8 +47,8 @@ export function VideoGallery() {
   return (
     <div className="flex flex-col gap-8">
       {/* Main Player */}
-      <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-4 md:p-6 flex flex-col lg:flex-row gap-6 shadow-lg">
-        <div className="w-full lg:w-2/3 aspect-video rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 relative">
+      <div className="bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 p-4 md:p-6 flex flex-col lg:flex-row gap-6 shadow-lg">
+        <div className="w-full lg:w-2/3 aspect-video rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 relative">
           <iframe 
             key={activeVideo.id} // Re-mount iframe when id changes
             className="absolute inset-0 w-full h-full"
@@ -66,7 +66,7 @@ export function VideoGallery() {
           <h3 className="text-2xl font-bold text-brand-ink dark:text-white mb-3">
             {activeVideo.title}
           </h3>
-          <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
             {activeVideo.description}
           </p>
         </div>
@@ -84,13 +84,13 @@ export function VideoGallery() {
                 // Optional: Scroll to top of the video gallery smoothly
                 window.scrollTo({ top: document.getElementById('video-gallery-section')?.offsetTop || 0, behavior: 'smooth' });
               }}
-              className={`text-left bg-white dark:bg-slate-900 rounded-2xl border p-4 flex flex-col transition-all duration-300 ${
+              className={`text-left bg-white dark:bg-zinc-900 rounded-2xl border p-4 flex flex-col transition-all duration-300 ${
                 isActive 
                   ? "border-brand-accent shadow-md ring-1 ring-brand-accent" 
-                  : "border-slate-200 dark:border-slate-800 hover:border-brand-accent/50 hover:shadow-lg"
+                  : "border-zinc-200 dark:border-zinc-800 hover:border-brand-accent/50 hover:shadow-lg"
               }`}
             >
-              <div className="w-full aspect-video rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 mb-4 relative group">
+              <div className="w-full aspect-video rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 mb-4 relative group">
                 <img 
                   src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`} 
                   alt={video.title} 

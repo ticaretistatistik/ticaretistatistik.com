@@ -59,7 +59,7 @@ export default async function DocPage({ params }: DocPageProps) {
               <span className="text-brand-accent">Merkezi.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-12 max-w-2xl leading-relaxed">
               İstatistik, Veri Bilimi, Python ve R için hazırladığımız kapsamlı Türkçe kaynaklara hoş geldiniz. Öğrenmeye başlamak için bir kategori seçin.
             </p>
 
@@ -68,16 +68,16 @@ export default async function DocPage({ params }: DocPageProps) {
                 { name: "Python ile Veri Bilimi", path: "/docs/python", icon: <Code className="w-5 h-5" />, color: "bg-blue-50 text-blue-600 border-blue-200 dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-500/20" },
                 { name: "R Programlama", path: "/docs/r", icon: <Database className="w-5 h-5" />, color: "bg-indigo-50 text-indigo-600 border-indigo-200 dark:bg-indigo-500/10 dark:text-indigo-400 dark:border-indigo-500/20" },
                 { name: "İstatistik Temelleri", path: "/docs/istatistik", icon: <LineChart className="w-5 h-5" />, color: "bg-emerald-50 text-emerald-600 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20" },
-                { name: "Araçlar ve Kurulumlar", path: "/docs/araclar", icon: <Book className="w-5 h-5" />, color: "bg-slate-50 text-slate-600 border-slate-200 dark:bg-slate-500/10 dark:text-slate-400 dark:border-slate-500/20" },
+                { name: "Araçlar ve Kurulumlar", path: "/docs/araclar", icon: <Book className="w-5 h-5" />, color: "bg-zinc-50 text-zinc-600 border-zinc-200 dark:bg-zinc-500/10 dark:text-zinc-400 dark:border-zinc-500/20" },
               ].map((item) => (
-                <a key={item.name} href={item.path} className="group relative p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-300 hover:shadow-md hover:border-brand-accent/30 text-left overflow-hidden flex items-center justify-between">
+                <a key={item.name} href={item.path} className="group relative p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all duration-300 hover:shadow-md hover:border-brand-accent/30 text-left overflow-hidden flex items-center justify-between">
                   <div className="flex items-center gap-4 z-10">
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-colors ${item.color}`}>
                       {item.icon}
                     </div>
                     <h3 className="text-lg font-bold text-brand-ink dark:text-white group-hover:text-brand-accent transition-colors">{item.name}</h3>
                   </div>
-                  <ChevronRightIcon className="w-5 h-5 text-slate-400 group-hover:text-brand-accent group-hover:translate-x-1 transition-all z-10" />
+                  <ChevronRightIcon className="w-5 h-5 text-zinc-400 group-hover:text-brand-accent group-hover:tranzinc-x-1 transition-all z-10" />
                 </a>
               ))}
             </div>
@@ -96,11 +96,11 @@ export default async function DocPage({ params }: DocPageProps) {
             {doc.title}
           </h1>
           {doc.description && (
-            <p className="text-lg text-slate-600 dark:text-slate-400">{doc.description}</p>
+            <p className="text-lg text-zinc-600 dark:text-zinc-400">{doc.description}</p>
           )}
-          <hr className="border-slate-200 dark:border-slate-800" />
+          <hr className="border-zinc-200 dark:border-zinc-800" />
         </div>
-        <div className="pb-12 pt-4 prose prose-slate dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-brand-ink dark:prose-headings:text-white prose-a:text-brand-accent hover:prose-a:text-brand-accent/80 prose-img:rounded-xl">
+        <div className="pb-12 pt-4 prose prose-zinc dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-brand-ink dark:prose-headings:text-white prose-a:text-brand-accent hover:prose-a:text-brand-accent/80 prose-img:rounded-xl">
           <MDXContent code={doc.content} />
         </div>
       </div>
