@@ -7,7 +7,9 @@ export { metadata, viewport } from 'next-sanity/studio'
 // output: "export" ayarından dolayı Next.js'in statik derleme yapabilmesi için gerekli:
 export function generateStaticParams() {
   return [
-    { tool: [] } // Kök /studio dizini için
+    { tool: [] },            // /studio
+    { tool: ['structure'] }, // /studio/structure
+    { tool: ['vision'] },    // /studio/vision
   ]
 }
 
