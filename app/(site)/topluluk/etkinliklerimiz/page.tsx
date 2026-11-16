@@ -1,29 +1,21 @@
 import { Calendar, MapPin, Clock, ArrowRight, Instagram, Linkedin, Ticket, Users, Presentation } from "lucide-react";
-import { getEvents as getNotionEvents } from "@/lib/notion";
-import { getEvents as getGoogleCalendarEvents } from "@/lib/calendar";
+import { getEvents } from "@/lib/calendar";
 
 export const revalidate = 3600;
 
 export default async function EventsPage() {
-  const notionEvents = await getNotionEvents();
-  const calendarEvents = await getGoogleCalendarEvents();
-  
-  // Google Calendar takvimini ana kaynak (source of truth) kabul edip, 
-  // eşleşen bir Notion içeriği varsa Notion'daki zengin bilgileri (açıklama vb.) kullanıyoruz.
-  const mergedEvents = calendarEvents.map(calEvent => {
-    const matchingNotion = notionEvents.find(n => n.title.toLowerCase() === calEvent.title.toLowerCase());
+  const calendarEvents = await getEvents();
 
-    return {
-      id: calEvent.id,
-      title: matchingNotion?.title || calEvent.title,
-      description: matchingNotion?.description || calEvent.description || "",
-      location: matchingNotion?.location || calEvent.location || "Belirtilmedi",
-      date: calEvent.date,
-      time: calEvent.time,
-      isUpcoming: calEvent.status === "upcoming",
-      icon: Users // Varsayılan ikon
-    };
-  });
+  const mergedEvents = calendarEvents.map(calEvent => ({
+    id: calEvent.id,
+    title: calEvent.title,
+    description: calEvent.description || "",
+    location: calEvent.location || "Belirtilmedi",
+    date: calEvent.date,
+    time: calEvent.time,
+    isUpcoming: calEvent.status === "upcoming",
+    icon: Users // Varsayılan ikon
+  }));
 
   const upcomingEvents = mergedEvents.filter(e => e.isUpcoming);
   const pastEvents = mergedEvents.filter(e => !e.isUpcoming);

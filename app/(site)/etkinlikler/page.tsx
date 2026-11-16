@@ -3,6 +3,8 @@ import { Calendar, MapPin, Clock, ArrowRight, Video, Users, Sparkles, CheckCircl
 import Link from "next/link";
 import { getEvents } from "@/lib/calendar";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Etkinlikler",
   description: "İstatistik Topluluğu güncel etkinlik takvimi ve planlanan organizasyonlar.",
@@ -51,7 +53,7 @@ export default async function EventsPage() {
           {upcomingEvents.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {upcomingEvents.map(event => (
-                <div key={event.id} className="group bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 p-6 flex flex-col hover:border-brand-accent/50 hover:shadow-xl hover:-tranzinc-y-1 transition-all duration-300">
+                <Link key={event.id} href={`/etkinlikler/${encodeURIComponent(event.id)}`} className="group bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 p-6 flex flex-col hover:border-brand-accent/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                   <div className="flex justify-between items-start mb-6">
                     <span className="inline-flex items-center px-3 py-1 rounded-full bg-brand-accent/10 text-brand-accent text-xs font-semibold tracking-wide uppercase">
                       {event.category}
@@ -83,7 +85,7 @@ export default async function EventsPage() {
                       {event.location}
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           ) : (
@@ -102,7 +104,7 @@ export default async function EventsPage() {
           <div className="flex flex-col gap-4">
             {pastEvents.length > 0 ? (
               pastEvents.map(event => (
-                <div key={event.id} className="bg-white dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors">
+                <Link key={event.id} href={`/etkinlikler/${encodeURIComponent(event.id)}`} className="group bg-white dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors">
                   <div className="shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-400">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
@@ -120,7 +122,8 @@ export default async function EventsPage() {
                       <span className="flex items-center"><Users className="w-3.5 h-3.5 mr-1.5" />{event.category}</span>
                     </div>
                   </div>
-                </div>
+                  <ArrowRight className="hidden sm:block w-5 h-5 shrink-0 text-zinc-300 dark:text-zinc-600 group-hover:text-brand-accent group-hover:translate-x-1 transition-all" />
+                </Link>
               ))
             ) : (
               <p className="text-zinc-500 dark:text-zinc-400 italic">Henüz geçmiş bir etkinlik verisi bulunmuyor.</p>

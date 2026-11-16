@@ -48,8 +48,6 @@ jobs:
           # Public CSV URL of the glossary Google Sheet. Set this as a repo
           # Variable (Settings > Secrets and variables > Actions > Variables)
           GOOGLE_CALENDAR_ICAL_URL: ${{ secrets.GOOGLE_CALENDAR_ICAL_URL }}
-          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
-          NOTION_EVENTS_DATABASE_ID: ${{ secrets.NOTION_EVENTS_DATABASE_ID }}
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3

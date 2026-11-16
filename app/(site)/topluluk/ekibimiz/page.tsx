@@ -1,5 +1,11 @@
 import { Linkedin, Mail, Twitter } from "lucide-react";
-import teamMembers from "@/data/team.json";
+import teamData from "@/data/team.json";
+
+type TeamMember = Omit<(typeof teamData)[number], "socials"> & {
+  socials: { linkedin?: string; mail?: string; twitter?: string };
+};
+
+const teamMembers: TeamMember[] = teamData;
 
 export default function TeamPage() {
   return (
